@@ -5,8 +5,8 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://thanhlh90it.github.io', // Thay 'username' bằng GitHub username của bạn
-  base: '/DoIt-Studio', // Tên repository trên GitHub
+  site: 'https://doitstudio.tech', // Thay 'username' bằng GitHub username của bạn
+  base: '/', // Tên repository trên GitHub
   output: 'static',
   vite: {
     plugins: [tailwindcss()]
