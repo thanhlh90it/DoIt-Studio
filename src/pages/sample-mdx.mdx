@@ -1,0 +1,51 @@
+---
+layout: ../layouts/Layout.astro
+title: Bài viết mẫu MDX - DoIt Studio
+description: Hướng dẫn viết bài và sử dụng MDX trong dự án DoIt Studio.
+---
+
+import Card from '../components/Card.astro';
+
+<div class="max-w-4xl mx-auto px-4 py-12">
+  <div class="prose prose-invert prose-indigo max-w-none">
+    # 🚀 Chào mừng bạn đến với MDX trong DoIt Studio!
+
+    MDX cho phép bạn kết hợp sự đơn giản của cú pháp Markdown với sức mạnh tương tác của các Component HTML/Astro.
+
+    ---
+
+    ## ✨ Tại sao nên dùng MDX?
+
+    - **Tốc độ sáng tạo**: Viết nội dung bằng Markdown quen thuộc mà không cần tốn thời gian format HTML thủ công.
+    - **Tính linh hoạt**: Nhúng linh hoạt bất kỳ component Astro/React/Vue nào ngay trong bài viết.
+    - **Hiệu năng cao**: Mọi thứ được biên dịch sẵn thành Static HTML mượt mà.
+
+    ---
+
+    ## 📦 Thử nghiệm nhúng Component Astro vào MDX
+
+    Dưới đây là một ví dụ về Component Astro `<Card />` được nhúng trực tiếp trong tệp `.mdx` này:
+
+    <div class="my-8 not-prose">
+      <Card 
+        title="Tính năng MDX Hoạt Động Hoàn Hảo" 
+        description="Bạn có thể tạo các Content Collection hoặc các trang tĩnh thông qua tệp .mdx trong thư mục src/pages/"
+        badge="MDX Integration"
+      />
+    </div>
+
+    ### 💻 Ví dụ về Block Code
+
+    ```js
+    // Cấu hình astro.config.mjs với MDX
+    import { defineConfig } from 'astro/config';
+    import mdx from '@astrojs/mdx';
+
+    export default defineConfig({
+      integrations: [mdx()],
+    });
+    ```
+
+    > **Mẹo:** Bạn có thể tạo thêm nhiều trang MDX mới đơn giản bằng cách tạo file `.mdx` bất kỳ inside `src/pages/`!
+  </div>
+</div>

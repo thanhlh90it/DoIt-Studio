@@ -1,0 +1,86 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+
+const appIdeas = [
+  {
+    slug: 'dotask-minimalist',
+    title: 'DoTask Minimalist',
+    description: 'Ứng dụng quản lý công việc theo phương pháp Kanban kết hợp Pomodoro tối giản, giúp tập trung cao độ.',
+    date: '14/08/2026',
+    status: 'Đang phát triển',
+    tags: ['Astro', 'Tailwind', 'TypeScript']
+  },
+  {
+    slug: 'mindspace-notes',
+    title: 'MindSpace Notes',
+    description: 'Công cụ ghi chú liên kết dạng mạng lưới (Bi-directional linking) dành cho việc quản lý tri thức cá nhân (PKM).',
+    date: '10/08/2026',
+    status: 'Ý tưởng',
+    tags: ['MDX', 'React', 'LocalFirst']
+  },
+  {
+    slug: 'ambient-focus-audio',
+    title: 'Ambient Focus Audio',
+    description: 'Trình phát âm thanh tiếng ồn trắng (White noise) và âm thanh thiên nhiên giúp tăng cường khả năng sáng tạo khi lập trình.',
+    date: '05/08/2026',
+    status: 'Thử nghiệm (Beta)',
+    tags: ['Web Audio API', 'Astro']
+  },
+  {
+    slug: 'budgetlite-tracker',
+    title: 'BudgetLite Tracker',
+    description: 'Sổ thu chi tối giản không cần đăng nhập, lưu trữ dữ liệu an toàn trực tiếp trên trình duyệt của người dùng.',
+    date: '28/07/2026',
+    status: 'Ý tưởng',
+    tags: ['IndexedDB', 'Tailwind CSS']
+  }
+];
+---
+
+<MainLayout title="Ý Tưởng Ứng Dụng | DoIT-Studio Telemetry" description="Bộ sưu tập các ý tưởng và dự án ứng dụng phần mềm đang được phát triển tại DoIT-Studio.">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <!-- Header HUD -->
+    <div class="max-w-3xl mb-12 font-mono">
+      <span class="px-3 py-1 rounded-md bg-blue-600/20 text-cyan-300 border border-cyan-400/30 text-xs font-bold">
+        // SHOWCASE_MODULES & APPS
+      </span>
+      <h1 class="font-tech text-3xl sm:text-5xl font-black text-white mt-4 mb-4 tracking-tight">
+        Ý Tưởng & Dự Án Ứng Dụng
+      </h1>
+      <p class="text-slate-400 text-base leading-relaxed font-['Plus_Jakarta_Sans',sans-serif]">
+        Nơi tổng hợp các ý tưởng sản phẩm số, thiết kế giao diện thử nghiệm và các dự án tiện ích cá nhân do DoIT-Studio nghiên cứu & phát triển.
+      </p>
+
+      <!-- Status Indicator Pills HUD -->
+      <div class="flex flex-wrap gap-2 mt-6">
+        <span class="px-3 py-1 rounded-md bg-black text-slate-300 text-xs font-bold border border-slate-800">
+          ALL (4)
+        </span>
+        <span class="px-3 py-1 rounded-md bg-blue-500/15 text-cyan-300 text-xs font-bold border border-blue-500/30">
+          ● IN_DEV (1)
+        </span>
+        <span class="px-3 py-1 rounded-md bg-sky-500/15 text-sky-300 text-xs font-bold border border-sky-500/30">
+          ● CONCEPT (2)
+        </span>
+        <span class="px-3 py-1 rounded-md bg-cyan-500/15 text-cyan-200 text-xs font-bold border border-cyan-400/40">
+          ● BETA (1)
+        </span>
+      </div>
+    </div>
+
+    <!-- App Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {appIdeas.map((app) => (
+        <ProjectCard
+          title={app.title}
+          description={app.description}
+          date={app.date}
+          slug={app.slug}
+          status={app.status}
+          tags={app.tags}
+        />
+      ))}
+    </div>
+  </div>
+</MainLayout>
