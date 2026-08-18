@@ -68,6 +68,7 @@
         <ul class="nav-menu">
           <li><a href="#features" class="nav-link" data-i18n="nav.features">Tính năng</a></li>
           <li><a href="#pathologies" class="nav-link" data-i18n="nav.pathologies">4 Dạng Sang thương</a></li>
+          <li><a href="#app-tour" class="nav-link" data-i18n="nav.showcase">Trải nghiệm App</a></li>
           <li><a href="#simulator" class="nav-link" data-i18n="nav.simulator">Mô phỏng Tăng trưởng</a></li>
           <li><a href="#summary" class="nav-link" data-i18n="nav.summary">Báo cáo Bác sĩ</a></li>
           <li><a href="#faq" class="nav-link" data-i18n="nav.faq">Hỏi đáp</a></li>
@@ -150,69 +151,80 @@
           </div>
         </div>
 
-        <!-- Right: Interactive Device Mockup -->
+        <!-- Right: Interactive Device Mockup with Real App Screenshots -->
         <div class="hero-media reveal-on-scroll">
           <div class="phone-mockup-wrapper">
+            <!-- Screen Selector Tabs -->
+            <div class="mockup-tabs-nav" role="tablist" aria-label="Màn hình xem trước">
+              <button type="button" class="mockup-tab-btn active" data-screen="dashboard" role="tab" aria-selected="true">
+                <span>📊</span> <span data-i18n="mockup.tab_dashboard">Trang Chủ</span>
+              </button>
+              <button type="button" class="mockup-tab-btn" data-screen="lesion" role="tab" aria-selected="false">
+                <span>📈</span> <span data-i18n="mockup.tab_lesion">Chi Tiết U/Hạch</span>
+              </button>
+              <button type="button" class="mockup-tab-btn" data-screen="history" role="tab" aria-selected="false">
+                <span>📑</span> <span data-i18n="mockup.tab_history">Lịch Sử Khám</span>
+              </button>
+              <button type="button" class="mockup-tab-btn" data-screen="profile" role="tab" aria-selected="false">
+                <span>👤</span> <span data-i18n="mockup.tab_profile">Hồ Sơ</span>
+              </button>
+            </div>
+
             <div class="phone-mockup">
+              <!-- Floating HUD Callout Badges -->
+              <div class="floating-hud-badge top-left">
+                <img src="/noduletrack/assets/icons/activity.svg" alt="" width="16" height="16">
+                <span data-i18n="mockup.hud_growth">+3.8% Tăng trưởng ổn định</span>
+              </div>
+              <div class="floating-hud-badge bottom-right">
+                <img src="/noduletrack/assets/icons/shield-check.svg" alt="" width="16" height="16">
+                <span data-i18n="mockup.hud_tirads">TI-RADS 3 • Rủi ro thấp</span>
+              </div>
+
               <div class="phone-dynamic-island"></div>
               <div class="phone-screen">
-                <div class="phone-app-content">
-                  <!-- App Header inside Mockup -->
-                  <div class="phone-app-header">
-                    <span class="phone-app-tag" data-i18n="mockup.tag">Đang theo dõi</span>
-                    <span style="font-family: var(--nt-font-mono); font-size: 0.65rem; color: var(--nt-color-text-muted);">18/08/2026</span>
-                  </div>
+                <!-- Screen 1: Dashboard -->
+                <div class="mockup-screen-view active" data-screen-view="dashboard">
+                  <img
+                    src="/noduletrack/assets/screenshot/home-dashboard.jpg"
+                    alt="Màn hình Trang chủ NoduleTrack"
+                    class="phone-screenshot-img open-lightbox"
+                    data-screenshot-src="/noduletrack/assets/screenshot/home-dashboard.jpg"
+                    data-screenshot-caption="Trang Chủ Dashboard NoduleTrack - Quản lý tổng quan các sang thương và lịch khám"
+                  />
+                </div>
 
-                  <!-- Patient Card in Mockup -->
-                  <div class="phone-lesion-card">
-                    <div class="phone-lesion-title" data-i18n="mockup.lesion_name">Nhân thùy phải tuyến giáp</div>
-                    <div class="phone-lesion-sub" data-i18n="mockup.tirads">TI-RADS 3 (Nguy cơ thấp)</div>
-                    
-                    <div class="phone-metric-row">
-                      <span class="phone-metric-label" data-i18n="mockup.latest_size">Kích thước mới nhất:</span>
-                      <span class="phone-metric-val" data-i18n="mockup.size_val">8.2 x 6.1 x 5.4 mm</span>
-                    </div>
-                    <div class="phone-metric-row">
-                      <span class="phone-metric-label" data-i18n="mockup.growth_rate">Tốc độ tăng trưởng:</span>
-                      <span class="phone-metric-val" style="color: var(--nt-color-status-stable);" data-i18n="mockup.growth_val">+3.8% (Ổn định)</span>
-                    </div>
-                  </div>
+                <!-- Screen 2: Lesion Detail -->
+                <div class="mockup-screen-view" data-screen-view="lesion">
+                  <img
+                    src="/noduletrack/assets/screenshot/lesion-detail.jpg"
+                    alt="Chi tiết sang thương và biểu đồ tăng trưởng"
+                    class="phone-screenshot-img open-lightbox"
+                    data-screenshot-src="/noduletrack/assets/screenshot/lesion-detail.jpg"
+                    data-screenshot-caption="Chi Tiết Sang Thương - Biểu đồ diễn biến kích thước 3 chiều & phân loại TI-RADS"
+                  />
+                </div>
 
-                  <!-- Mini Chart in Mockup -->
-                  <div class="phone-chart-box">
-                    <div style="font-size: 0.7rem; font-weight: 700; color: var(--nt-color-primary-dark); margin-bottom: 6px;" data-i18n="mockup.chart_title">
-                      Diễn biến kích thước (18 tháng qua)
-                    </div>
-                    <svg viewBox="0 0 200 65" style="width: 100%; height: 65px; overflow: visible;">
-                      <!-- Grid Lines -->
-                      <line x1="0" y1="50" x2="200" y2="50" stroke="#E2E8F0" stroke-dasharray="2,2"/>
-                      <line x1="0" y1="25" x2="200" y2="25" stroke="#E2E8F0" stroke-dasharray="2,2"/>
-                      
-                      <!-- Growth Curve Area -->
-                      <path d="M 20 42 Q 70 38, 110 35 T 180 30 L 180 65 L 20 65 Z" fill="rgba(0, 168, 150, 0.1)"/>
-                      <!-- Growth Curve Line -->
-                      <path d="M 20 42 Q 70 38, 110 35 T 180 30" fill="none" stroke="#00A896" stroke-width="3" stroke-linecap="round"/>
-                      
-                      <!-- Data Nodes -->
-                      <circle cx="20" cy="42" r="4" fill="#003C90" stroke="#FFFFFF" stroke-width="2"/>
-                      <circle cx="110" cy="35" r="4" fill="#003C90" stroke="#FFFFFF" stroke-width="2"/>
-                      <circle cx="180" cy="30" r="5" fill="#10B981" stroke="#FFFFFF" stroke-width="2" class="pulse-glow-node"/>
+                <!-- Screen 3: Exam History -->
+                <div class="mockup-screen-view" data-screen-view="history">
+                  <img
+                    src="/noduletrack/assets/screenshot/exam-history.jpg"
+                    alt="Lịch sử các lần khám bệnh"
+                    class="phone-screenshot-img open-lightbox"
+                    data-screenshot-src="/noduletrack/assets/screenshot/exam-history.jpg"
+                    data-screenshot-caption="Lịch Sử Khám - Danh sách lưu trữ toàn bộ các đợt siêu âm định kỳ"
+                  />
+                </div>
 
-                      <!-- Text points -->
-                      <text x="20" y="58" font-size="8" fill="#737784" text-anchor="middle">T1/25</text>
-                      <text x="110" y="58" font-size="8" fill="#737784" text-anchor="middle">T8/25</text>
-                      <text x="180" y="58" font-size="8" fill="#737784" text-anchor="middle">T8/26</text>
-                    </svg>
-                  </div>
-
-                  <!-- Follow-up Alert Mockup -->
-                  <div style="margin-top: 10px; background: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 8px; padding: 8px; display: flex; align-items: center; gap: 8px;">
-                    <img src="/noduletrack/assets/icons/calendar.svg" alt="" width="16" height="16" style="color: #10B981;">
-                    <div>
-                      <div style="font-size: 0.65rem; font-weight: 700; color: #065F46;" data-i18n="mockup.next_exam">Lịch hẹn tái khám đề xuất</div>
-                      <div style="font-size: 0.65rem; color: #047857;" data-i18n="mockup.next_date">15/12/2026 (Sau 6 tháng)</div>
-                    </div>
-                  </div>
+                <!-- Screen 4: Settings & Profile -->
+                <div class="mockup-screen-view" data-screen-view="profile">
+                  <img
+                    src="/noduletrack/assets/screenshot/settings-profile.jpg"
+                    alt="Cài đặt và hồ sơ gia đình"
+                    class="phone-screenshot-img open-lightbox"
+                    data-screenshot-src="/noduletrack/assets/screenshot/settings-profile.jpg"
+                    data-screenshot-caption="Cài Đặt & Hồ Sơ - Quản lý hồ sơ người thân và bảo mật sinh trắc học"
+                  />
                 </div>
               </div>
             </div>
@@ -451,6 +463,266 @@
                 <div style="font-weight: 700; color: #991B1B;">&ge; 10 mm</div>
                 <div style="font-size: 0.65rem; color: #DC2626;">Hội chẩn can thiệp</div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         4B. Dedicated App Showcase & Real Screenshots Tour
+         ======================================================================== -->
+    <section class="section section-white" id="app-tour">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-badge">
+            <img src="/noduletrack/assets/icons/sparkles.svg" alt="" width="14" height="14">
+            <span data-i18n="showcase.badge">Ảnh Chụp Giao Diện Thật</span>
+          </div>
+          <h2 class="section-title" data-i18n="showcase.title">Trực Quan Hóa Từng Trải Nghiệm Khám & Theo Dõi</h2>
+          <p class="section-subtitle" data-i18n="showcase.subtitle">Ảnh chụp màn hình thực tế từ ứng dụng NoduleTrack trên điện thoại — giao diện dịu mắt, dễ dùng cho cả người lớn tuổi.</p>
+        </div>
+
+        <!-- Showcase Tab Navigation -->
+        <div class="showcase-tab-bar reveal-on-scroll" role="tablist">
+          <button type="button" class="showcase-tab-btn active" data-showcase="dashboard" role="tab" aria-selected="true">
+            <span>📊</span> <span data-i18n="showcase.tab_1">1. Trang Chủ</span>
+          </button>
+          <button type="button" class="showcase-tab-btn" data-showcase="lesion" role="tab" aria-selected="false">
+            <span>📈</span> <span data-i18n="showcase.tab_2">2. Chi Tiết Sang Thương</span>
+          </button>
+          <button type="button" class="showcase-tab-btn" data-showcase="directory" role="tab" aria-selected="false">
+            <span>🗂️</span> <span data-i18n="showcase.tab_3">3. Danh Sách U/Hạch</span>
+          </button>
+          <button type="button" class="showcase-tab-btn" data-showcase="history" role="tab" aria-selected="false">
+            <span>📑</span> <span data-i18n="showcase.tab_4">4. Lịch Sử Khám</span>
+          </button>
+          <button type="button" class="showcase-tab-btn" data-showcase="profile" role="tab" aria-selected="false">
+            <span>👤</span> <span data-i18n="showcase.tab_5">5. Hồ Sơ & Cài Đặt</span>
+          </button>
+        </div>
+
+        <!-- Panel 1: Dashboard -->
+        <div class="showcase-panel active" data-showcase-panel="dashboard">
+          <div class="showcase-grid">
+            <div class="showcase-content">
+              <span class="showcase-badge" data-i18n="showcase.p1_badge">Dashboard Tổng Quan</span>
+              <h3 class="showcase-title" data-i18n="showcase.p1_title">Nắm bắt nhanh diễn tiến và lịch tái khám tiếp theo</h3>
+              <p class="showcase-desc" data-i18n="showcase.p1_desc">Màn hình chính hiển thị rõ ràng danh sách các khối u nang đang theo dõi, cảnh báo tốc độ tăng trưởng và đếm ngược ngày tái khám đề xuất chuẩn y khoa.</p>
+              
+              <ul class="showcase-features-list">
+                <li class="showcase-feature-item">
+                  <img src="/noduletrack/assets/icons/check.svg" alt="">
+                  <span data-i18n="showcase.p1_f1">Thẻ tóm tắt tăng trưởng thể tích trực quan (+/- %)</span>
+                </li>
+                <li class="showcase-feature-item">
+                  <img src="/noduletrack/assets/icons/check.svg" alt="">
+                  <span data-i18n="showcase.p1_f2">Nhắc lịch hẹn khám gần nhất với bác sĩ</span>
+                </li>
+                <li class="showcase-feature-item">
+                  <img src="/noduletrack/assets/icons/check.svg" alt="">
+                  <span data-i18n="showcase.p1_f3">Thao tác 1 chạm để thêm phiếu siêu âm mới</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="showcase-device-wrapper">
+              <div class="phone-mockup">
+                <div class="phone-dynamic-island"></div>
+                <div class="phone-screen">
+                  <img
+                    src="/noduletrack/assets/screenshot/home-dashboard.jpg"
+                    alt="Trang chủ Dashboard NoduleTrack"
+                    class="phone-screenshot-img open-lightbox"
+                    data-screenshot-src="/noduletrack/assets/screenshot/home-dashboard.jpg"
+                    data-screenshot-caption="Trang Chủ Dashboard NoduleTrack"
+                  />
+                </div>
+              </div>
+              <button type="button" class="screenshot-zoom-btn open-lightbox" data-screenshot-src="/noduletrack/assets/screenshot/home-dashboard.jpg" data-screenshot-caption="Trang Chủ Dashboard NoduleTrack">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                <span data-i18n="showcase.zoom_btn">Phóng to</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2: Lesion Detail & Charts -->
+        <div class="showcase-panel" data-showcase-panel="lesion">
+          <div class="showcase-grid">
+            <div class="showcase-content">
+              <span class="showcase-badge" data-i18n="showcase.p2_badge">Biểu Đồ & Phân Tích</span>
+              <h3 class="showcase-title" data-i18n="showcase.p2_title">Chi tiết số đo 3 chiều & Biểu đồ đường cong</h3>
+              <p class="showcase-desc" data-i18n="showcase.p2_desc">Theo dõi sự thay đổi kích thước theo từng trục (D1 x D2 x D3) cùng biểu đồ diễn tiến qua các mốc khám 6 tháng, 12 tháng, 24 tháng.</p>
+              
+              <ul class="showcase-features-list">
+                <li class="showcase-feature-item">
+                  <img src="/noduletrack/assets/icons/check.svg" alt="">
+                  <span data-i18n="showcase.p2_f1">Tự động phân tầng TI-RADS / BI-RADS lâm sàng</span>
+                </li>
+                <li class="showcase-feature-item">
+                  <img src="/noduletrack/assets/icons/check.svg" alt="">
+                  <span data-i18n="showcase.p2_f2">Đính kèm ảnh chụp phiếu siêu âm gốc sắc nét</span>
+                </li>
+                <li class="showcase-feature-item">
+                  <img src="/noduletrack/assets/icons/check.svg" alt="">
+                  <span data-i18n="showcase.p2_f3">Ghi chú lời dặn chuyên môn của Bác sĩ siêu âm</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="showcase-device-wrapper">
+              <div class="phone-mockup">
+                <div class="phone-dynamic-island"></div>
+                <div class="phone-screen">
+                  <img
+                    src="/noduletrack/assets/screenshot/lesion-detail.jpg"
+                    alt="Chi tiết sang thương và biểu đồ"
+                    class="phone-screenshot-img open-lightbox"
+                    data-screenshot-src="/noduletrack/assets/screenshot/lesion-detail.jpg"
+                    data-screenshot-caption="Chi Tiết Sang Thương & Biểu Đồ Diễn Tiến"
+                  />
+                </div>
+              </div>
+              <button type="button" class="screenshot-zoom-btn open-lightbox" data-screenshot-src="/noduletrack/assets/screenshot/lesion-detail.jpg" data-screenshot-caption="Chi Tiết Sang Thương & Biểu Đồ Diễn Tiến">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                <span data-i18n="showcase.zoom_btn">Phóng to</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 3: Lesions Directory -->
+        <div class="showcase-panel" data-showcase-panel="directory">
+          <div class="showcase-grid">
+            <div class="showcase-content">
+              <span class="showcase-badge" data-i18n="showcase.p3_badge">Phân Loại Y Khoa</span>
+              <h3 class="showcase-title" data-i18n="showcase.p3_title">Quản lý đồng thời nhiều sang thương trên cơ thể</h3>
+              <p class="showcase-desc" data-i18n="showcase.p3_desc">Phân loại khoa học theo vị trí: Tuyến giáp, Tuyến vú, Hạch bạch huyết, Polyp túi mật hoặc Nang các tạng.</p>
+              
+              <ul class="showcase-features-list">
+                <li class="showcase-feature-item">
+                  <img src="/noduletrack/assets/icons/check.svg" alt="">
+                  <span data-i18n="showcase.p3_f1">Màu sắc chỉ báo mức độ ổn định rõ ràng</span>
+                </li>
+                <li class="showcase-feature-item">
+                  <img src="/noduletrack/assets/icons/check.svg" alt="">
+                  <span data-i18n="showcase.p3_f2">Bộ lọc nhanh theo nhóm cơ quan</span>
+                </li>
+                <li class="showcase-feature-item">
+                  <img src="/noduletrack/assets/icons/check.svg" alt="">
+                  <span data-i18n="showcase.p3_f3">Hiển thị ngày khám mới nhất của từng vị trí</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="showcase-device-wrapper">
+              <div class="phone-mockup">
+                <div class="phone-dynamic-island"></div>
+                <div class="phone-screen">
+                  <img
+                    src="/noduletrack/assets/screenshot/lesions-list.jpg"
+                    alt="Danh sách sang thương"
+                    class="phone-screenshot-img open-lightbox"
+                    data-screenshot-src="/noduletrack/assets/screenshot/lesions-list.jpg"
+                    data-screenshot-caption="Danh Sách & Phân Loại Các Khối Sang Thương"
+                  />
+                </div>
+              </div>
+              <button type="button" class="screenshot-zoom-btn open-lightbox" data-screenshot-src="/noduletrack/assets/screenshot/lesions-list.jpg" data-screenshot-caption="Danh Sách & Phân Loại Các Khối Sang Thương">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                <span data-i18n="showcase.zoom_btn">Phóng to</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 4: Exam History & Results -->
+        <div class="showcase-panel" data-showcase-panel="history">
+          <div class="showcase-grid">
+            <div class="showcase-content">
+              <span class="showcase-badge" data-i18n="showcase.p4_badge">Hồ Sơ Siêu Âm</span>
+              <h3 class="showcase-title" data-i18n="showcase.p4_title">Lịch sử thăm khám & Chi tiết từng phiếu siêu âm</h3>
+              <p class="showcase-desc" data-i18n="showcase.p4_desc">Không còn nỗi lo mất giấy tờ. Mỗi lần đi khám đều được lưu trữ đầy đủ ngày giờ, cơ sở y tế, bác sĩ thực hiện và ảnh chụp phiếu gốc.</p>
+              
+              <ul class="showcase-features-list">
+                <li class="showcase-feature-item">
+                  <img src="/noduletrack/assets/icons/check.svg" alt="">
+                  <span data-i18n="showcase.p4_f1">Tra cứu lại phiếu khám cũ trong 3 giây</span>
+                </li>
+                <li class="showcase-feature-item">
+                  <img src="/noduletrack/assets/icons/check.svg" alt="">
+                  <span data-i18n="showcase.p4_f2">Phóng to xem chi tiết hình ảnh siêu âm 2D/Doppler</span>
+                </li>
+                <li class="showcase-feature-item">
+                  <img src="/noduletrack/assets/icons/check.svg" alt="">
+                  <span data-i18n="showcase.p4_f3">Sẵn sàng đưa bác sĩ xem ngay trong phòng khám</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="showcase-device-wrapper">
+              <div class="phone-mockup">
+                <div class="phone-dynamic-island"></div>
+                <div class="phone-screen">
+                  <img
+                    src="/noduletrack/assets/screenshot/exam-detail.jpg"
+                    alt="Chi tiết kết quả lịch khám"
+                    class="phone-screenshot-img open-lightbox"
+                    data-screenshot-src="/noduletrack/assets/screenshot/exam-detail.jpg"
+                    data-screenshot-caption="Chi Tiết Phiếu Siêu Âm & Kết Luận Lâm Sàng"
+                  />
+                </div>
+              </div>
+              <button type="button" class="screenshot-zoom-btn open-lightbox" data-screenshot-src="/noduletrack/assets/screenshot/exam-detail.jpg" data-screenshot-caption="Chi Tiết Phiếu Siêu Âm & Kết Luận Lâm Sàng">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                <span data-i18n="showcase.zoom_btn">Phóng to</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 5: Profile & Settings -->
+        <div class="showcase-panel" data-showcase-panel="profile">
+          <div class="showcase-grid">
+            <div class="showcase-content">
+              <span class="showcase-badge" data-i18n="showcase.p5_badge">Gia Đình & Bảo Mật</span>
+              <h3 class="showcase-title" data-i18n="showcase.p5_title">Chăm sóc sức khỏe cho cả gia đình & Bảo mật</h3>
+              <p class="showcase-desc" data-i18n="showcase.p5_desc">Quản lý nhiều hồ sơ độc lập cho bản thân, cha mẹ và con cái trên cùng một ứng dụng với tính năng khóa vân tay / FaceID an toàn.</p>
+              
+              <ul class="showcase-features-list">
+                <li class="showcase-feature-item">
+                  <img src="/noduletrack/assets/icons/check.svg" alt="">
+                  <span data-i18n="showcase.p5_f1">Chuyển đổi linh hoạt giữa các thành viên gia đình</span>
+                </li>
+                <li class="showcase-feature-item">
+                  <img src="/noduletrack/assets/icons/check.svg" alt="">
+                  <span data-i18n="showcase.p5_f2">Đồng bộ đám mây và hỗ trợ tra cứu ngoại tuyến</span>
+                </li>
+                <li class="showcase-feature-item">
+                  <img src="/noduletrack/assets/icons/check.svg" alt="">
+                  <span data-i18n="showcase.p5_f3">Mã hóa dữ liệu chuẩn quyền riêng tư y tế</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="showcase-device-wrapper">
+              <div class="phone-mockup">
+                <div class="phone-dynamic-island"></div>
+                <div class="phone-screen">
+                  <img
+                    src="/noduletrack/assets/screenshot/settings-profile.jpg"
+                    alt="Cài đặt và hồ sơ người dùng"
+                    class="phone-screenshot-img open-lightbox"
+                    data-screenshot-src="/noduletrack/assets/screenshot/settings-profile.jpg"
+                    data-screenshot-caption="Quản Lý Hồ Sơ Gia Đình & Cài Đặt Bảo Mật"
+                  />
+                </div>
+              </div>
+              <button type="button" class="screenshot-zoom-btn open-lightbox" data-screenshot-src="/noduletrack/assets/screenshot/settings-profile.jpg" data-screenshot-caption="Quản Lý Hồ Sơ Gia Đình & Cài Đặt Bảo Mật">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                <span data-i18n="showcase.zoom_btn">Phóng to</span>
+              </button>
             </div>
           </div>
         </div>
@@ -935,6 +1207,70 @@
       </div>
     </div>
   </footer>
+
+  <!-- App Preview Controller Modal -->
+  <div id="screenshot-lightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Xem giao diện ứng dụng">
+    <!-- Glassmorphism backdrop click-to-close -->
+    <div class="lbx-backdrop" id="lightbox-backdrop"></div>
+
+    <!-- Layout: sidebar info + center phone + thumbnail strip -->
+    <div class="lbx-layout">
+
+      <!-- Left: App Info Panel -->
+      <div class="lbx-info-panel">
+        <div class="lbx-app-badge">
+          <img src="/noduletrack/assets/img/app-icon.png" alt="NoduleTrack" class="lbx-app-icon" onerror="this.style.display='none'" />
+          <div>
+            <div class="lbx-app-name">NoduleTrack</div>
+            <div class="lbx-app-platform">iOS &amp; Android</div>
+          </div>
+        </div>
+        <div id="lightbox-caption-element" class="lbx-caption"></div>
+        <div class="lbx-counter">
+          <span id="lbx-current-index">1</span> / <span id="lbx-total-count">5</span>
+        </div>
+        <div class="lbx-hint">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          Dùng phím ← → để chuyển ảnh
+        </div>
+      </div>
+
+      <!-- Center: iPhone Frame -->
+      <div class="lbx-phone-wrap">
+        <button type="button" class="lbx-nav-btn lbx-prev" id="lbx-prev-btn" aria-label="Ảnh trước">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+
+        <div class="lbx-phone-frame">
+          <!-- Phone notch -->
+          <div class="lbx-phone-notch"></div>
+          <!-- Screen -->
+          <div class="lbx-phone-screen">
+            <img id="lightbox-img-element" src="" alt="" class="lbx-phone-img" />
+          </div>
+          <!-- Phone home bar -->
+          <div class="lbx-phone-home-bar"></div>
+        </div>
+
+        <button type="button" class="lbx-nav-btn lbx-next" id="lbx-next-btn" aria-label="Ảnh tiếp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+
+      <!-- Right: Thumbnail Strip -->
+      <div class="lbx-thumb-panel">
+        <div class="lbx-thumb-label">Tất cả màn hình</div>
+        <div class="lbx-thumb-strip" id="lbx-thumb-strip">
+          <!-- Thumbnails injected by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Close Button -->
+    <button type="button" id="lightbox-close-btn" class="lbx-close-btn" aria-label="Đóng">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
 
   <!-- Scripts -->
   <script is:inline src="/noduletrack/scripts/i18n.js"></script>
