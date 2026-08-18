@@ -12,10 +12,66 @@ const translations = {
     // Navbar
     "nav.features": "Tính năng",
     "nav.pathologies": "4 Dạng Sang thương",
+    "nav.showcase": "Trải nghiệm App",
     "nav.simulator": "Mô phỏng Tăng trưởng",
     "nav.summary": "Báo cáo Bác sĩ",
     "nav.faq": "Hỏi đáp",
     "nav.download": "Tải ứng dụng",
+
+    // Hero Mockup Tabs
+    "mockup.tab_dashboard": "Trang Chủ",
+    "mockup.tab_lesion": "Chi Tiết U/Hạch",
+    "mockup.tab_history": "Lịch Sử Khám",
+    "mockup.tab_profile": "Hồ Sơ",
+    "mockup.hud_growth": "+3.8% Tăng trưởng ổn định",
+    "mockup.hud_tirads": "TI-RADS 3 • Rủi ro thấp",
+
+    // Dedicated App Showcase Section
+    "showcase.badge": "Ảnh Chụp Giao Diện Thật",
+    "showcase.title": "Trực Quan Hóa Từng Trải Nghiệm Khám & Theo Dõi",
+    "showcase.subtitle": "Ảnh chụp màn hình thực tế từ ứng dụng NoduleTrack trên điện thoại — giao diện dịu mắt, dễ dùng cho cả người lớn tuổi.",
+    "showcase.zoom_btn": "Phóng to xem chi tiết",
+
+    "showcase.tab_1": "1. Trang Chủ",
+    "showcase.tab_2": "2. Chi Tiết Sang Thương",
+    "showcase.tab_3": "3. Danh Sách U/Hạch",
+    "showcase.tab_4": "4. Lịch Sử Khám",
+    "showcase.tab_5": "5. Hồ Sơ & Cài Đặt",
+
+    "showcase.p1_badge": "Dashboard Tổng Quan",
+    "showcase.p1_title": "Nắm bắt nhanh diễn tiến và lịch tái khám tiếp theo",
+    "showcase.p1_desc": "Màn hình chính hiển thị rõ ràng danh sách các khối u nang đang theo dõi, cảnh báo tốc độ tăng trưởng và đếm ngược ngày tái khám đề xuất chuẩn y khoa.",
+    "showcase.p1_f1": "Thẻ tóm tắt tăng trưởng thể tích trực quan (+/- %)",
+    "showcase.p1_f2": "Nhắc lịch hẹn khám gần nhất với bác sĩ",
+    "showcase.p1_f3": "Thao tác 1 chạm để thêm phiếu siêu âm mới",
+
+    "showcase.p2_badge": "Biểu Đồ & Phân Tích",
+    "showcase.p2_title": "Chi tiết số đo 3 chiều & Biểu đồ đường cong",
+    "showcase.p2_desc": "Theo dõi sự thay đổi kích thước theo từng trục (D1 x D2 x D3) cùng biểu đồ diễn tiến qua các mốc khám 6 tháng, 12 tháng, 24 tháng.",
+    "showcase.p2_f1": "Tự động phân tầng TI-RADS / BI-RADS lâm sàng",
+    "showcase.p2_f2": "Đính kèm ảnh chụp phiếu siêu âm gốc sắc nét",
+    "showcase.p2_f3": "Ghi chú lời dặn chuyên môn của Bác sĩ siêu âm",
+
+    "showcase.p3_badge": "Phân Loại Y Khoa",
+    "showcase.p3_title": "Quản lý đồng thời nhiều sang thương trên cơ thể",
+    "showcase.p3_desc": "Phân loại khoa học theo vị trí: Tuyến giáp, Tuyến vú, Hạch bạch huyết, Polyp túi mật hoặc Nang các tạng.",
+    "showcase.p3_f1": "Màu sắc chỉ báo mức độ ổn định rõ ràng",
+    "showcase.p3_f2": "Bộ lọc nhanh theo nhóm cơ quan",
+    "showcase.p3_f3": "Hiển thị ngày khám mới nhất của từng vị trí",
+
+    "showcase.p4_badge": "Hồ Sơ Siêu Âm",
+    "showcase.p4_title": "Lịch sử thăm khám & Chi tiết từng phiếu siêu âm",
+    "showcase.p4_desc": "Không còn nỗi lo mất giấy tờ. Mỗi lần đi khám đều được lưu trữ đầy đủ ngày giờ, cơ sở y tế, bác sĩ thực hiện và ảnh chụp phiếu gốc.",
+    "showcase.p4_f1": "Tra cứu lại phiếu khám cũ trong 3 giây",
+    "showcase.p4_f2": "Phóng to xem chi tiết hình ảnh siêu âm 2D/Doppler",
+    "showcase.p4_f3": "Sẵn sàng đưa bác sĩ xem ngay trong phòng khám",
+
+    "showcase.p5_badge": "Gia Đình & Bảo Mật",
+    "showcase.p5_title": "Chăm sóc sức khỏe cho cả gia đình & Bảo mật",
+    "showcase.p5_desc": "Quản lý nhiều hồ sơ độc lập cho bản thân, cha mẹ và con cái trên cùng một ứng dụng với tính năng khóa vân tay / FaceID an toàn.",
+    "showcase.p5_f1": "Chuyển đổi linh hoạt giữa các thành viên gia đình",
+    "showcase.p5_f2": "Đồng bộ đám mây và hỗ trợ tra cứu ngoại tuyến",
+    "showcase.p5_f3": "Mã hóa dữ liệu chuẩn quyền riêng tư y tế",
 
     // Hero Section
     "hero.badge": "✨ Chuẩn phân loại lâm sàng TI-RADS & BI-RADS Quốc Tế",
@@ -195,10 +251,66 @@ const translations = {
     // Navbar
     "nav.features": "Features",
     "nav.pathologies": "4 Pathologies",
+    "nav.showcase": "App Tour",
     "nav.simulator": "Growth Simulator",
     "nav.summary": "Doctor Summary",
     "nav.faq": "FAQ",
     "nav.download": "Get App Free",
+
+    // Hero Mockup Tabs
+    "mockup.tab_dashboard": "Dashboard",
+    "mockup.tab_lesion": "Lesion Details",
+    "mockup.tab_history": "Exam History",
+    "mockup.tab_profile": "Profile",
+    "mockup.hud_growth": "+3.8% Stable Growth Rate",
+    "mockup.hud_tirads": "TI-RADS 3 • Low Risk",
+
+    // Dedicated App Showcase Section
+    "showcase.badge": "Authentic App Screens",
+    "showcase.title": "Visualizing Every Step of Your Healthcare Journey",
+    "showcase.subtitle": "Real mobile screenshots from NoduleTrack on iOS & Android — calming, evidence-based, and senior-friendly.",
+    "showcase.zoom_btn": "Enlarge Preview",
+
+    "showcase.tab_1": "1. Home Dashboard",
+    "showcase.tab_2": "2. Lesion Details",
+    "showcase.tab_3": "3. Lesions Directory",
+    "showcase.tab_4": "4. Exam History",
+    "showcase.tab_5": "5. Family & Settings",
+
+    "showcase.p1_badge": "Overview Dashboard",
+    "showcase.p1_title": "Instant clarity on active lesions and upcoming milestones",
+    "showcase.p1_desc": "The home screen provides an immediate summary of all monitored lesions, volume change alerts, and clinical countdowns to your next suggested ultrasound exam.",
+    "showcase.p1_f1": "Visual volume progression summary (+/- %)",
+    "showcase.p1_f2": "Upcoming clinic appointment countdown & smart reminders",
+    "showcase.p1_f3": "1-tap quick log for new ultrasound examination papers",
+
+    "showcase.p2_badge": "Trend Analytics",
+    "showcase.p2_title": "3D dimensions & Longitudinal growth curve charts",
+    "showcase.p2_desc": "Track multi-axial dimensional progression (D1 x D2 x D3) alongside smooth timeline curves across 6, 12, and 24-month clinical milestones.",
+    "showcase.p2_f1": "Automated clinical TI-RADS / BI-RADS risk classification",
+    "showcase.p2_f2": "Direct attachment of high-resolution ultrasound image files",
+    "showcase.p2_f3": "Physician notes and clinical conclusion records",
+
+    "showcase.p3_badge": "Pathology Directory",
+    "showcase.p3_title": "Simultaneously organize multiple physical lesions",
+    "showcase.p3_desc": "Clinically categorized by organ: Thyroid nodules, Breast cysts, Lymph nodes, Gallbladder polyps, and Visceral cysts.",
+    "showcase.p3_f1": "Color-coded clinical stability status indicators",
+    "showcase.p3_f2": "Fast filtering by organ system and risk tier",
+    "showcase.p3_f3": "Displays latest examination date and size per lesion",
+
+    "showcase.p4_badge": "Ultrasound Archive",
+    "showcase.p4_title": "Chronological exam history & Original scan reports",
+    "showcase.p4_desc": "Never worry about lost paper records again. Every past exam retains date, clinic, physician, and uncompressed ultrasound scan photos.",
+    "showcase.p4_f1": "Retrieve historical scans in under 3 seconds",
+    "showcase.p4_f2": "Pinch-to-zoom 2D & Color Doppler ultrasound captures",
+    "showcase.p4_f3": "Ready to hand directly to your doctor during consultations",
+
+    "showcase.p5_badge": "Family & Security",
+    "showcase.p5_title": "Comprehensive family care with biometric encryption",
+    "showcase.p5_desc": "Manage independent patient profiles for yourself, elderly parents, and children with FaceID / TouchID biometric protection.",
+    "showcase.p5_f1": "Seamless profile switching between family members",
+    "showcase.p5_f2": "Encrypted cloud backup with full offline access",
+    "showcase.p5_f3": "Strict medical-grade patient data privacy standards",
 
     // Hero Section
     "hero.badge": "✨ Based on International Clinical TI-RADS & BI-RADS Standards",
