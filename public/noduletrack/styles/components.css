@@ -571,8 +571,6 @@
   overflow: hidden;
   position: relative;
   aspect-ratio: 9 / 19.5;
-  display: flex;
-  flex-direction: column;
 }
 
 .phone-dynamic-island {
@@ -589,6 +587,8 @@
 
 .mockup-screen-view {
   display: none;
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   animation: fadeInMockup 0.35s ease forwards;
