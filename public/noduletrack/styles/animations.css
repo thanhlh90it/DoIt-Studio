@@ -1,0 +1,112 @@
+/* ==========================================================================
+   NoduleTrack Landing Page - Keyframe Animations & Micro-interactions
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Keyframe Definitions
+   -------------------------------------------------------------------------- */
+@keyframes floatPhone {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 168, 150, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(0, 168, 150, 0.55);
+  }
+}
+
+@keyframes soundwaveArc {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmerEffect {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Animation Classes
+   -------------------------------------------------------------------------- */
+.phone-mockup-wrapper {
+  animation: floatPhone 6s ease-in-out infinite;
+}
+
+.pulse-glow-node {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s var(--nt-ease-spring), transform 0.6s var(--nt-ease-spring);
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover Micro-interactions */
+.hover-lift {
+  transition: transform var(--nt-duration-fast) var(--nt-ease-spring), box-shadow var(--nt-duration-fast) ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--nt-shadow-lg);
+}
+
+/* --------------------------------------------------------------------------
+   Accessibility: Reduced Motion Preference (WCAG 2.1 AAA)
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .phone-mockup-wrapper {
+    animation: none !important;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

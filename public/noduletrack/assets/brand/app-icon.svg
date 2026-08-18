@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="100%" height="100%">
+  <defs>
+    <!-- Rich Icon Background Gradient -->
+    <linearGradient id="appBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#001F4D" />
+      <stop offset="35%" stop-color="#003C90" />
+      <stop offset="85%" stop-color="#072B61" />
+      <stop offset="100%" stop-color="#001433" />
+    </linearGradient>
+
+    <!-- Glowing Node Teal Gradient -->
+    <linearGradient id="appTealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5EEAD4" />
+      <stop offset="50%" stop-color="#00A896" />
+      <stop offset="100%" stop-color="#006A65" />
+    </linearGradient>
+
+    <!-- Clean White/Ice Wave Gradient -->
+    <linearGradient id="appWhiteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#D9E2FF" />
+    </linearGradient>
+
+    <!-- Node Aura Glow -->
+    <filter id="appGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="20" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="auraGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="60" />
+    </filter>
+  </defs>
+
+  <!-- Squircle / Rounded Background (for standalone view) -->
+  <rect width="1024" height="1024" rx="230" fill="url(#appBgGrad)" />
+
+  <!-- Subtle Medical Grid / Radial Depth Pattern -->
+  <circle cx="512" cy="512" r="380" fill="#00A896" opacity="0.08" filter="url(#auraGlow)" />
+  <circle cx="512" cy="512" r="320" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="16 24" opacity="0.15" fill="none" />
+  <circle cx="512" cy="512" r="230" stroke="#00A896" stroke-width="4" stroke-dasharray="12 18" opacity="0.3" fill="none" />
+  <circle cx="512" cy="512" r="140" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="8 12" opacity="0.2" fill="none" />
+
+  <!-- Calibrated Target Crosshair Lines -->
+  <line x1="512" y1="210" x2="512" y2="260" stroke="#2DD4BF" stroke-width="8" stroke-linecap="round" opacity="0.8" />
+  <line x1="512" y1="764" x2="512" y2="814" stroke="#2DD4BF" stroke-width="8" stroke-linecap="round" opacity="0.8" />
+  <line x1="210" y1="512" x2="260" y2="512" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity="0.8" />
+  <line x1="764" y1="512" x2="814" y2="512" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity="0.8" />
+
+  <!-- Main Symbol (Scaled to 5.1x centered at 512, 512) -->
+  <g transform="translate(512, 512) scale(4.4) translate(-100, -100)">
+    <!-- Outer Ultrasonic Wave Arc (Left Pillar) -->
+    <path d="M 52 152 C 40 125 40 75 62 48 C 66 43 73 45 74 51 C 75 58 70 63 68 67 C 54 88 54 120 64 142 C 67 148 62 155 55 155 C 53 155 52 154 52 152 Z" 
+          fill="url(#appWhiteGrad)" />
+
+    <!-- Dynamic Diagonal Tracking Sweep (Diagonal of N) -->
+    <path d="M 66 52 C 72 46 82 50 86 58 L 126 132 C 128 136 133 138 137 136 C 141 134 143 129 141 125 L 102 52 C 98 44 104 36 113 36 C 117 36 122 39 124 43 L 158 116 C 160 120 160 124 158 128 C 153 140 141 148 128 148 C 119 148 111 143 106 135 L 68 64 C 66 60 62 58 58 60 C 53 62 52 68 55 72 L 82 124 C 85 130 80 137 73 137 C 68 137 64 133 62 129 L 46 95 C 44 91 46 86 50 84 C 54 82 59 84 61 88 L 66 98 Z" 
+          fill="url(#appWhiteGrad)" opacity="0.95" />
+
+    <!-- Right Ultrasonic Wave Arc -->
+    <path d="M 148 48 C 160 75 160 125 138 152 C 134 157 127 155 126 149 C 125 142 130 137 132 133 C 146 112 146 80 136 58 C 133 52 138 45 145 45 C 147 45 148 46 148 48 Z" 
+          fill="url(#appTealGrad)" />
+
+    <!-- Glowing Central Node -->
+    <circle cx="100" cy="100" r="17" fill="url(#appTealGrad)" filter="url(#appGlow)" />
+    <circle cx="100" cy="100" r="9" fill="#FFFFFF" />
+  </g>
+</svg>

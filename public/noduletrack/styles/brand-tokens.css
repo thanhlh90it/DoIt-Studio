@@ -1,0 +1,121 @@
+/**
+ * NoduleTrack Brand CSS Design Tokens
+ * Option 1: Precision Pulse & Node (Clinical Clarity)
+ */
+
+:root {
+  /* Brand Primary */
+  --nt-color-primary: #003C90;
+  --nt-color-primary-dark: #002B66;
+  --nt-color-primary-light: #1D59C1;
+  --nt-color-primary-container: #D9E2FF;
+  --nt-color-on-primary-container: #001945;
+  --nt-color-primary-glow: rgba(0, 60, 144, 0.25);
+
+  /* Brand Secondary */
+  --nt-color-secondary: #00A896;
+  --nt-color-secondary-dark: #006A65;
+  --nt-color-secondary-light: #2DD4BF;
+  --nt-color-secondary-container: #CCFBF1;
+  --nt-color-secondary-glow: rgba(0, 168, 150, 0.3);
+
+  /* Clinical Status Tokens */
+  --nt-color-status-stable: #10B981;
+  --nt-color-status-stable-bg: #ECFDF5;
+  --nt-color-status-stable-border: #A7F3D0;
+  
+  --nt-color-status-warning: #F59E0B;
+  --nt-color-status-warning-bg: #FFFBEB;
+  --nt-color-status-warning-border: #FDE68A;
+  
+  --nt-color-status-critical: #D32F2F;
+  --nt-color-status-critical-bg: #FEF2F2;
+  --nt-color-status-critical-border: #FECACA;
+  
+  --nt-color-status-info: #1D59C1;
+  --nt-color-status-info-bg: #EFF6FF;
+  --nt-color-status-info-border: #BFDBFE;
+
+  /* Neutrals & Surfaces */
+  --nt-color-bg: #FAF8FF;
+  --nt-color-surface: #FFFFFF;
+  --nt-color-surface-glass: rgba(255, 255, 255, 0.85);
+  --nt-color-surface-glass-dark: rgba(0, 43, 102, 0.75);
+  --nt-color-surface-muted: #F8FAFC;
+  --nt-color-surface-container: #F1F5F9;
+  
+  --nt-color-text-primary: #191B22;
+  --nt-color-text-secondary: #434653;
+  --nt-color-text-muted: #737784;
+  --nt-color-text-on-primary: #FFFFFF;
+  
+  --nt-color-border: #E2E8F0;
+  --nt-color-border-subtle: rgba(0, 0, 0, 0.06);
+  --nt-color-border-strong: #CBD5E1;
+
+  /* Typography */
+  --nt-font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --nt-font-mono: 'JetBrains Mono', 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
+
+  /* Font Sizes & Line Heights */
+  --nt-text-xs: 0.75rem;    /* 12px */
+  --nt-lh-xs: 1rem;         /* 16px */
+  --nt-text-sm: 0.875rem;   /* 14px */
+  --nt-lh-sm: 1.25rem;      /* 20px */
+  --nt-text-base: 1rem;     /* 16px */
+  --nt-lh-base: 1.5rem;     /* 24px */
+  --nt-text-lg: 1.125rem;   /* 18px */
+  --nt-lh-lg: 1.625rem;     /* 26px */
+  --nt-text-xl: 1.25rem;    /* 20px */
+  --nt-lh-xl: 1.75rem;      /* 28px */
+  --nt-text-2xl: 1.5rem;    /* 24px */
+  --nt-lh-2xl: 2rem;        /* 32px */
+  --nt-text-3xl: 1.875rem;  /* 30px */
+  --nt-lh-3xl: 2.375rem;    /* 38px */
+  --nt-text-4xl: 2.25rem;   /* 36px */
+  --nt-lh-4xl: 2.75rem;     /* 44px */
+  --nt-text-5xl: 3rem;      /* 48px */
+  --nt-lh-5xl: 3.5rem;      /* 56px */
+
+  /* Spacing */
+  --nt-space-1: 0.25rem;    /* 4px */
+  --nt-space-2: 0.5rem;     /* 8px */
+  --nt-space-3: 0.75rem;    /* 12px */
+  --nt-space-4: 1rem;       /* 16px */
+  --nt-space-5: 1.25rem;    /* 20px */
+  --nt-space-6: 1.5rem;     /* 24px */
+  --nt-space-8: 2rem;       /* 32px */
+  --nt-space-10: 2.5rem;    /* 40px */
+  --nt-space-12: 3rem;      /* 48px */
+  --nt-space-16: 4rem;      /* 64px */
+  --nt-space-20: 5rem;      /* 80px */
+  --nt-space-24: 6rem;      /* 96px */
+
+  /* Border Radii */
+  --nt-radius-xs: 4px;
+  --nt-radius-sm: 8px;
+  --nt-radius-md: 12px;
+  --nt-radius-lg: 16px;
+  --nt-radius-xl: 24px;
+  --nt-radius-2xl: 32px;
+  --nt-radius-full: 9999px;
+
+  /* Shadows (Multi-layered clinical shadows) */
+  --nt-shadow-subtle: 0 1px 3px rgba(0, 31, 77, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --nt-shadow-sm: 0 2px 8px -1px rgba(0, 31, 77, 0.06), 0 1px 4px -1px rgba(0, 0, 0, 0.04);
+  --nt-shadow-md: 0 8px 24px -4px rgba(0, 31, 77, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+  --nt-shadow-lg: 0 16px 40px -8px rgba(0, 31, 77, 0.12), 0 8px 20px -4px rgba(0, 0, 0, 0.04);
+  --nt-shadow-xl: 0 24px 60px -12px rgba(0, 31, 77, 0.18), 0 12px 28px -6px rgba(0, 0, 0, 0.06);
+  --nt-shadow-glow: 0 0 30px rgba(0, 168, 150, 0.35);
+
+  /* Transitions */
+  --nt-ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --nt-ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --nt-duration-fast: 150ms;
+  --nt-duration-normal: 250ms;
+  --nt-duration-slow: 400ms;
+
+  /* Layout Container */
+  --nt-container-max: 1280px;
+  --nt-header-height: 72px;
+}
