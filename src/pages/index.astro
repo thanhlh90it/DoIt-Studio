@@ -4,6 +4,14 @@ import ProjectCard from '../components/ProjectCard.astro';
 
 const featuredApps = [
   {
+    slug: '/apps/securevault',
+    title: 'SecureVault',
+    description: 'Két sắt cá nhân bảo mật cao trên thiết bị di động — ẩn và bảo vệ ảnh, video riêng tư với Face ID, Blur Shield, chống chụp màn hình. 100% cục bộ, không máy chủ.',
+    date: '19/08/2026',
+    status: 'Thử nghiệm (Beta)',
+    tags: ['React Native', 'Expo', 'Privacy', 'iOS', 'Android']
+  },
+  {
     slug: '/noduletrack',
     title: 'NoduleTrack',
     description: 'Ứng dụng di động y tế cá nhân chuyên biệt hỗ trợ số hóa hồ sơ siêu âm, theo dõi tốc độ tăng trưởng của nang, nhân, hạch và nhắc lịch tái khám chuẩn TI-RADS/BI-RADS.',
@@ -18,14 +26,6 @@ const featuredApps = [
     date: '14/08/2026',
     status: 'Đang phát triển',
     tags: ['Astro', 'Tailwind', 'TypeScript']
-  },
-  {
-    slug: 'mindspace-notes',
-    title: 'MindSpace Notes',
-    description: 'Công cụ ghi chú liên kết dạng mạng lưới (Bi-directional linking) dành cho việc quản lý tri thức cá nhân (PKM).',
-    date: '10/08/2026',
-    status: 'Ý tưởng',
-    tags: ['MDX', 'React', 'LocalFirst']
   }
 ];
 ---
@@ -69,7 +69,7 @@ const featuredApps = [
   <section class="py-10 sm:py-14 border-b border-blue-900/40 bg-black/80 font-mono w-full">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-center">
       <div class="p-5 sm:p-6 rounded-2xl glass-card hud-corners border border-blue-900/60">
-        <div class="text-3xl sm:text-4xl lg:text-5xl font-black font-mono text-cyan-400 mb-1">04+</div>
+        <div class="text-3xl sm:text-4xl lg:text-5xl font-black font-mono text-cyan-400 mb-1">05+</div>
         <div class="text-xs sm:text-sm text-slate-300 uppercase tracking-widest font-semibold">// APPS & IDEAS</div>
       </div>
       <div class="p-5 sm:p-6 rounded-2xl glass-card hud-corners border border-blue-900/60">
