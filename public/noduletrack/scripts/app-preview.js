@@ -105,18 +105,18 @@ function initAppPreview() {
   // Ordered gallery of all app screenshots
   const GALLERY = [
     // ── Onboarding Flow ──────────────────────────────────────────
-    { src: '/noduletrack/assets/screenshot/onboarding-1.jpg', caption: 'Onboarding — Bước 1: Giới thiệu NoduleTrack' },
-    { src: '/noduletrack/assets/screenshot/onboarding-2.jpg', caption: 'Onboarding — Bước 2: Chọn loại sang thương theo dõi' },
-    { src: '/noduletrack/assets/screenshot/onboarding-3.jpg', caption: 'Onboarding — Bước 3: Thiết lập hồ sơ cá nhân' },
-    { src: '/noduletrack/assets/screenshot/onboarding-4.jpg', caption: 'Onboarding — Bước 4: Cấu hình thông báo & lịch nhắc' },
-    { src: '/noduletrack/assets/screenshot/onboarding-5.jpg', caption: 'Onboarding — Bước 5: Miễn trừ trách nhiệm y tế' },
+    { src: '/noduletrack/assets/screenshot/onboarding-1.webp', caption: 'Onboarding — Bước 1: Giới thiệu NoduleTrack' },
+    { src: '/noduletrack/assets/screenshot/onboarding-2.webp', caption: 'Onboarding — Bước 2: Chọn loại sang thương theo dõi' },
+    { src: '/noduletrack/assets/screenshot/onboarding-3.webp', caption: 'Onboarding — Bước 3: Thiết lập hồ sơ cá nhân' },
+    { src: '/noduletrack/assets/screenshot/onboarding-4.webp', caption: 'Onboarding — Bước 4: Cấu hình thông báo & lịch nhắc' },
+    { src: '/noduletrack/assets/screenshot/onboarding-5.webp', caption: 'Onboarding — Bước 5: Miễn trừ trách nhiệm y tế' },
     // ── Core App Screens ─────────────────────────────────────────
-    { src: '/noduletrack/assets/screenshot/home-dashboard.jpg',  caption: 'Trang Chủ — Dashboard tổng quan sang thương & nhắc tái khám' },
-    { src: '/noduletrack/assets/screenshot/lesions-list.jpg',    caption: 'Danh Sách U/Hạch — Tất cả sang thương theo dõi' },
-    { src: '/noduletrack/assets/screenshot/lesion-detail.jpg',   caption: 'Chi Tiết Sang Thương — Biểu đồ tăng trưởng & phân loại TI-RADS' },
-    { src: '/noduletrack/assets/screenshot/exam-history.jpg',    caption: 'Lịch Sử Khám — Các lần siêu âm theo thời gian' },
-    { src: '/noduletrack/assets/screenshot/exam-detail.jpg',     caption: 'Chi Tiết Lần Khám — Kết quả & ghi chú bác sĩ' },
-    { src: '/noduletrack/assets/screenshot/settings-profile.jpg',caption: 'Hồ Sơ & Cài Đặt — Thông tin bệnh nhân & tùy chỉnh' },
+    { src: '/noduletrack/assets/screenshot/home-dashboard.webp',  caption: 'Trang Chủ — Dashboard tổng quan sang thương & nhắc tái khám' },
+    { src: '/noduletrack/assets/screenshot/lesions-list.webp',    caption: 'Danh Sách U/Hạch — Tất cả sang thương theo dõi' },
+    { src: '/noduletrack/assets/screenshot/lesion-detail.webp',   caption: 'Chi Tiết Sang Thương — Biểu đồ tăng trưởng & phân loại TI-RADS' },
+    { src: '/noduletrack/assets/screenshot/exam-history.webp',    caption: 'Lịch Sử Khám — Các lần siêu âm theo thời gian' },
+    { src: '/noduletrack/assets/screenshot/exam-detail.webp',     caption: 'Chi Tiết Lần Khám — Kết quả & ghi chú bác sĩ' },
+    { src: '/noduletrack/assets/screenshot/settings-profile.webp',caption: 'Hồ Sơ & Cài Đặt — Thông tin bệnh nhân & tùy chỉnh' },
   ];
 
   let currentIndex = 0;
