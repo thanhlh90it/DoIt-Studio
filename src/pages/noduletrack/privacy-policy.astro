@@ -1,0 +1,1348 @@
+---
+// src/pages/noduletrack/privacy-policy.astro
+// NoduleTrack - Privacy Policy Page
+---
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chính Sách Quyền Riêng Tư (Privacy Policy) | NoduleTrack - Ứng dụng theo dõi u, hạch, polyp</title>
+  <meta name="description" content="Chính sách quyền riêng tư chính thức của ứng dụng NoduleTrack. Minh bạch cách thu thập, bảo mật và lưu trữ dữ liệu y tế, hình ảnh siêu âm và quyền của người dùng theo chuẩn Google Play Store.">
+  <meta name="keywords" content="NoduleTrack Privacy Policy, chính sách quyền riêng tư NoduleTrack, bảo mật dữ liệu y bạ, quyền riêng tư hồ sơ khám bệnh, Google Play Store compliance, bảo mật Firebase y tế">
+  <meta name="theme-color" content="#003C90">
+
+  <!-- OpenGraph / Social Meta Tags -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://doitstudio.tech/noduletrack/privacy-policy">
+  <meta property="og:title" content="Chính Sách Quyền Riêng Tư | NoduleTrack">
+  <meta property="og:description" content="Cam kết bảo mật tuyệt đối dữ liệu y tế, hình ảnh siêu âm và quyền riêng tư của bạn và gia đình khi sử dụng NoduleTrack.">
+  <meta property="og:image" content="/noduletrack/assets/brand/app-icon.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/noduletrack/assets/brand/logo-mark.svg">
+  <link rel="apple-touch-icon" href="/noduletrack/assets/brand/app-icon.svg">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/noduletrack/styles/brand-tokens.css">
+  <link rel="stylesheet" href="/noduletrack/styles/layout.css">
+  <link rel="stylesheet" href="/noduletrack/styles/components.css">
+  <link rel="stylesheet" href="/noduletrack/styles/animations.css">
+
+  <style>
+    /* Dedicated Privacy Policy Clinical Styles */
+    :root {
+      --privacy-sidebar-width: 290px;
+    }
+
+    .privacy-hero {
+      background: linear-gradient(180deg, #FFFFFF 0%, #FAF8FF 100%);
+      border-bottom: 1px solid var(--nt-color-border);
+      padding-top: calc(var(--nt-header-height) + var(--nt-space-10));
+      padding-bottom: var(--nt-space-12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .privacy-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(0, 60, 144, 0.05) 0%, rgba(0, 168, 150, 0.03) 50%, transparent 70%);
+      pointer-events-none;
+      z-index: 0;
+    }
+
+    .privacy-hero-container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .breadcrumbs {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--nt-space-2);
+      font-size: var(--nt-text-xs);
+      font-weight: 500;
+      color: var(--nt-color-text-muted);
+      margin-bottom: var(--nt-space-4);
+    }
+
+    .breadcrumbs a {
+      color: var(--nt-color-primary);
+      transition: color var(--nt-duration-fast) ease;
+    }
+
+    .breadcrumbs a:hover {
+      color: var(--nt-color-primary-light);
+      text-decoration: underline;
+    }
+
+    .meta-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--nt-space-3);
+      margin-top: var(--nt-space-6);
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--nt-space-2);
+      padding: var(--nt-space-1) var(--nt-space-3);
+      background-color: var(--nt-color-surface);
+      border: 1px solid var(--nt-color-border);
+      border-radius: var(--nt-radius-full);
+      font-size: var(--nt-text-xs);
+      color: var(--nt-color-text-secondary);
+      box-shadow: var(--nt-shadow-subtle);
+    }
+
+    .meta-pill strong {
+      color: var(--nt-color-text-primary);
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--nt-color-status-stable);
+      display: inline-block;
+      box-shadow: 0 0 0 2px var(--nt-color-status-stable-border);
+    }
+
+    /* Privacy Layout */
+    .privacy-layout {
+      display: grid;
+      grid-template-columns: var(--privacy-sidebar-width) minmax(0, 1fr);
+      gap: var(--nt-space-10);
+      align-items: start;
+      padding-top: var(--nt-space-10);
+      padding-bottom: var(--nt-space-20);
+    }
+
+    @media (max-width: 991px) {
+      .privacy-layout {
+        grid-template-columns: 1fr;
+        gap: var(--nt-space-8);
+      }
+    }
+
+    /* Sticky Sidebar Navigation */
+    .privacy-sidebar {
+      position: sticky;
+      top: calc(var(--nt-header-height) + var(--nt-space-6));
+      display: flex;
+      flex-direction: column;
+      gap: var(--nt-space-6);
+    }
+
+    @media (max-width: 991px) {
+      .privacy-sidebar {
+        position: relative;
+        top: 0;
+      }
+    }
+
+    .toc-card {
+      background-color: var(--nt-color-surface);
+      border: 1px solid var(--nt-color-border);
+      border-radius: var(--nt-radius-lg);
+      padding: var(--nt-space-5);
+      box-shadow: var(--nt-shadow-sm);
+    }
+
+    .toc-title {
+      font-size: var(--nt-text-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--nt-color-text-muted);
+      margin-bottom: var(--nt-space-4);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--nt-space-1);
+    }
+
+    .toc-link {
+      display: flex;
+      align-items: center;
+      gap: var(--nt-space-2);
+      padding: var(--nt-space-2) var(--nt-space-3);
+      border-radius: var(--nt-radius-sm);
+      font-size: var(--nt-text-sm);
+      font-weight: 500;
+      color: var(--nt-color-text-secondary);
+      transition: all var(--nt-duration-fast) ease;
+      line-height: 1.35;
+    }
+
+    .toc-link:hover {
+      color: var(--nt-color-primary);
+      background-color: var(--nt-color-primary-container);
+    }
+
+    .toc-link.active {
+      color: var(--nt-color-primary-dark);
+      background-color: var(--nt-color-primary-container);
+      font-weight: 600;
+      border-left: 3px solid var(--nt-color-primary);
+    }
+
+    .toc-num {
+      font-family: var(--nt-font-mono);
+      font-size: 0.75rem;
+      color: var(--nt-color-text-muted);
+      min-width: 18px;
+    }
+
+    .toc-link.active .toc-num {
+      color: var(--nt-color-primary);
+      font-weight: 700;
+    }
+
+    .help-box {
+      background: linear-gradient(135deg, var(--nt-color-primary-dark) 0%, var(--nt-color-primary) 100%);
+      color: var(--nt-color-text-on-primary);
+      border-radius: var(--nt-radius-lg);
+      padding: var(--nt-space-5);
+      box-shadow: var(--nt-shadow-md);
+    }
+
+    .help-box h3 {
+      font-size: var(--nt-text-base);
+      font-weight: 700;
+      margin-bottom: var(--nt-space-2);
+      color: #FFFFFF;
+    }
+
+    .help-box p {
+      font-size: var(--nt-text-xs);
+      line-height: var(--nt-lh-sm);
+      color: #D9E2FF;
+      margin-bottom: var(--nt-space-4);
+    }
+
+    .help-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--nt-space-2);
+      width: 100%;
+      padding: var(--nt-space-2) var(--nt-space-4);
+      background-color: var(--nt-color-secondary);
+      color: #002B66;
+      font-weight: 700;
+      font-size: var(--nt-text-xs);
+      border-radius: var(--nt-radius-sm);
+      transition: all var(--nt-duration-fast) ease;
+    }
+
+    .help-btn:hover {
+      background-color: var(--nt-color-secondary-light);
+      transform: translateY(-1px);
+    }
+
+    /* Key Summary Highlights */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--nt-space-4);
+      margin-bottom: var(--nt-space-10);
+    }
+
+    @media (max-width: 640px) {
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .summary-card {
+      background-color: var(--nt-color-surface);
+      border: 1px solid var(--nt-color-border);
+      border-radius: var(--nt-radius-lg);
+      padding: var(--nt-space-5);
+      box-shadow: var(--nt-shadow-sm);
+      display: flex;
+      gap: var(--nt-space-4);
+      transition: transform var(--nt-duration-fast) ease, box-shadow var(--nt-duration-fast) ease;
+    }
+
+    .summary-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--nt-shadow-md);
+      border-color: var(--nt-color-primary-light);
+    }
+
+    .summary-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--nt-radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .summary-icon-wrap.primary {
+      background-color: var(--nt-color-primary-container);
+      color: var(--nt-color-primary-dark);
+    }
+
+    .summary-icon-wrap.secondary {
+      background-color: var(--nt-color-secondary-container);
+      color: var(--nt-color-secondary-dark);
+    }
+
+    .summary-icon-wrap.stable {
+      background-color: var(--nt-color-status-stable-bg);
+      color: var(--nt-color-status-stable);
+    }
+
+    .summary-icon-wrap.info {
+      background-color: var(--nt-color-status-info-bg);
+      color: var(--nt-color-status-info);
+    }
+
+    .summary-content h3 {
+      font-size: var(--nt-text-sm);
+      font-weight: 700;
+      color: var(--nt-color-text-primary);
+      margin-bottom: var(--nt-space-1);
+    }
+
+    .summary-content p {
+      font-size: var(--nt-text-xs);
+      line-height: var(--nt-lh-sm);
+      color: var(--nt-color-text-secondary);
+    }
+
+    /* Policy Content Sections */
+    .policy-section {
+      background-color: var(--nt-color-surface);
+      border: 1px solid var(--nt-color-border);
+      border-radius: var(--nt-radius-xl);
+      padding: var(--nt-space-8);
+      margin-bottom: var(--nt-space-8);
+      box-shadow: var(--nt-shadow-sm);
+      scroll-margin-top: calc(var(--nt-header-height) + var(--nt-space-6));
+    }
+
+    @media (max-width: 640px) {
+      .policy-section {
+        padding: var(--nt-space-5);
+      }
+    }
+
+    .section-num-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--nt-space-1);
+      font-family: var(--nt-font-mono);
+      font-size: var(--nt-text-xs);
+      font-weight: 700;
+      color: var(--nt-color-primary);
+      background-color: var(--nt-color-primary-container);
+      padding: 2px var(--nt-space-2);
+      border-radius: var(--nt-radius-xs);
+      margin-bottom: var(--nt-space-2);
+      text-transform: uppercase;
+    }
+
+    .policy-section-title {
+      font-size: var(--nt-text-xl);
+      font-weight: 800;
+      color: var(--nt-color-primary-dark);
+      letter-spacing: -0.01em;
+      margin-bottom: var(--nt-space-4);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--nt-color-border-subtle);
+      padding-bottom: var(--nt-space-3);
+    }
+
+    .policy-section-intro {
+      font-size: var(--nt-text-sm);
+      line-height: var(--nt-lh-base);
+      color: var(--nt-color-text-secondary);
+      margin-bottom: var(--nt-space-6);
+    }
+
+    /* Subsection Cards */
+    .sub-item-card {
+      background-color: var(--nt-color-surface-muted);
+      border: 1px solid var(--nt-color-border);
+      border-radius: var(--nt-radius-lg);
+      padding: var(--nt-space-5);
+      margin-bottom: var(--nt-space-4);
+    }
+
+    .sub-item-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .sub-item-header {
+      display: flex;
+      align-items: center;
+      gap: var(--nt-space-3);
+      margin-bottom: var(--nt-space-3);
+    }
+
+    .sub-item-badge {
+      width: 28px;
+      height: 28px;
+      border-radius: var(--nt-radius-sm);
+      background-color: var(--nt-color-primary);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--nt-font-mono);
+      font-size: var(--nt-text-xs);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .sub-item-title {
+      font-size: var(--nt-text-base);
+      font-weight: 700;
+      color: var(--nt-color-text-primary);
+    }
+
+    .sub-item-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--nt-space-2);
+      font-size: var(--nt-text-sm);
+      color: var(--nt-color-text-secondary);
+      line-height: var(--nt-lh-base);
+    }
+
+    .sub-item-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--nt-space-2);
+    }
+
+    .sub-item-list li svg {
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .code-tag {
+      font-family: var(--nt-font-mono);
+      font-size: 0.8125rem;
+      background-color: #EEF2F6;
+      color: var(--nt-color-primary-dark);
+      padding: 1px 6px;
+      border-radius: var(--nt-radius-xs);
+      border: 1px solid #D8E2EC;
+    }
+
+    /* Permissions Table Grid */
+    .perm-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--nt-space-4);
+    }
+
+    @media (max-width: 768px) {
+      .perm-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .perm-card {
+      border: 1px solid var(--nt-color-border);
+      border-radius: var(--nt-radius-md);
+      padding: var(--nt-space-4);
+      background-color: var(--nt-color-surface);
+      display: flex;
+      flex-direction: column;
+      gap: var(--nt-space-2);
+    }
+
+    .perm-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--nt-space-2);
+    }
+
+    .perm-name {
+      font-size: var(--nt-text-sm);
+      font-weight: 700;
+      color: var(--nt-color-text-primary);
+      display: flex;
+      align-items: center;
+      gap: var(--nt-space-2);
+    }
+
+    .perm-package {
+      font-family: var(--nt-font-mono);
+      font-size: 0.7rem;
+      color: var(--nt-color-primary);
+      background-color: var(--nt-color-primary-container);
+      padding: 2px 6px;
+      border-radius: var(--nt-radius-xs);
+    }
+
+    .perm-desc {
+      font-size: var(--nt-text-xs);
+      line-height: var(--nt-lh-sm);
+      color: var(--nt-color-text-secondary);
+    }
+
+    /* Callout & Disclaimer Boxes */
+    .callout-box {
+      border-radius: var(--nt-radius-lg);
+      padding: var(--nt-space-5);
+      margin-top: var(--nt-space-4);
+      display: flex;
+      gap: var(--nt-space-4);
+      align-items: flex-start;
+    }
+
+    .callout-box.warning {
+      background-color: var(--nt-color-status-warning-bg);
+      border: 1px solid var(--nt-color-status-warning-border);
+      color: #78350F;
+    }
+
+    .callout-box.danger {
+      background-color: var(--nt-color-status-critical-bg);
+      border: 1px solid var(--nt-color-status-critical-border);
+      color: #7F1D1D;
+    }
+
+    .callout-box.info {
+      background-color: var(--nt-color-status-info-bg);
+      border: 1px solid var(--nt-color-status-info-border);
+      color: #1E3A8A;
+    }
+
+    .callout-box.success {
+      background-color: var(--nt-color-status-stable-bg);
+      border: 1px solid var(--nt-color-status-stable-border);
+      color: #064E3B;
+    }
+
+    .callout-icon {
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .callout-content h4 {
+      font-size: var(--nt-text-sm);
+      font-weight: 700;
+      margin-bottom: var(--nt-space-1);
+    }
+
+    .callout-content p {
+      font-size: var(--nt-text-xs);
+      line-height: var(--nt-lh-base);
+    }
+
+    /* Security Architecture Features */
+    .security-feature-row {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--nt-space-4);
+      padding: var(--nt-space-4);
+      background-color: var(--nt-color-surface-muted);
+      border-radius: var(--nt-radius-md);
+      margin-bottom: var(--nt-space-3);
+      border: 1px solid var(--nt-color-border);
+    }
+
+    .security-feature-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .sec-icon-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: var(--nt-color-primary-container);
+      color: var(--nt-color-primary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* Contact Card */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--nt-space-4);
+      margin-top: var(--nt-space-4);
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-card {
+      background-color: var(--nt-color-surface-muted);
+      border: 1px solid var(--nt-color-border);
+      border-radius: var(--nt-radius-lg);
+      padding: var(--nt-space-4);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--nt-space-2);
+    }
+
+    .contact-card svg {
+      color: var(--nt-color-primary);
+    }
+
+    .contact-label {
+      font-size: var(--nt-text-xs);
+      font-weight: 700;
+      color: var(--nt-color-text-muted);
+      text-transform: uppercase;
+    }
+
+    .contact-value {
+      font-size: var(--nt-text-sm);
+      font-weight: 600;
+      color: var(--nt-color-primary-dark);
+      word-break: break-all;
+    }
+
+    .contact-card a.contact-value:hover {
+      color: var(--nt-color-primary-light);
+      text-decoration: underline;
+    }
+
+    /* Quick Print & Back to Top */
+    .doc-actions {
+      display: flex;
+      align-items: center;
+      gap: var(--nt-space-3);
+    }
+
+    .btn-action-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--nt-space-2);
+      padding: var(--nt-space-2) var(--nt-space-3);
+      border: 1px solid var(--nt-color-border);
+      border-radius: var(--nt-radius-sm);
+      font-size: var(--nt-text-xs);
+      font-weight: 600;
+      color: var(--nt-color-text-secondary);
+      background-color: var(--nt-color-surface);
+      transition: all var(--nt-duration-fast) ease;
+    }
+
+    .btn-action-outline:hover {
+      border-color: var(--nt-color-primary);
+      color: var(--nt-color-primary);
+      background-color: var(--nt-color-primary-container);
+    }
+
+    @media print {
+      .header, .footer, .privacy-sidebar, .doc-actions, .help-box, #back-to-top-btn {
+        display: none !important;
+      }
+      .privacy-layout {
+        display: block !important;
+        padding: 0 !important;
+      }
+      .policy-section {
+        box-shadow: none !important;
+        border: 1px solid #CCC !important;
+        break-inside: avoid;
+        margin-bottom: 24px !important;
+      }
+      .privacy-hero {
+        padding-top: 20px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. Header / Navbar
+       ======================================================================== -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="/noduletrack" class="header-logo" aria-label="NoduleTrack Home">
+        <img src="/noduletrack/assets/brand/logo-full-horizontal.svg" alt="NoduleTrack Logo" width="168" height="38">
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="/noduletrack#features" class="nav-link">Tính năng</a></li>
+          <li><a href="/noduletrack#pathologies" class="nav-link">4 Dạng Sang thương</a></li>
+          <li><a href="/noduletrack#app-tour" class="nav-link">Trải nghiệm App</a></li>
+          <li><a href="/noduletrack#simulator" class="nav-link">Mô phỏng Tăng trưởng</a></li>
+          <li><a href="/noduletrack#summary" class="nav-link">Báo cáo Bác sĩ</a></li>
+          <li><a href="/noduletrack#faq" class="nav-link">Hỏi đáp</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="/noduletrack" class="btn btn-secondary" style="font-size: var(--nt-text-xs); padding: 8px 16px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right: 4px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Trang chủ App
+        </a>
+        <a href="/noduletrack#download" class="btn btn-primary" style="font-size: var(--nt-text-xs); padding: 8px 16px;">Tải ứng dụng</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ========================================================================
+         2. Hero Banner & Metadata Strip
+         ======================================================================== -->
+    <section class="privacy-hero">
+      <div class="container privacy-hero-container">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">DoIT-Studio</a>
+          <span>/</span>
+          <a href="/noduletrack">NoduleTrack</a>
+          <span>/</span>
+          <span style="color: var(--nt-color-text-primary); font-weight: 600;">Chính sách Quyền riêng tư</span>
+        </nav>
+
+        <!-- Compliance Tag -->
+        <div class="section-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <span>GOOGLE PLAY STORE &amp; MEDICAL DATA COMPLIANT</span>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: var(--nt-space-4);">
+          <div>
+            <h1 class="section-title" style="margin-bottom: var(--nt-space-2); text-align: left; font-size: clamp(1.75rem, 4vw, 2.5rem);">
+              Chính Sách Quyền Riêng Tư
+            </h1>
+            <p style="color: var(--nt-color-text-secondary); font-size: var(--nt-text-base); max-width: 720px; line-height: var(--nt-lh-base);">
+              Cam kết bảo mật tuyệt đối, minh bạch trong thu thập, xử lý và lưu trữ dữ liệu y tế của bạn và gia đình khi sử dụng ứng dụng <strong>NoduleTrack</strong>.
+            </p>
+          </div>
+
+          <!-- Document Action Buttons -->
+          <div class="doc-actions">
+            <button type="button" class="btn-action-outline" onclick="window.print()" title="In hoặc lưu file PDF">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+              In / Xuất PDF
+            </button>
+            <a href="mailto:thanhlh90it@gmail.com?subject=[NoduleTrack-Privacy]%20Yeu%20Cau%20Ho%20Tro" class="btn-action-outline" title="Gửi yêu cầu bảo mật">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              Liên hệ Bảo mật
+            </a>
+          </div>
+        </div>
+
+        <!-- Meta Pills Strip -->
+        <div class="meta-pills">
+          <div class="meta-pill">
+            <span class="status-dot"></span>
+            <span>Trạng thái: <strong>Đang có hiệu lực</strong></span>
+          </div>
+          <div class="meta-pill">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Cập nhật lần cuối: <strong>18/08/2026</strong></span>
+          </div>
+          <div class="meta-pill">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            <span>Phiên bản tài liệu: <strong>v1.1 (Cập nhật tinh giản)</strong></span>
+          </div>
+          <div class="meta-pill">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            <span>Hạ tầng: <strong>Firebase Cloud Security</strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         3. Main Content Layout (Sidebar TOC + Content Sections)
+         ======================================================================== -->
+    <div class="container">
+      <div class="privacy-layout">
+        
+        <!-- Left Column: Sticky Sidebar & Quick Navigation -->
+        <aside class="privacy-sidebar" aria-label="Mục lục chính sách">
+          <div class="toc-card">
+            <div class="toc-title">
+              <span>Mục lục chính sách</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+            </div>
+            <ul class="toc-list" id="toc-nav">
+              <li>
+                <a href="#section-1" class="toc-link">
+                  <span class="toc-num">01</span>
+                  <span>Thu thập &amp; Sử dụng dữ liệu</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section-2" class="toc-link">
+                  <span class="toc-num">02</span>
+                  <span>Quyền truy cập thiết bị</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section-3" class="toc-link">
+                  <span class="toc-num">03</span>
+                  <span>Cơ chế bảo mật &amp; Lưu trữ</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section-4" class="toc-link">
+                  <span class="toc-num">04</span>
+                  <span>Cam kết bên thứ ba</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section-5" class="toc-link">
+                  <span class="toc-num">05</span>
+                  <span>Xóa dữ liệu &amp; Quyền người dùng</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section-6" class="toc-link">
+                  <span class="toc-num">06</span>
+                  <span>Miễn trừ trách nhiệm y tế</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section-7" class="toc-link">
+                  <span class="toc-num">07</span>
+                  <span>Thông tin liên hệ</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Help & Support Widget -->
+          <div class="help-box">
+            <div style="display: flex; align-items: center; gap: var(--nt-space-2); margin-bottom: var(--nt-space-2);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <h3>Quyền Riêng Tư Của Bạn</h3>
+            </div>
+            <p>Bạn có toàn quyền yêu cầu trích xuất hoặc xóa sạch vĩnh viễn toàn bộ dữ liệu y bạ cá nhân bất cứ lúc nào.</p>
+            <a href="mailto:thanhlh90it@gmail.com?subject=[NoduleTrack]%20Yeu%20Cau%20Xoa%20Du%20Lieu" class="help-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"></path><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path></svg>
+              Gửi yêu cầu xóa dữ liệu
+            </a>
+          </div>
+        </aside>
+
+        <!-- Right Column: Document Content -->
+        <article class="privacy-content">
+
+          <!-- 4 Executive Highlights -->
+          <div class="summary-grid">
+            <div class="summary-card">
+              <div class="summary-icon-wrap primary">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              </div>
+              <div class="summary-content">
+                <h3>Bảo Mật Cấp Y Tế</h3>
+                <p>Xác thực Firebase Authentication &amp; Firestore Security Rules nghiêm ngặt. Chỉ bạn mới có quyền xem dữ liệu của mình.</p>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon-wrap secondary">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+              </div>
+              <div class="summary-content">
+                <h3>KHÔNG Bán Hay Chia Sẻ Dữ Liệu</h3>
+                <p>Cam kết 100% không bán, không thương mại hóa dữ liệu sức khỏe cho công ty bảo hiểm hay đơn vị quảng cáo.</p>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon-wrap stable">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
+              </div>
+              <div class="summary-content">
+                <h3>Offline-First &amp; Lưu Cục Bộ</h3>
+                <p>Hồ sơ siêu âm và biểu đồ phát triển luôn sẵn sàng tra cứu ngay cả khi vào phòng khám bị mất sóng mạng.</p>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon-wrap info">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+              </div>
+              <div class="summary-content">
+                <h3>Toàn Quyền Sở Hữu &amp; Xóa Sạch</h3>
+                <p>Chủ động chỉnh sửa, xóa từng nốt u hoặc xóa toàn bộ tài khoản và hình ảnh siêu âm vĩnh viễn chỉ với 1 thao tác.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 1 -->
+          <section id="section-1" class="policy-section">
+            <div class="section-num-tag">Mục 01</div>
+            <h2 class="policy-section-title">
+              <span>1. Thu Thập Và Sử Dụng Dữ Liệu Cá Nhân</span>
+            </h2>
+            <p class="policy-section-intro">
+              Để vận hành các tính năng theo dõi sức khỏe cá nhân và quản lý hồ sơ gia đình, <strong>NoduleTrack</strong> thu thập các nhóm thông tin sau đây trực tiếp từ sự nhập liệu chủ động của bạn:
+            </p>
+
+            <div class="sub-item-card">
+              <div class="sub-item-header">
+                <div class="sub-item-badge">A</div>
+                <h3 class="sub-item-title">Thông tin Tài khoản Đăng nhập</h3>
+              </div>
+              <ul class="sub-item-list">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--nt-color-primary)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>Dữ liệu thu thập:</strong> Địa chỉ Email và Mật khẩu (được mã hóa).</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--nt-color-primary)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>Mục đích:</strong> Khởi tạo tài khoản người dùng, định danh duy nhất trên hệ thống, xác thực quyền truy cập và đồng bộ hóa an toàn dữ liệu y tế của bạn giữa các thiết bị thông qua hệ thống bảo mật tiêu chuẩn <code class="code-tag">Firebase Authentication</code>.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="sub-item-card">
+              <div class="sub-item-header">
+                <div class="sub-item-badge">B</div>
+                <h3 class="sub-item-title">Thông tin Hồ sơ Người bệnh (Patients)</h3>
+              </div>
+              <ul class="sub-item-list">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--nt-color-primary)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>Dữ liệu thu thập:</strong> Họ và tên, Ngày tháng năm sinh, Giới tính, và Mối quan hệ với chủ tài khoản (Bản thân, Cha, Mẹ, Vợ/Chồng, Anh chị em, Con cái...).</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--nt-color-primary)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>Mục đích:</strong> Cho phép một tài khoản quản lý nhiều hồ sơ sức khỏe độc lập của người thân trong gia đình, cá nhân hóa biểu đồ và tối ưu hóa các gợi ý y tế theo độ tuổi và giới tính.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="sub-item-card">
+              <div class="sub-item-header">
+                <div class="sub-item-badge">C</div>
+                <h3 class="sub-item-title">Dữ liệu Y tế &amp; Kết quả Thăm khám (Health &amp; Examination Data)</h3>
+              </div>
+              <p style="font-size: var(--nt-text-xs); color: var(--nt-color-primary-dark); font-weight: 600; margin-bottom: var(--nt-space-3);">
+                Đây là dữ liệu nhạy cảm được quản lý nghiêm ngặt nhất trong ứng dụng:
+              </p>
+              <ul class="sub-item-list">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--nt-color-secondary-dark)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>Thông tin buổi khám:</strong> Ngày khám thực tế, Tên cơ sở y tế (bệnh viện/phòng khám), Tên bác sĩ điều trị và các Ghi chú/Đơn thuốc/Lời dặn của bác sĩ.</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--nt-color-secondary-dark)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>Thông số u/hạch/polyp (Measurements):</strong> Kích thước 3 chiều (Chiều dài × Chiều rộng × Chiều cao tính bằng milimet), vị trí giải phẫu trên cơ thể, tỷ trọng âm, ranh giới rõ/nham nhở, và các dấu hiệu lâm sàng (vi vôi hóa, tăng sinh mạch máu, độ đàn hồi...).</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--nt-color-secondary-dark)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <div>
+                    <strong>Trường dữ liệu động đặc thù theo 4 dạng sang thương:</strong>
+                    <ul style="margin-top: 6px; padding-left: 18px; list-style-type: disc; display: flex; flex-direction: column; gap: 4px;">
+                      <li><em>Polyp:</em> Trạng thái có cuống hoặc không cuống.</li>
+                      <li><em>U nang (Cyst):</em> Nang đơn thuần hoặc nang phức hợp.</li>
+                      <li><em>Nhân (Nodule):</em> Phân loại chuẩn lâm sàng <code class="code-tag">TI-RADS</code> (tuyến giáp) hoặc <code class="code-tag">BI-RADS</code> (tuyến vú).</li>
+                      <li><em>Hạch (Lymph node):</em> Trạng thái hạch viêm, hạch nghi ngờ hoặc cấu trúc rốn hạch.</li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--nt-color-secondary-dark)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>Mục đích:</strong> Vẽ biểu đồ tăng trưởng kích thước theo thời gian, tính toán tốc độ phát triển và tự động phát tín hiệu cảnh báo y khoa (<span style="color: #059669; font-weight: 700;">Xanh</span> - <span style="color: #D97706; font-weight: 700;">Vàng</span> - <span style="color: #DC2626; font-weight: 700;">Đỏ</span>) dựa trên thuật toán tích hợp sẵn, hỗ trợ đề xuất lịch tái khám tự động.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="sub-item-card">
+              <div class="sub-item-header">
+                <div class="sub-item-badge">D</div>
+                <h3 class="sub-item-title">Hình ảnh Chứng từ Y khoa (Attachments)</h3>
+              </div>
+              <ul class="sub-item-list">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--nt-color-primary)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>Dữ liệu thu thập:</strong> Ảnh chụp phiếu kết quả siêu âm, phiếu kết quả khám hoặc ảnh nội soi do bạn tự chụp hoặc tải lên từ thư viện ảnh thiết bị.</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--nt-color-primary)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>Mục đích:</strong> Lưu trữ bản gốc làm bằng chứng đối chứng trực quan cho các lần thăm khám và hỗ trợ tính năng xem đối chiếu hình ảnh hai bên cạnh nhau (Side-by-Side Comparison).</span>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- SECTION 2 -->
+          <section id="section-2" class="policy-section">
+            <div class="section-num-tag">Mục 02</div>
+            <h2 class="policy-section-title">
+              <span>2. Quyền Truy Cập Thiết Bị (Device Permissions)</span>
+            </h2>
+            <p class="policy-section-intro">
+              NoduleTrack sử dụng một số quyền truy cập hệ thống của thiết bị di động để thực thi các tính năng cốt lõi. Chúng tôi chỉ yêu cầu quyền khi bạn thực hiện các thao tác tương ứng trong app và bạn có thể bật/tắt bất kỳ lúc nào trong phần Cài đặt thiết bị:
+            </p>
+
+            <div class="perm-grid">
+              <!-- Perm 1 -->
+              <div class="perm-card">
+                <div class="perm-head">
+                  <div class="perm-name">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--nt-color-primary)" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                    <span>Camera &amp; Thư viện ảnh</span>
+                  </div>
+                  <span class="perm-package">expo-image-picker</span>
+                </div>
+                <p class="perm-desc">
+                  Cho phép bạn chụp trực tiếp phiếu siêu âm bằng camera hoặc chọn hình ảnh kết quả từ bộ nhớ máy để đính kèm vào hồ sơ khám. Hình ảnh sẽ được tối ưu hóa dung lượng (nén ảnh) tại chỗ trên thiết bị trước khi tải lên kho lưu trữ.
+                </p>
+              </div>
+
+              <!-- Perm 2 -->
+              <div class="perm-card">
+                <div class="perm-head">
+                  <div class="perm-name">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--nt-color-secondary)" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                    <span>Quyền Thông báo (Notifications)</span>
+                  </div>
+                  <span class="perm-package">expo-notifications</span>
+                </div>
+                <p class="perm-desc">
+                  Thiết lập các thông báo nhắc lịch tái khám định kỳ (Local Scheduled Notifications) trực tiếp trên thiết bị của bạn trước mốc hẹn từ 1 đến 2 tuần, đảm bảo không bỏ lỡ thời điểm kiểm tra quan trọng.
+                </p>
+              </div>
+
+              <!-- Perm 3 -->
+              <div class="perm-card">
+                <div class="perm-head">
+                  <div class="perm-name">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--nt-color-primary)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <span>Quyền truy cập Lịch (Calendar)</span>
+                  </div>
+                  <span class="perm-package">expo-calendar</span>
+                </div>
+                <p class="perm-desc">
+                  Cung cấp tính năng "Thêm vào lịch điện thoại", tự động đồng bộ sự kiện tái khám do hệ thống gợi ý vào Google Calendar hoặc Apple Calendar trên thiết bị cá nhân của bạn.
+                </p>
+              </div>
+
+              <!-- Perm 4 -->
+              <div class="perm-card">
+                <div class="perm-head">
+                  <div class="perm-name">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--nt-color-secondary)" stroke-width="2"><path d="M12 2a10 10 0 0 0-7.07 17.07C6.35 17.85 8.94 17 12 17s5.65.85 7.07 2.07A10 10 0 0 0 12 2z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>Sinh trắc học (FaceID / Fingerprint)</span>
+                  </div>
+                  <span class="perm-package">expo-local-auth</span>
+                </div>
+                <p class="perm-desc">
+                  Cung cấp lớp bảo mật thứ 2 (Passcode/Vân tay/FaceID), ngăn ngừa việc người khác tự ý mở ứng dụng và đọc dữ liệu bệnh án nhạy cảm của bạn khi mượn điện thoại.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 3 -->
+          <section id="section-3" class="policy-section">
+            <div class="section-num-tag">Mục 03</div>
+            <h2 class="policy-section-title">
+              <span>3. Cơ Chế Bảo Mật Và Lưu Trữ Dữ Liệu</span>
+            </h2>
+            <p class="policy-section-intro">
+              Chúng tôi áp dụng các tiêu chuẩn mã hóa và bảo mật điện toán đám mây cấp doanh nghiệp để đảm bảo tính toàn vẹn và quyền riêng tư của dữ liệu y tế:
+            </p>
+
+            <div class="security-feature-row">
+              <div class="sec-icon-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+              </div>
+              <div>
+                <h4 style="font-size: var(--nt-text-sm); font-weight: 700; color: var(--nt-color-text-primary); margin-bottom: 2px;">
+                  Lưu trữ đám mây an toàn (Google Firebase Services)
+                </h4>
+                <p style="font-size: var(--nt-text-xs); line-height: var(--nt-lh-sm); color: var(--nt-color-text-secondary);">
+                  Toàn bộ dữ liệu của bạn được lưu trữ trên nền tảng đám mây an toàn thông qua <code class="code-tag">Firebase Authentication</code> để xác thực danh tính, <code class="code-tag">Cloud Firestore</code> cho cơ sở dữ liệu y bạ, và <code class="code-tag">Firebase Cloud Storage</code> cho việc lưu trữ an toàn hình ảnh phiếu kết quả khám.
+                </p>
+              </div>
+            </div>
+
+            <div class="security-feature-row">
+              <div class="sec-icon-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              </div>
+              <div>
+                <h4 style="font-size: var(--nt-text-sm); font-weight: 700; color: var(--nt-color-text-primary); margin-bottom: 2px;">
+                  Phân quyền truy cập nghiêm ngặt (Firebase Security Rules)
+                </h4>
+                <p style="font-size: var(--nt-text-xs); line-height: var(--nt-lh-sm); color: var(--nt-color-text-secondary);">
+                  Hệ thống áp dụng quy tắc bảo mật dữ liệu nâng cao ở cấp máy chủ. Điều này đảm bảo tính riêng tư tuyệt đối: <strong>chỉ có bạn</strong> (tài khoản đã xác thực hợp lệ) mới có quyền truy cập, đọc, ghi hoặc sửa đổi dữ liệu y tế của chính mình và các hồ sơ gia đình do chính bạn khởi tạo.
+                </p>
+              </div>
+            </div>
+
+            <div class="security-feature-row">
+              <div class="sec-icon-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path><line x1="2" y1="2" x2="22" y2="22"></line></svg>
+              </div>
+              <div>
+                <h4 style="font-size: var(--nt-text-sm); font-weight: 700; color: var(--nt-color-text-primary); margin-bottom: 2px;">
+                  Cơ chế Ngoại tuyến bền bỉ (Offline-First Architecture)
+                </h4>
+                <p style="font-size: var(--nt-text-xs); line-height: var(--nt-lh-sm); color: var(--nt-color-text-secondary);">
+                  Nhờ cơ chế lưu trữ bền bỉ của Cloud Firestore, dữ liệu y bạ được mã hóa và lưu một bản sao cục bộ trên thiết bị của bạn. Người bệnh có thể mở app xem lại lịch sử khám, biểu đồ kích thước u/hạch ngay cả khi vào phòng khám bị mất sóng mạng. Dữ liệu nhập mới khi offline sẽ tự động đồng bộ ngầm khi thiết bị có kết nối trở lại.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 4 -->
+          <section id="section-4" class="policy-section">
+            <div class="section-num-tag">Mục 04</div>
+            <h2 class="policy-section-title">
+              <span>4. Cam Kết Chia Sẻ Dữ Liệu Với Bên Thứ Ba</span>
+            </h2>
+            
+            <div class="callout-box success" style="margin-top: 0; margin-bottom: var(--nt-space-4);">
+              <svg class="callout-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <div class="callout-content">
+                <h4>Chính Sách Không Thương Mại Hóa (Zero Data Monetization)</h4>
+                <p>
+                  NoduleTrack cam kết <strong>không bao giờ</strong> bán, trao đổi, chia sẻ hoặc tiết lộ bất kỳ thông tin cá nhân hay dữ liệu y tế nhạy cảm nào của bạn cho bất kỳ bên thứ ba nào (như các công ty bảo hiểm, đơn vị quảng cáo hay các tổ chức bên ngoài) vì bất kỳ mục đích thương mại nào.
+                </p>
+              </div>
+            </div>
+
+            <p style="font-size: var(--nt-text-sm); line-height: var(--nt-lh-base); color: var(--nt-color-text-secondary);">
+              <strong>Dịch vụ nền tảng tin cậy:</strong> Chúng tôi chỉ sử dụng hạ tầng lưu trữ đám mây tiêu chuẩn từ Google Firebase để vận hành và cam kết dữ liệu được bảo vệ bằng các tiêu chuẩn bảo mật điện toán đám mây quốc tế cao nhất.
+            </p>
+          </section>
+
+          <!-- SECTION 5 -->
+          <section id="section-5" class="policy-section">
+            <div class="section-num-tag">Mục 05</div>
+            <h2 class="policy-section-title">
+              <span>5. Chính Sách Xóa Dữ Liệu Và Quyền Của Người Dùng</span>
+            </h2>
+            <p class="policy-section-intro">
+              Bạn là chủ sở hữu duy nhất đối với dữ liệu sức khỏe của mình. NoduleTrack cung cấp cho bạn toàn quyền kiểm soát và định đoạt dữ liệu:
+            </p>
+
+            <div class="sub-item-card">
+              <div class="sub-item-header">
+                <div class="sub-item-badge">✓</div>
+                <h3 class="sub-item-title">Quyền chỉnh sửa và xóa thủ công từng phần</h3>
+              </div>
+              <p style="font-size: var(--nt-text-sm); line-height: var(--nt-lh-base); color: var(--nt-color-text-secondary);">
+                Bạn có thể tự do chỉnh sửa hoặc xóa từng lần khám, từng nốt u/hạch hoặc hồ sơ người thân trực tiếp trong giao diện ứng dụng. Khi bạn xóa, các tài liệu tương ứng trên cơ sở dữ liệu Firestore và hình ảnh đính kèm trên Cloud Storage sẽ bị loại bỏ vĩnh viễn ngay lập tức.
+              </p>
+            </div>
+
+            <div class="sub-item-card">
+              <div class="sub-item-header">
+                <div class="sub-item-badge" style="background-color: var(--nt-color-status-critical);">🗑️</div>
+                <h3 class="sub-item-title">Quyền Xóa Tài Khoản Vĩnh Viễn (Account &amp; Data Deletion)</h3>
+              </div>
+              <ul class="sub-item-list">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--nt-color-status-critical)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>Thao tác trực tiếp:</strong> Bạn có thể thực hiện yêu cầu xóa toàn bộ tài khoản trực tiếp trong ứng dụng (tại mục Cài đặt &gt; Xóa tài khoản) hoặc gửi email yêu cầu hỗ trợ tới địa chỉ <a href="mailto:thanhlh90it@gmail.com" style="color: var(--nt-color-primary); font-weight: 600;">thanhlh90it@gmail.com</a>.</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--nt-color-status-critical)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>Quy trình xóa sạch dữ liệu:</strong> Khi nhận được yêu cầu xóa tài khoản, hệ thống sẽ thực hiện quy trình tự động loại bỏ sạch hoàn toàn và vĩnh viễn:
+                    <div style="margin-top: 6px; display: flex; flex-wrap: wrap; gap: 6px;">
+                      <span class="code-tag">Firebase Auth Credential</span>
+                      <span class="code-tag">collection: users</span>
+                      <span class="code-tag">collection: patients</span>
+                      <span class="code-tag">collection: examinations</span>
+                      <span class="code-tag">collection: lesions</span>
+                      <span class="code-tag">Cloud Storage Attachments</span>
+                    </div>
+                  </span>
+                </li>
+              </ul>
+
+              <div class="callout-box danger" style="margin-top: var(--nt-space-3);">
+                <svg class="callout-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                <div class="callout-content">
+                  <h4>Cảnh Báo Tính Bất Khả Hoàn Tác</h4>
+                  <p>Quy trình xóa tài khoản là vĩnh viễn và không thể khôi phục để bảo vệ quyền riêng tư tuyệt đối của bạn. Mọi dữ liệu đo đạc và ảnh chụp phiếu khám sẽ bị hủy bỏ hoàn toàn.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 6 -->
+          <section id="section-6" class="policy-section">
+            <div class="section-num-tag">Mục 06</div>
+            <h2 class="policy-section-title">
+              <span>6. Tuyên Bố Miễn Trừ Trách Nhiệm Y Tế (Medical Disclaimer)</span>
+            </h2>
+            
+            <div class="callout-box warning" style="margin-top: 0;">
+              <svg class="callout-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              <div class="callout-content">
+                <h4 style="font-size: var(--nt-text-base);">Quan Trọng: NoduleTrack Là Công Cụ Theo Dõi, Không Phải Dịch Vụ Chẩn Đoán</h4>
+                <ul style="margin-top: 8px; padding-left: 18px; list-style-type: disc; display: flex; flex-direction: column; gap: 6px; font-size: var(--nt-text-xs); line-height: var(--nt-lh-base);">
+                  <li>NoduleTrack là ứng dụng công cụ hỗ trợ người bệnh số hóa giấy tờ khám, tự lưu trữ và theo dõi xu hướng phát triển kích thước của u, hạch, polyp tại nhà để chủ động tái khám.</li>
+                  <li>Ứng dụng <strong>không đưa ra bất kỳ chẩn đoán y khoa nào</strong> và <strong>hoàn toàn không có khả năng thay thế</strong> cho các chẩn đoán chuyên môn, phác đồ điều trị, lời khuyên trực tiếp hay sự thăm khám trực tiếp từ các Bác sĩ chuyên khoa có chuyên môn.</li>
+                  <li>Vui lòng luôn tham khảo ý kiến của các chuyên gia y tế và Bác sĩ điều trị trước khi đưa ra bất kỳ quyết định y khoa hoặc thay đổi phác đồ điều trị nào của bạn.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 7 -->
+          <section id="section-7" class="policy-section">
+            <div class="section-num-tag">Mục 07</div>
+            <h2 class="policy-section-title">
+              <span>7. Thông Tin Liên Hệ</span>
+            </h2>
+            <p class="policy-section-intro">
+              Nếu bạn có bất kỳ câu hỏi nào về Chính sách Quyền riêng tư này, hoặc muốn thực hiện yêu cầu xóa toàn bộ dữ liệu của mình trên hệ thống, vui lòng liên hệ với chúng tôi qua:
+            </p>
+
+            <div class="contact-grid">
+              <div class="contact-card">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <span class="contact-label">Email Hỗ Trợ</span>
+                <a href="mailto:thanhlh90it@gmail.com" class="contact-value">thanhlh90it@gmail.com</a>
+              </div>
+
+              <div class="contact-card">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <span class="contact-label">Website Chính Thức</span>
+                <a href="https://doitstudio.tech/noduletrack/" target="_blank" rel="noopener noreferrer" class="contact-value">doitstudio.tech/noduletrack</a>
+              </div>
+
+              <div class="contact-card">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span class="contact-label">Đơn Vị Quản Lý</span>
+                <span class="contact-value" style="color: var(--nt-color-text-primary);">Ban Phát triển Dự án NoduleTrack</span>
+              </div>
+            </div>
+          </section>
+
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       4. Footer
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <!-- Brand column -->
+        <div class="footer-brand">
+          <a href="/noduletrack" class="footer-logo">
+            <img src="/noduletrack/assets/brand/logo-white.svg" alt="NoduleTrack" width="168" height="38">
+          </a>
+          <p class="footer-tagline">
+            Ứng dụng số hóa hồ sơ siêu âm, theo dõi tốc độ phát triển của nang, nhân, hạch và polyp theo chuẩn y khoa TI-RADS / BI-RADS.
+          </p>
+          <div class="footer-socials">
+            <span style="font-size: var(--nt-text-xs); color: #94A3B8;">Sản phẩm thuộc hệ sinh thái <a href="/" style="color: #38BDF8; font-weight: 600;">DoIT-Studio</a></span>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <div class="footer-col-title">Ứng Dụng</div>
+          <ul class="footer-links">
+            <li><a href="/noduletrack#features" class="footer-link">Tính năng nổi bật</a></li>
+            <li><a href="/noduletrack#pathologies" class="footer-link">4 Dạng Sang thương</a></li>
+            <li><a href="/noduletrack#app-tour" class="footer-link">Trải nghiệm giao diện</a></li>
+            <li><a href="/noduletrack#simulator" class="footer-link">Mô phỏng tăng trưởng</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal & Clinical -->
+        <div>
+          <div class="footer-col-title">Pháp Lý &amp; Y Tế</div>
+          <ul class="footer-links">
+            <li><a href="/noduletrack/privacy-policy" class="footer-link" style="color: var(--nt-color-secondary-light); font-weight: 600;">Chính sách quyền riêng tư</a></li>
+            <li><a href="/noduletrack/privacy-policy#section-6" class="footer-link">Tuyên bố miễn trừ y tế</a></li>
+            <li><a href="/noduletrack/privacy-policy#section-5" class="footer-link">Chính sách xóa dữ liệu</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Support -->
+        <div>
+          <div class="footer-col-title">Hỗ Trợ</div>
+          <ul class="footer-links">
+            <li style="color: #94A3B8;">Email: <a href="mailto:thanhlh90it@gmail.com" style="color: var(--nt-color-secondary-light);">thanhlh90it@gmail.com</a></li>
+            <li style="color: #94A3B8;">Website: <a href="https://doitstudio.tech/noduletrack/" style="color: var(--nt-color-secondary-light);">doitstudio.tech</a></li>
+            <li style="color: #94A3B8;">Phiên bản: <span style="font-family: var(--nt-font-mono); color: #CBD5E1;">v1.1 (Release)</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 NoduleTrack by DoIT-Studio. Đã đăng ký bản quyền. Được xây dựng vì sức khỏe cộng đồng.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll-Spy & Active TOC Script -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.policy-section');
+      const navLinks = document.querySelectorAll('#toc-nav .toc-link');
+
+      function updateActiveTOC() {
+        let currentSectionId = '';
+        const scrollPosition = window.scrollY + 160;
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentSectionId = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${currentSectionId}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', updateActiveTOC, { passive: true });
+      updateActiveTOC();
+    });
+  </script>
+</body>
+</html>
