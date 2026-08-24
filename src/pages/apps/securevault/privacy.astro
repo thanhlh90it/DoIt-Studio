@@ -128,7 +128,8 @@ const permissions = [
 
       <!-- Section 2 -->
       <section
-        class="glass-card hud-corners p-6 sm:p-8 rounded-2xl border border-slate-800"
+        id="data-safety"
+        class="glass-card hud-corners p-6 sm:p-8 rounded-2xl border border-slate-800 scroll-mt-8"
       >
         <div class="font-mono text-xs font-bold text-cyan-400 mb-2">
           // SECTION_02
@@ -273,12 +274,16 @@ const permissions = [
           <p>
             Nếu bạn có bất kỳ câu hỏi hoặc góp ý nào liên quan đến chính sách
             bảo mật của SecureVault, xin vui lòng liên hệ với bộ phận phát triển
-            ứng dụng thông qua trang hỗ trợ chính thức trên Google Play Store
+            ứng dụng thông qua <a href="https://play.google.com/store/apps/details?id=com.thanhle.securevault" target="_blank" rel="noopener noreferrer" class="text-cyan-300 hover:underline font-bold">trang ứng dụng chính thức trên Google Play Store</a>
             hoặc email:
           </p>
           <div
             class="p-4 rounded-xl bg-black border border-slate-800 font-mono text-xs flex flex-wrap items-center justify-between gap-3"
           >
+            <div>
+              <span class="text-slate-400">APP_LINK:</span>
+              <a href="https://play.google.com/store/apps/details?id=com.thanhle.securevault" target="_blank" rel="noopener noreferrer" class="text-cyan-300 font-bold ml-2 hover:underline">Google Play Store ↗</a>
+            </div>
             <div>
               <span class="text-slate-400">SUPPORT_EMAIL:</span>
               <span class="text-cyan-300 font-bold ml-2"

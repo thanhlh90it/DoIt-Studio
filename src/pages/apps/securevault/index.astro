@@ -1,5 +1,7 @@
 ---
 import MainLayout from '../../../layouts/MainLayout.astro';
+
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.thanhle.securevault";
 ---
 
 <MainLayout
@@ -19,9 +21,9 @@ import MainLayout from '../../../layouts/MainLayout.astro';
       --sv-blue:    #007AFF;
       --sv-body:    #A0A5B5;
       --sv-white:   #FFFFFF;
-      --sv-border:  rgba(0,240,255,.12);
-      --sv-glow-c:  rgba(0,240,255,.22);
-      --sv-glow-b:  rgba(0,122,255,.18);
+      --sv-border:  rgba(0,240,255,.15);
+      --sv-glow-c:  rgba(0,240,255,.25);
+      --sv-glow-b:  rgba(0,122,255,.2);
     }
 
     /* ── Global reset for this page ── */
@@ -30,7 +32,7 @@ import MainLayout from '../../../layouts/MainLayout.astro';
 
     /* ── Glassmorphism card ── */
     .sv-glass {
-      background: rgba(13,21,37,.65);
+      background: rgba(13,21,37,.7);
       border: 1px solid var(--sv-border);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
@@ -44,24 +46,33 @@ import MainLayout from '../../../layouts/MainLayout.astro';
 
     /* ── Cyan glowing button ── */
     .sv-btn-primary {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 14px 28px; border-radius: 14px; font-weight: 700; font-size: 15px;
-      background: linear-gradient(135deg, #007AFF 0%, #00C6FF 100%);
-      color: #000; border: none; cursor: pointer; text-decoration: none;
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 14px 26px; border-radius: 14px; font-weight: 700; font-size: 15px;
+      background: linear-gradient(135deg, #00C6FF 0%, #007AFF 100%);
+      color: #000000; border: none; cursor: pointer; text-decoration: none;
       box-shadow: 0 0 28px rgba(0,240,255,.35), 0 4px 24px rgba(0,122,255,.45);
-      transition: transform .2s ease, box-shadow .2s ease;
+      transition: transform .2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .2s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .sv-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 42px rgba(0,240,255,.55), 0 8px 32px rgba(0,122,255,.55); }
+    .sv-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 42px rgba(0,240,255,.6), 0 8px 32px rgba(0,122,255,.6); }
 
     .sv-btn-outline {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 13px 28px; border-radius: 14px; font-weight: 700; font-size: 15px;
-      background: transparent; color: var(--sv-cyan);
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 13px 26px; border-radius: 14px; font-weight: 700; font-size: 15px;
+      background: rgba(0,240,255,.04); color: var(--sv-cyan);
       border: 1.5px solid rgba(0,240,255,.5); cursor: pointer; text-decoration: none;
       box-shadow: 0 0 18px rgba(0,240,255,.12);
-      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+      transition: transform .2s cubic-bezier(0.16, 1, 0.3, 1), background .2s ease, box-shadow .2s ease;
     }
-    .sv-btn-outline:hover { background: rgba(0,240,255,.08); transform: translateY(-2px); box-shadow: 0 0 30px rgba(0,240,255,.25); }
+    .sv-btn-outline:hover { background: rgba(0,240,255,.12); transform: translateY(-2px); box-shadow: 0 0 30px rgba(0,240,255,.3); }
+
+    .sv-btn-qr {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 13px 20px; border-radius: 14px; font-weight: 600; font-size: 14px;
+      background: rgba(255,255,255,.05); color: #E2E8F0;
+      border: 1.5px solid rgba(255,255,255,.15); cursor: pointer; text-decoration: none;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
+    }
+    .sv-btn-qr:hover { background: rgba(0,240,255,.1); border-color: rgba(0,240,255,.5); color: var(--sv-cyan); transform: translateY(-2px); }
 
     /* ── Section label chip ── */
     .sv-chip {
@@ -106,14 +117,70 @@ import MainLayout from '../../../layouts/MainLayout.astro';
     }
     .sv-float { animation: sv-float 4s ease-in-out infinite; }
 
+    @keyframes sv-scanline {
+      0% { transform: translateY(-100%); opacity: 0; }
+      50% { opacity: 0.8; }
+      100% { transform: translateY(200%); opacity: 0; }
+    }
+    .sv-scanner-beam {
+      position: absolute; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, transparent, #00F0FF, transparent);
+      box-shadow: 0 0 12px #00F0FF;
+      animation: sv-scanline 3s ease-in-out infinite;
+      pointer-events: none;
+    }
+
     @media (prefers-reduced-motion: reduce) {
-      .sv-pulse, .sv-float { animation: none; }
+      .sv-pulse, .sv-float, .sv-scanner-beam { animation: none; }
+    }
+
+    /* ── QR Modal Styles ── */
+    .sv-modal-overlay {
+      position: fixed; inset: 0; z-index: 9999;
+      background: rgba(0, 0, 0, 0.82);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px;
+      opacity: 0; pointer-events: none;
+      transition: opacity .25s ease;
+    }
+    .sv-modal-overlay.active {
+      opacity: 1; pointer-events: auto;
+    }
+    .sv-modal-card {
+      background: #0B111E;
+      border: 1.5px solid rgba(0, 240, 255, 0.45);
+      border-radius: 28px;
+      padding: 36px 32px;
+      max-width: 440px; width: 100%;
+      box-shadow: 0 0 50px rgba(0, 240, 255, 0.25), 0 20px 40px rgba(0,0,0,.8);
+      position: relative;
+      transform: scale(0.95) translateY(10px);
+      transition: transform .25s cubic-bezier(0.16, 1, 0.3, 1);
+      text-align: center;
+    }
+    .sv-modal-overlay.active .sv-modal-card {
+      transform: scale(1) translateY(0);
+    }
+    .sv-modal-close {
+      position: absolute; top: 16px; right: 16px;
+      width: 38px; height: 38px; border-radius: 12px;
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.15);
+      color: #94A3B8; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: all .2s;
+    }
+    .sv-modal-close:hover {
+      background: rgba(239,68,68,.15); border-color: rgba(239,68,68,.4); color: #F87171;
     }
 
     /* ── Responsive helpers ── */
     .sv-section { padding: 80px 0; }
     .sv-container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-    @media (max-width: 768px) { .sv-section { padding: 56px 0; } }
+    @media (max-width: 768px) {
+      .sv-section { padding: 56px 0; }
+      .sv-hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+      .sv-hero-art { display: none !important; }
+    }
   </style>
 
   <div class="sv-page">
@@ -139,14 +206,14 @@ import MainLayout from '../../../layouts/MainLayout.astro';
       <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full pointer-events-none" style="background: radial-gradient(ellipse, rgba(0,122,255,.15) 0%, transparent 70%); filter: blur(60px);" aria-hidden="true"></div>
 
       <div class="sv-container relative z-10">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+        <div class="sv-hero-grid" style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 64px; align-items: center;">
 
           <!-- LEFT: Copy -->
           <div>
             <!-- Status badge -->
             <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; background: rgba(0,240,255,.07); border: 1px solid rgba(0,240,255,.25); margin-bottom: 28px;">
               <span class="sv-pulse" style="width: 8px; height: 8px; border-radius: 50%; background: var(--sv-cyan); display: inline-block;"></span>
-              <span style="font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--sv-cyan); font-family: 'JetBrains Mono', monospace;">MVP 1.0 · Available Now</span>
+              <span style="font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--sv-cyan); font-family: 'JetBrains Mono', monospace;">Google Play Live · MVP 1.0</span>
             </div>
 
             <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; line-height: 1.08; letter-spacing: -.02em; margin-bottom: 20px;">
@@ -159,16 +226,45 @@ import MainLayout from '../../../layouts/MainLayout.astro';
               Lưu trữ khép kín hoàn toàn trên thiết bị của bạn. Không máy chủ trung gian, không rò rỉ dữ liệu. <strong style="color: var(--sv-white);">Bảo mật cục bộ – An tâm tuyệt đối.</strong>
             </p>
 
-            <!-- CTA Buttons -->
-            <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 44px;">
-              <a href="#" class="sv-btn-primary" aria-label="Tải SecureVault trên App Store">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.14-2.19 1.3-2.17 3.87.02 3.08 2.69 4.11 2.72 4.12l-.1.09M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                App Store
-              </a>
-              <a href="#" class="sv-btn-outline" aria-label="Tải SecureVault trên Google Play">
+            <!-- CTA Buttons Group -->
+            <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 44px; align-items: center;">
+              <!-- Google Play (Primary Active Link) -->
+              <a
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="sv-btn-primary"
+                aria-label="Tải SecureVault trên Google Play Store"
+              >
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199a1 1 0 01.003 1.725l-2.232 1.29L13.2 10.26l1.63-1.628 2.869 1.876zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.634z"/></svg>
-                Google Play
+                <span>Google Play</span>
               </a>
+
+              <!-- QR Code Trigger -->
+              <button
+                type="button"
+                class="sv-btn-outline js-open-qr-modal"
+                aria-label="Mở mã QR quét tải SecureVault"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="3" width="7" height="7" rx="1"/>
+                  <rect x="14" y="3" width="7" height="7" rx="1"/>
+                  <rect x="14" y="14" width="7" height="7" rx="1"/>
+                  <rect x="3" y="14" width="7" height="7" rx="1"/>
+                  <path d="M7 7h.01M17 7h.01M7 17h.01M17 17h.01"/>
+                </svg>
+                <span>Quét mã QR</span>
+              </button>
+
+              <!-- App Store (iOS Notice) -->
+              <button
+                type="button"
+                class="sv-btn-qr js-open-ios-modal"
+                aria-label="Tải SecureVault trên App Store (Sắp có)"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.14-2.19 1.3-2.17 3.87.02 3.08 2.69 4.11 2.72 4.12l-.1.09M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <span>App Store <small style="opacity: .6; font-size: 11px;">(Sắp có)</small></span>
+              </button>
             </div>
 
             <!-- Trust badges -->
@@ -189,7 +285,7 @@ import MainLayout from '../../../layouts/MainLayout.astro';
           </div>
 
           <!-- RIGHT: App mockup / Icon -->
-          <div style="display: flex; justify-content: center; align-items: center; position: relative;">
+          <div class="sv-hero-art" style="display: flex; justify-content: center; align-items: center; position: relative;">
             <!-- Glow ring behind icon -->
             <div class="sv-float" style="position: relative; z-index: 2;">
               <div style="width: 240px; height: 240px; border-radius: 52px; overflow: hidden; box-shadow: 0 0 80px rgba(0,240,255,.4), 0 0 160px rgba(0,122,255,.2), 0 32px 80px rgba(0,0,0,.8); border: 1.5px solid rgba(0,240,255,.3);">
@@ -209,14 +305,6 @@ import MainLayout from '../../../layouts/MainLayout.astro';
 
         </div>
       </div>
-
-      <!-- Responsive mobile layout -->
-      <style>
-        @media (max-width: 768px) {
-          #sv-hero-grid { grid-template-columns: 1fr !important; }
-          #sv-hero-grid > div:last-child { display: none !important; }
-        }
-      </style>
     </section>
 
     <!-- ============================================================
@@ -295,7 +383,6 @@ import MainLayout from '../../../layouts/MainLayout.astro';
           </h2>
         </div>
 
-        <!-- Feature rows (Z-pattern simulation using full cards) -->
         <div style="display: flex; flex-direction: column; gap: 32px;">
 
           <!-- Feature 1 – Album Management -->
@@ -341,7 +428,6 @@ import MainLayout from '../../../layouts/MainLayout.astro';
 
           <!-- Feature 2 – Full Screen Viewer -->
           <div class="sv-glass" style="border-radius: 28px; padding: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
-            <!-- Mockup on LEFT for Z-pattern -->
             <div style="position: relative; order: -1;">
               <div style="background: linear-gradient(135deg, rgba(0,122,255,.08) 0%, rgba(0,240,255,.06) 100%); border: 1px solid var(--sv-border); border-radius: 20px; aspect-ratio: 9/16; max-height: 380px; display: flex; align-items: center; justify-content: center; overflow: hidden; margin: 0 auto; max-width: 200px;">
                 <div style="text-align: center; padding: 20px;">
@@ -424,15 +510,6 @@ import MainLayout from '../../../layouts/MainLayout.astro';
 
         </div>
       </div>
-
-      <!-- Feature responsive styles -->
-      <style>
-        @media (max-width: 768px) {
-          .sv-feature-row { grid-template-columns: 1fr !important; }
-          .sv-feature-row .sv-mockup-left { order: 0 !important; display: none !important; }
-          .sv-feature-row .sv-mockup-right { display: none !important; }
-        }
-      </style>
     </section>
 
     <!-- ============================================================
@@ -510,56 +587,122 @@ import MainLayout from '../../../layouts/MainLayout.astro';
           </div>
 
         </div>
-
-        <!-- Mobile steps fallback (vertical) -->
-        <style>
-          @media (max-width: 768px) {
-            #sv-steps-grid { grid-template-columns: 1fr !important; }
-            #sv-steps-grid > div[style*="Connector"] { display: none !important; }
-          }
-        </style>
       </div>
     </section>
 
     <!-- ============================================================
-         SECTION 5 – FOOTER / CTA / LEGAL
+         SECTION 5 – FOOTER / CTA / QR CODE TERMINAL
     ============================================================ -->
     <section class="sv-section" style="background: var(--sv-black); position: relative; overflow: hidden;">
       <!-- Circuit BG at low opacity -->
       <div class="sv-circuit-bg" style="opacity: .06;" aria-hidden="true"></div>
       <div style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(0,240,255,.3), transparent);" aria-hidden="true"></div>
 
-      <div class="sv-container" style="position: relative; z-index: 1; text-align: center;">
-        <!-- Logo + name -->
-        <div style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 28px;">
-          <div style="width: 64px; height: 64px; border-radius: 18px; overflow: hidden; border: 1.5px solid rgba(0,240,255,.3); box-shadow: 0 0 32px rgba(0,240,255,.25);">
-            <img src="/securevault/app-icon.png" alt="SecureVault icon" width="64" height="64" style="width: 100%; height: 100%; object-fit: cover;" />
+      <div class="sv-container" style="position: relative; z-index: 1;">
+
+        <!-- Header of Download section -->
+        <div style="text-align: center; margin-bottom: 44px;">
+          <!-- Logo + name -->
+          <div style="display: inline-flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 24px;">
+            <div style="width: 56px; height: 56px; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0,240,255,.3); box-shadow: 0 0 32px rgba(0,240,255,.25);">
+              <img src="/securevault/app-icon.png" alt="SecureVault icon" width="56" height="56" style="width: 100%; height: 100%; object-fit: cover;" />
+            </div>
+            <div style="text-align: left;">
+              <div style="font-size: 22px; font-weight: 800; letter-spacing: -.01em;">SecureVault</div>
+              <div style="font-size: 12px; color: var(--sv-cyan); font-family: 'JetBrains Mono', monospace;">Android Live · MVP 1.0</div>
+            </div>
           </div>
-          <div style="text-align: left;">
-            <div style="font-size: 22px; font-weight: 800; letter-spacing: -.01em;">SecureVault</div>
-            <div style="font-size: 13px; color: var(--sv-body); font-family: 'JetBrains Mono', monospace;">MVP 1.0 · iOS & Android</div>
+
+          <h2 style="font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; margin-bottom: 14px; letter-spacing: -.02em;">
+            Bắt Đầu Bảo Vệ<br>
+            <span class="sv-glow-text">Quyền Riêng Tư Của Bạn</span>
+          </h2>
+          <p style="color: var(--sv-body); font-size: 16px; max-width: 480px; margin: 0 auto; line-height: 1.6;">
+            Tải xuống miễn phí từ Google Play Store ngay hôm nay. Không cần đăng ký tài khoản. Không thu thập dữ liệu.
+          </p>
+        </div>
+
+        <!-- QR Code & Download Interactive Terminal -->
+        <div class="sv-glass" style="border-radius: 28px; padding: 40px 32px; max-width: 780px; margin: 0 auto 56px; position: relative; overflow: hidden; border: 1.5px solid rgba(0,240,255,.25); box-shadow: 0 0 40px rgba(0,240,255,.1);">
+          <div class="sv-scanner-beam"></div>
+
+          <div style="display: grid; grid-template-columns: auto 1fr; gap: 36px; align-items: center;" class="sv-qr-terminal-grid">
+            <!-- Left: Scannable QR Code -->
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+              <div style="width: 180px; height: 180px; background: #FFFFFF; border-radius: 20px; padding: 10px; display: flex; align-items: center; justify-content: center; position: relative; box-shadow: 0 0 30px rgba(0,240,255,.3); border: 2px solid rgba(0,240,255,.8);">
+                <img
+                  src="/securevault/qr-playstore.svg"
+                  alt="Mã QR tải ứng dụng SecureVault trên Google Play Store"
+                  width="160"
+                  height="160"
+                  style="width: 100%; height: 100%; display: block;"
+                />
+                <!-- Center Logo badge overlay -->
+                <div style="position: absolute; width: 38px; height: 38px; border-radius: 10px; background: #0A0E17; border: 2px solid #00F0FF; padding: 2px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,.6);">
+                  <img src="/securevault/app-icon.png" alt="" width="30" height="30" style="width: 100%; height: 100%; border-radius: 6px; object-fit: cover;" />
+                </div>
+              </div>
+              <span style="font-size: 11px; font-family: 'JetBrains Mono', monospace; color: var(--sv-cyan); letter-spacing: .05em; display: flex; align-items: center; gap: 4px;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg>
+                QUÉT BẰNG CAMERA ĐIỆN THOẠI
+              </span>
+            </div>
+
+            <!-- Right: Action details -->
+            <div style="text-align: left;">
+              <div style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 6px; background: rgba(34,197,94,.15); border: 1px solid rgba(34,197,94,.4); color: #4ADE80; font-size: 11px; font-weight: 700; font-family: 'JetBrains Mono', monospace; margin-bottom: 12px;">
+                <span style="width: 6px; height: 6px; border-radius: 50%; background: #4ADE80; display: inline-block;"></span>
+                OFFICIAL RELEASE ON GOOGLE PLAY
+              </div>
+
+              <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 8px; color: #FFFFFF;">
+                Cài đặt trực tiếp trên thiết bị Android
+              </h3>
+              <p style="color: var(--sv-body); font-size: 14px; line-height: 1.6; margin-bottom: 20px;">
+                Ứng dụng đã sẵn sàng trên kho ứng dụng Google Play. Nhấn nút bên dưới để mở cửa hàng ứng dụng hoặc sao chép liên kết chia sẻ.
+              </p>
+
+              <!-- Button actions in Terminal -->
+              <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 18px;">
+                <a
+                  href={PLAY_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="sv-btn-primary"
+                  style="padding: 12px 22px; font-size: 14px;"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199a1 1 0 01.003 1.725l-2.232 1.29L13.2 10.26l1.63-1.628 2.869 1.876zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.634z"/></svg>
+                  <span>Mở Google Play Store</span>
+                </a>
+
+                <button
+                  type="button"
+                  class="sv-btn-outline js-copy-link-btn"
+                  data-url={PLAY_STORE_URL}
+                  style="padding: 11px 18px; font-size: 13px;"
+                  aria-label="Sao chép liên kết Google Play"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                  <span class="js-copy-text">Sao chép liên kết</span>
+                </button>
+              </div>
+
+              <!-- Package ID Info -->
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #64748B; background: rgba(0,0,0,.4); padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,.06); display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+                <span>PACKAGE_ID: <span style="color: var(--sv-cyan);">com.thanhle.securevault</span></span>
+                <span style="color: #94A3B8;">VER 1.0.0</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <h2 style="font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; margin-bottom: 16px; letter-spacing: -.02em;">
-          Bắt Đầu Bảo Vệ<br>
-          <span class="sv-glow-text">Quyền Riêng Tư Của Bạn</span>
-        </h2>
-        <p style="color: var(--sv-body); font-size: 17px; max-width: 460px; margin: 0 auto 40px; line-height: 1.65;">
-          Tải xuống miễn phí ngay hôm nay. Không cần đăng ký tài khoản. Không thu thập dữ liệu.
-        </p>
-
-        <!-- Download buttons -->
-        <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 56px;">
-          <a href="#" class="sv-btn-primary" style="font-size: 16px; padding: 16px 32px;" aria-label="Download SecureVault on App Store">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.14-2.19 1.3-2.17 3.87.02 3.08 2.69 4.11 2.72 4.12l-.1.09M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-            Download on the App Store
-          </a>
-          <a href="#" class="sv-btn-outline" style="font-size: 16px; padding: 15px 32px;" aria-label="Get SecureVault on Google Play">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199a1 1 0 01.003 1.725l-2.232 1.29L13.2 10.26l1.63-1.628 2.869 1.876zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.634z"/></svg>
-            Get it on Google Play
-          </a>
-        </div>
+        <style>
+          @media (max-width: 640px) {
+            .sv-qr-terminal-grid { grid-template-columns: 1fr !important; text-align: center !important; }
+            .sv-qr-terminal-grid > div:last-child { text-align: center !important; }
+            .sv-qr-terminal-grid .sv-btn-primary, .sv-qr-terminal-grid .sv-btn-outline { width: 100% !important; justify-content: center !important; }
+          }
+        </style>
 
         <!-- Developer security commitment -->
         <div class="sv-glass" style="border-radius: 20px; padding: 32px; max-width: 680px; margin: 0 auto 48px; text-align: left; display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: start;">
@@ -588,13 +731,219 @@ import MainLayout from '../../../layouts/MainLayout.astro';
         </div>
 
         <!-- Copyright -->
-        <div style="border-top: 1px solid rgba(255,255,255,.06); padding-top: 28px;">
+        <div style="border-top: 1px solid rgba(255,255,255,.06); padding-top: 28px; text-align: center;">
           <p style="font-size: 13px; color: rgba(160,165,181,.5); font-family: 'JetBrains Mono', monospace;">
-            © 2026 SecureVault · Built with ❤️ by <a href="/" style="color: var(--sv-cyan); text-decoration: none;">DoIT-Studio</a> · Generated by Gemini
+            © 2026 SecureVault · Built with ❤️ by <a href="/" style="color: var(--sv-cyan); text-decoration: none;">DoIT-Studio</a>
           </p>
         </div>
       </div>
     </section>
 
   </div>
+
+  <!-- ========================================================================
+       MODAL: QR CODE SCANNER POPUP
+       ======================================================================== -->
+  <div id="sv-qr-modal" class="sv-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="sv-qr-modal-title">
+    <div class="sv-modal-card">
+      <button type="button" class="sv-modal-close js-close-qr-modal" aria-label="Đóng popup QR code">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <div style="width: 48px; height: 48px; border-radius: 14px; background: rgba(0,240,255,.1); border: 1px solid rgba(0,240,255,.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--sv-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="3" width="7" height="7" rx="1"/>
+          <rect x="14" y="3" width="7" height="7" rx="1"/>
+          <rect x="14" y="14" width="7" height="7" rx="1"/>
+          <rect x="3" y="14" width="7" height="7" rx="1"/>
+          <path d="M7 7h.01M17 7h.01M7 17h.01M17 17h.01"/>
+        </svg>
+      </div>
+
+      <h3 id="sv-qr-modal-title" style="font-size: 20px; font-weight: 800; color: #FFFFFF; margin-bottom: 6px;">
+        Quét mã QR để tải ứng dụng
+      </h3>
+      <p style="font-size: 13px; color: var(--sv-body); line-height: 1.5; margin-bottom: 24px;">
+        Sử dụng Camera hoặc ứng dụng quét mã QR trên Android để mở trực tiếp trên Google Play Store.
+      </p>
+
+      <!-- Clean Scannable QR -->
+      <div style="width: 200px; height: 200px; background: #FFFFFF; border-radius: 20px; padding: 12px; margin: 0 auto 20px; position: relative; box-shadow: 0 0 36px rgba(0,240,255,.35); border: 2.5px solid #00F0FF; display: flex; align-items: center; justify-content: center;">
+        <img
+          src="/securevault/qr-playstore.svg"
+          alt="Mã QR tải ứng dụng SecureVault"
+          width="176"
+          height="176"
+          style="width: 100%; height: 100%; display: block;"
+        />
+        <div style="position: absolute; width: 44px; height: 44px; border-radius: 10px; background: #0A0E17; border: 2px solid #00F0FF; padding: 3px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(0,0,0,.7);">
+          <img src="/securevault/app-icon.png" alt="" width="36" height="36" style="width: 100%; height: 100%; border-radius: 6px; object-fit: cover;" />
+        </div>
+      </div>
+
+      <!-- Quick Action Buttons -->
+      <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+        <a
+          href={PLAY_STORE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="sv-btn-primary"
+          style="width: 100%; justify-content: center; padding: 13px 20px; font-size: 14px;"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199a1 1 0 01.003 1.725l-2.232 1.29L13.2 10.26l1.63-1.628 2.869 1.876zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.634z"/></svg>
+          <span>Mở Google Play Store</span>
+        </a>
+
+        <button
+          type="button"
+          class="sv-btn-outline js-copy-link-btn"
+          data-url={PLAY_STORE_URL}
+          style="width: 100%; justify-content: center; padding: 12px 20px; font-size: 13px;"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          <span class="js-copy-text">Sao chép liên kết</span>
+        </button>
+      </div>
+
+      <div style="margin-top: 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #64748B;">
+        ID: <span style="color: var(--sv-cyan);">com.thanhle.securevault</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL: IOS APP STORE COMING SOON
+       ======================================================================== -->
+  <div id="sv-ios-modal" class="sv-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="sv-ios-modal-title">
+    <div class="sv-modal-card">
+      <button type="button" class="sv-modal-close js-close-ios-modal" aria-label="Đóng thông báo iOS">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <div style="width: 48px; height: 48px; border-radius: 14px; background: rgba(0,122,255,.12); border: 1px solid rgba(0,122,255,.35); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="color: #60A5FA;" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.14-2.19 1.3-2.17 3.87.02 3.08 2.69 4.11 2.72 4.12l-.1.09M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      </div>
+
+      <div style="display: inline-block; padding: 3px 10px; border-radius: 999px; background: rgba(0,122,255,.15); border: 1px solid rgba(0,122,255,.4); font-size: 11px; font-family: 'JetBrains Mono', monospace; color: #60A5FA; font-weight: 700; margin-bottom: 12px;">
+        // TESTFLIGHT_IN_PROGRESS
+      </div>
+
+      <h3 id="sv-ios-modal-title" style="font-size: 20px; font-weight: 800; color: #FFFFFF; margin-bottom: 8px;">
+        Phiên bản iOS sắp ra mắt
+      </h3>
+      <p style="font-size: 14px; color: var(--sv-body); line-height: 1.6; margin-bottom: 24px;">
+        SecureVault dành cho iOS đang trong quá trình hoàn tất đánh giá trên TestFlight và chuẩn bị đưa lên App Store. Trong thời gian này, bạn có thể trải nghiệm ngay phiên bản chính thức trên Android!
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <a
+          href={PLAY_STORE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="sv-btn-primary"
+          style="width: 100%; justify-content: center; padding: 13px 20px; font-size: 14px;"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199a1 1 0 01.003 1.725l-2.232 1.29L13.2 10.26l1.63-1.628 2.869 1.876zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.634z"/></svg>
+          <span>Khám phá phiên bản Android trên Google Play</span>
+        </a>
+        <button
+          type="button"
+          class="sv-btn-qr js-close-ios-modal"
+          style="width: 100%; justify-content: center; padding: 12px 20px; font-size: 13px;"
+        >
+          Đã hiểu
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       CLIENT-SIDE INTERACTIVITY SCRIPTS
+       ======================================================================== -->
+  <script is:inline>
+    (function () {
+      const qrModal = document.getElementById('sv-qr-modal');
+      const iosModal = document.getElementById('sv-ios-modal');
+
+      function openModal(modal) {
+        if (!modal) return;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal(modal) {
+        if (!modal) return;
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      // QR Modal triggers
+      document.querySelectorAll('.js-open-qr-modal').forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          openModal(qrModal);
+        });
+      });
+
+      document.querySelectorAll('.js-close-qr-modal').forEach((btn) => {
+        btn.addEventListener('click', () => closeModal(qrModal));
+      });
+
+      // iOS Modal triggers
+      document.querySelectorAll('.js-open-ios-modal').forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          openModal(iosModal);
+        });
+      });
+
+      document.querySelectorAll('.js-close-ios-modal').forEach((btn) => {
+        btn.addEventListener('click', () => closeModal(iosModal));
+      });
+
+      // Backdrop click
+      [qrModal, iosModal].forEach((modal) => {
+        if (!modal) return;
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            closeModal(modal);
+          }
+        });
+      });
+
+      // Escape key to close
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeModal(qrModal);
+          closeModal(iosModal);
+        }
+      });
+
+      // Copy link buttons
+      document.querySelectorAll('.js-copy-link-btn').forEach((btn) => {
+        btn.addEventListener('click', async (e) => {
+          e.preventDefault();
+          const url = btn.getAttribute('data-url') || 'https://play.google.com/store/apps/details?id=com.thanhle.securevault';
+          const textEl = btn.querySelector('.js-copy-text');
+          try {
+            await navigator.clipboard.writeText(url);
+            if (textEl) {
+              const oldText = textEl.textContent;
+              textEl.textContent = 'Đã sao chép!';
+              btn.style.borderColor = 'rgba(74, 222, 128, 0.6)';
+              btn.style.color = '#4ADE80';
+              setTimeout(() => {
+                textEl.textContent = oldText;
+                btn.style.borderColor = '';
+                btn.style.color = '';
+              }, 2000);
+            }
+          } catch (err) {
+            console.error('Clipboard copy failed:', err);
+          }
+        });
+      });
+    })();
+  </script>
 </MainLayout>
+

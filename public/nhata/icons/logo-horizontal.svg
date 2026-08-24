@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 160" width="100%" height="100%">
+  <defs>
+    <linearGradient id="hLogoBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+    <linearGradient id="hWarmSunGlow" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#FBBF24" />
+    </linearGradient>
+    <filter id="hShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#1D4ED8" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Left Icon Group (Bigger & Balanced) -->
+  <g transform="translate(16, 12) scale(0.33)" filter="url(#hShadow)">
+    <!-- Cột trái -->
+    <rect x="106" y="180" width="56" height="236" rx="28" fill="url(#hLogoBlueGrad)" />
+
+    <!-- Mái nhà & Nét chữ N -->
+    <path d="M 134 200 
+             C 134 140, 206 96, 256 96 
+             C 306 96, 378 140, 378 200 
+             L 378 388 
+             C 378 403, 366 416, 350 416 
+             C 334 416, 322 403, 322 388 
+             L 322 220 
+             C 322 176, 280 152, 256 152 
+             C 232 152, 190 176, 190 220 
+             L 190 388 
+             C 190 403, 178 416, 162 416 
+             C 146 416, 134 403, 134 388 
+             Z" 
+          fill="url(#hLogoBlueGrad)" />
+
+    <!-- Nụ cười sum vầy -->
+    <path d="M 188 280 
+             C 214 340, 298 340, 324 280 
+             C 332 262, 310 250, 298 266 
+             C 280 292, 232 292, 214 266 
+             C 202 250, 180 262, 188 280 Z" 
+          fill="url(#hWarmSunGlow)" />
+
+    <!-- Điểm nhấn ngôi sao -->
+    <circle cx="256" cy="62" r="14" fill="#F59E0B" />
+  </g>
+
+  <!-- Typography Group: "NhàTa" -->
+  <g transform="translate(162, 20)">
+    <!-- Wordmark "NhàTa" -->
+    <text x="0" y="70" font-family="'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="64" font-weight="700" fill="#0F172A" letter-spacing="-1">
+      Nhà<tspan fill="#2563EB">Ta</tspan>
+    </text>
+
+    <!-- Tagline: "Một mái nhà, vạn niềm vui" -->
+    <text x="2" y="104" font-family="'Work Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-size="19" font-weight="500" fill="#475569" letter-spacing="0.2">
+      Một mái nhà, vạn niềm vui
+    </text>
+
+    <!-- Tiny decorative star after tagline -->
+    <circle cx="238" cy="98" r="3.5" fill="#F59E0B" />
+  </g>
+</svg>
