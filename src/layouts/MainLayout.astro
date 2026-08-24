@@ -4,11 +4,15 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  showHeader?: boolean;
+  showFooter?: boolean;
 }
 
 const { 
   title = "DoIT-Studio | Cybernetic Digital Workspace", 
-  description = "Tối giản, Sáng tạo và Xây dựng các ứng dụng chất lượng cao với tư duy kỹ thuật tương lai." 
+  description = "Tối giản, Sáng tạo và Xây dựng các ứng dụng chất lượng cao với tư duy kỹ thuật tương lai.",
+  showHeader = true,
+  showFooter = true
 } = Astro.props;
 
 const pathname = new URL(Astro.request.url).pathname;
@@ -40,11 +44,11 @@ function isActive(href: string) {
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body class="bg-[#02040a] text-slate-100 font-['Plus_Jakarta_Sans',sans-serif] antialiased min-h-screen flex flex-col selection:bg-cyan-500 selection:text-black relative bg-grid-pattern overflow-x-hidden w-full text-base">
-    <!-- Ultramarine Ambient Background Laser Light -->
-    <div class="ambient-glow-ultramarine top-0 left-1/2 -translate-x-1/2 w-[95vw] max-w-[1100px] h-[360px] sm:h-[450px] opacity-70 pointer-events-none"></div>
+    {showHeader && (
+      <>
+        <div class="ambient-glow-ultramarine top-0 left-1/2 -translate-x-1/2 w-[95vw] max-w-[1100px] h-[360px] sm:h-[450px] opacity-70 pointer-events-none"></div>
 
-    <!-- Header Navbar HUD -->
-    <header class="sticky top-3 sm:top-5 z-50 max-w-6xl mx-auto px-3 sm:px-6 w-full">
+        <header class="sticky top-3 sm:top-5 z-50 max-w-6xl mx-auto px-3 sm:px-6 w-full">
       <div class="glass-card hud-corners rounded-2xl px-4 sm:px-6 py-3 sm:py-3.5 flex items-center justify-between shadow-2xl shadow-blue-950/80 border border-blue-500/35 backdrop-blur-2xl bg-[#030712]/92">
         <!-- Logo HUD -->
         <a href="/" class="flex items-center gap-3 group shrink-0">
@@ -124,50 +128,53 @@ function isActive(href: string) {
         })}
       </nav>
     </header>
+    </>
+    )}
 
     <!-- Main Content Container -->
     <main class="flex-grow z-10 relative w-full overflow-x-hidden">
       <slot />
     </main>
 
-    <!-- Footer HUD Telemetry Console -->
-    <footer class="border-t border-blue-900/50 bg-[#02040a]/95 backdrop-blur-md py-10 sm:py-16 mt-20 sm:mt-28 relative z-10 font-mono w-full">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-800/80 text-center md:text-left">
-          <div class="flex items-center gap-3.5">
-            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-700 to-cyan-500 p-0.5 shadow-md shadow-blue-600/40 shrink-0">
-              <div class="w-full h-full bg-black rounded-[10px] flex items-center justify-center">
-                <svg class="w-4.5 h-4.5" viewBox="0 0 512 512" fill="none">
-                  <path d="M 130 140 C 130 128, 140 118, 154 118 L 220 118 C 285 118, 330 162, 330 256 C 330 350, 285 394, 220 394 L 154 394 C 140 394, 130 384, 130 372 Z M 186 174 L 186 338 L 218 338 C 255 338, 274 308, 274 256 C 274 204, 255 174, 218 174 Z" fill="#38BDF8" />
-                  <circle cx="360" cy="336" r="32" fill="#00F0FF" />
-                </svg>
+    {showFooter && (
+      <footer class="border-t border-blue-900/50 bg-[#02040a]/95 backdrop-blur-md py-10 sm:py-16 mt-20 sm:mt-28 relative z-10 font-mono w-full">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-800/80 text-center md:text-left">
+            <div class="flex items-center gap-3.5">
+              <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-700 to-cyan-500 p-0.5 shadow-md shadow-blue-600/40 shrink-0">
+                <div class="w-full h-full bg-black rounded-[10px] flex items-center justify-center">
+                  <svg class="w-4.5 h-4.5" viewBox="0 0 512 512" fill="none">
+                    <path d="M 130 140 C 130 128, 140 118, 154 118 L 220 118 C 285 118, 330 162, 330 256 C 330 350, 285 394, 220 394 L 154 394 C 140 394, 130 384, 130 372 Z M 186 174 L 186 338 L 218 338 C 255 338, 274 308, 274 256 C 274 204, 255 174, 218 174 Z" fill="#38BDF8" />
+                    <circle cx="360" cy="336" r="32" fill="#00F0FF" />
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <span class="font-tech font-bold text-white tracking-tight text-lg">DoIT-Studio</span>
+                <p class="text-xs text-slate-400">CYBERNETIC PRODUCT & PHILOSOPHY LAB</p>
               </div>
             </div>
-            <div>
-              <span class="font-tech font-bold text-white tracking-tight text-lg">DoIT-Studio</span>
-              <p class="text-xs text-slate-400">CYBERNETIC PRODUCT & PHILOSOPHY LAB</p>
+
+            <div class="flex flex-wrap justify-center items-center gap-5 sm:gap-7 text-xs sm:text-sm text-slate-300">
+              <a href="/" class="hover:text-cyan-300 transition-colors">// Home</a>
+              <a href="/apps" class="hover:text-cyan-300 transition-colors">// Apps</a>
+              <a href="/philosophy" class="hover:text-cyan-300 transition-colors">// Philosophy</a>
+              <a href="/profile" class="hover:text-cyan-300 transition-colors">// Profile</a>
             </div>
           </div>
 
-          <div class="flex flex-wrap justify-center items-center gap-5 sm:gap-7 text-xs sm:text-sm text-slate-300">
-            <a href="/" class="hover:text-cyan-300 transition-colors">// Home</a>
-            <a href="/apps" class="hover:text-cyan-300 transition-colors">// Apps</a>
-            <a href="/philosophy" class="hover:text-cyan-300 transition-colors">// Philosophy</a>
-            <a href="/profile" class="hover:text-cyan-300 transition-colors">// Profile</a>
+          <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs sm:text-sm text-slate-400">
+            <p>© {new Date().getFullYear()} DoIT-Studio. ALL PROTOCOLS RESERVED.</p>
+            <div class="flex flex-wrap justify-center items-center gap-3">
+              <span class="text-cyan-400 font-bold">[SYS_STATUS: ONLINE]</span>
+              <span class="hidden sm:inline">•</span>
+              <span class="text-blue-400">ASTRO 5 SSG</span>
+              <span class="hidden sm:inline">•</span>
+              <span class="text-slate-400">BUILD: 0x8F4A</span>
+            </div>
           </div>
         </div>
-
-        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs sm:text-sm text-slate-400">
-          <p>© {new Date().getFullYear()} DoIT-Studio. ALL PROTOCOLS RESERVED.</p>
-          <div class="flex flex-wrap justify-center items-center gap-3">
-            <span class="text-cyan-400 font-bold">[SYS_STATUS: ONLINE]</span>
-            <span class="hidden sm:inline">•</span>
-            <span class="text-blue-400">ASTRO 5 SSG</span>
-            <span class="hidden sm:inline">•</span>
-            <span class="text-slate-400">BUILD: 0x8F4A</span>
-          </div>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    )}
   </body>
 </html>
