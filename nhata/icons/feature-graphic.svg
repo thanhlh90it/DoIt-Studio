@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 500" width="100%" height="100%">
+  <defs>
+    <!-- Modern Zen Background Gradient -->
+    <linearGradient id="featBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF7ED" />
+      <stop offset="50%" stop-color="#FDFBF7" />
+      <stop offset="100%" stop-color="#F3E8DF" />
+    </linearGradient>
+
+    <!-- Sunset Orange Glow for Main Mark -->
+    <linearGradient id="featOrangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB923C" />
+      <stop offset="50%" stop-color="#F97316" />
+      <stop offset="100%" stop-color="#EA580C" />
+    </linearGradient>
+
+    <!-- Warm Amber Glow for Smile & Accent -->
+    <linearGradient id="featSmileGold" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#FBBF24" />
+    </linearGradient>
+
+    <!-- Ambient Shadow -->
+    <filter id="featShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#431407" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1024" height="500" fill="url(#featBgGrad)" />
+
+  <!-- Decorative Zen Ambient Elements -->
+  <circle cx="80" cy="80" r="160" fill="#F97316" opacity="0.04" />
+  <circle cx="940" cy="420" r="220" fill="#10B981" opacity="0.04" />
+  <circle cx="880" cy="90" r="120" fill="#F59E0B" opacity="0.05" />
+
+  <!-- Left Side: Icon & Branding Elements -->
+  <g transform="translate(100, 100)" filter="url(#featShadow)">
+    <g transform="translate(0, 0) scale(0.65)">
+      <!-- Cột trái -->
+      <rect x="106" y="180" width="56" height="236" rx="28" fill="url(#featOrangeGrad)" />
+
+      <!-- Mái nhà che chở & Nét chữ N -->
+      <path d="M 134 200 
+               C 134 140, 206 96, 256 96 
+               C 306 96, 378 140, 378 200 
+               L 378 388 
+               C 378 403, 366 416, 350 416 
+               C 334 416, 322 403, 322 388 
+               L 322 220 
+               C 322 176, 280 152, 256 152 
+               C 232 152, 190 176, 190 220 
+               L 190 388 
+               C 190 403, 178 416, 162 416 
+               C 146 416, 134 403, 134 388 
+               Z" 
+            fill="url(#featOrangeGrad)" />
+
+      <!-- Nụ cười sum vầy -->
+      <path d="M 188 280 
+               C 214 340, 298 340, 324 280 
+               C 332 262, 310 250, 298 266 
+               C 280 292, 232 292, 214 266 
+               C 202 250, 180 262, 188 280 Z" 
+            fill="url(#featSmileGold)" />
+
+      <!-- Ngôi sao vàng đỉnh mái -->
+      <circle cx="256" cy="62" r="16" fill="url(#featSmileGold)" />
+    </g>
+  </g>
+
+  <!-- Center-Right: Typography & Key Value Propositions -->
+  <g transform="translate(420, 160)">
+    <!-- App Title "NhàTa" -->
+    <text x="0" y="54" font-family="'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="64" font-weight="700" fill="#1C1917" letter-spacing="-1.5">
+      Nhà<tspan fill="#F97316">Ta</tspan>
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="102" font-family="'Work Sans', 'Inter', sans-serif" font-size="22" font-weight="600" fill="#431407">
+      Một mái nhà, vạn niềm vui
+    </text>
+
+    <!-- Bullet Pillars -->
+    <g transform="translate(0, 138)">
+      <!-- Pill 1: Việc nhà & Tích sao -->
+      <rect x="0" y="0" width="160" height="36" rx="18" fill="#FFF7ED" stroke="#FED7AA" stroke-width="1" />
+      <text x="80" y="23" text-anchor="middle" font-family="'Work Sans', sans-serif" font-size="13" font-weight="600" fill="#C2410C">⭐ Tích sao đổi quà</text>
+
+      <!-- Pill 2: Lịch học con -->
+      <rect x="172" y="0" width="150" height="36" rx="18" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1" />
+      <text x="247" y="23" text-anchor="middle" font-family="'Work Sans', sans-serif" font-size="13" font-weight="600" fill="#047857">📚 Thời khóa biểu</text>
+
+      <!-- Pill 3: Chi tiêu & Kỷ niệm -->
+      <rect x="334" y="0" width="150" height="36" rx="18" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1" />
+      <text x="409" y="23" text-anchor="middle" font-family="'Work Sans', sans-serif" font-size="13" font-weight="600" fill="#B45309">💖 Kỷ niệm gia đình</text>
+    </g>
+
+    <!-- Audience Target Badge -->
+    <text x="2" y="220" font-family="'Work Sans', sans-serif" font-size="14" font-weight="500" fill="#78716C">
+      Không gian số thông minh, ấm áp & an toàn cho mọi gia đình Việt
+    </text>
+  </g>
+</svg>

@@ -36,10 +36,9 @@
     </filter>
   </defs>
 
-  <!-- iOS / Android Squircle Background -->
-  <rect width="1024" height="1024" rx="230" fill="url(#appBgGrad)" />
-  <rect width="1024" height="1024" rx="230" fill="url(#topSheen)" />
-  <rect width="1020" height="1020" x="2" y="2" rx="228" fill="none" stroke="url(#rimLight)" stroke-width="4" />
+  <!-- Full-bleed background (Apple App Store & Android Square launcher) -->
+  <rect width="1024" height="1024" fill="url(#appBgGrad)" />
+  <rect width="1024" height="1024" fill="url(#topSheen)" />
 
   <!-- Center Symbol: Shelter (Mái Ấm) & Smile (Nụ Cười) & Star -->
   <g transform="translate(100, 105) scale(1.7)" filter="url(#iconDepth)">

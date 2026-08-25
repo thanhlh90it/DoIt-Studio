@@ -1,40 +1,49 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="100%" height="100%">
   <defs>
-    <linearGradient id="favBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#3B82F6" />
-      <stop offset="100%" stop-color="#1D4ED8" />
+    <linearGradient id="favBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB923C" />
+      <stop offset="50%" stop-color="#F97316" />
+      <stop offset="100%" stop-color="#EA580C" />
+    </linearGradient>
+    <linearGradient id="favSmileGold" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#FEF08A" />
     </linearGradient>
   </defs>
 
-  <!-- Squircle Base -->
-  <rect width="64" height="64" rx="15" fill="url(#favBg)" />
+  <!-- Squircle Background -->
+  <rect width="64" height="64" rx="14" fill="url(#favBgGrad)" />
 
-  <!-- Prominent White N Shelter Mark for crisp low-res visibility -->
-  <g transform="translate(-1, 0) scale(0.13)" fill="#FFFFFF">
-    <!-- Left bar -->
-    <rect x="106" y="180" width="64" height="240" rx="32" />
+  <!-- Simplified Crisp Symbol for 16-64px Displays -->
+  <g transform="translate(6, 6) scale(0.1)" fill="#FFFFFF">
+    <!-- Cột trái -->
+    <rect x="106" y="180" width="56" height="236" rx="28" fill="#FFFFFF" />
 
-    <!-- Roof & Arch -->
+    <!-- Mái nhà & Nét chữ N -->
     <path d="M 134 200 
-             C 134 130, 206 90, 256 90 
-             C 306 90, 378 130, 378 200 
-             L 378 390 
-             C 378 408, 362 420, 346 420 
-             C 330 420, 314 408, 314 390 
-             L 314 210 
-             C 314 165, 276 142, 256 142 
-             C 236 142, 198 165, 198 210 
-             L 198 390 
-             C 198 408, 182 420, 166 420 
-             C 150 420, 134 408, 134 390 
-             Z" />
+             C 134 140, 206 96, 256 96 
+             C 306 96, 378 140, 378 200 
+             L 378 388 
+             C 378 403, 366 416, 350 416 
+             C 334 416, 322 403, 322 388 
+             L 322 220 
+             C 322 176, 280 152, 256 152 
+             C 232 152, 190 176, 190 220 
+             L 190 388 
+             C 190 403, 178 416, 162 416 
+             C 146 416, 134 403, 134 388 
+             Z" 
+          fill="#FFFFFF" />
 
-    <!-- Warm Golden Smile -->
-    <path d="M 184 285 
-             C 214 345, 298 345, 328 285 
-             C 334 270, 316 256, 304 272 
-             C 284 298, 228 298, 208 272 
-             C 196 256, 178 270, 184 285 Z" 
-          fill="#FDE047" />
+    <!-- Nụ cười sum vầy -->
+    <path d="M 188 280 
+             C 214 340, 298 340, 324 280 
+             C 332 262, 310 250, 298 266 
+             C 280 292, 232 292, 214 266 
+             C 202 250, 180 262, 188 280 Z" 
+          fill="url(#favSmileGold)" />
+
+    <!-- Điểm nhấn ngôi sao -->
+    <circle cx="256" cy="62" r="18" fill="url(#favSmileGold)" />
   </g>
 </svg>
