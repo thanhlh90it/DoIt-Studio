@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <!-- Sunset Orange 500 Gradient for Center Mark -->
+    <linearGradient id="splashIconOrangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB923C" />
+      <stop offset="50%" stop-color="#F97316" />
+      <stop offset="100%" stop-color="#EA580C" />
+    </linearGradient>
+
+    <!-- Warm Golden Amber Glow for Smile & Star -->
+    <linearGradient id="splashIconSmileGold" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#FBBF24" />
+    </linearGradient>
+
+    <!-- Soft Depth Shadow -->
+    <filter id="splashIconDepth" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#431407" flood-opacity="0.16" />
+    </filter>
+  </defs>
+
+  <!-- Center Logo Stack Group -->
+  <g transform="translate(300, 240)" text-anchor="middle">
+    <!-- Centered Vector Shelter & Smile Symbol -->
+    <g transform="translate(-256, -240) scale(1.0)" filter="url(#splashIconDepth)">
+      <!-- Cột trái -->
+      <rect x="106" y="180" width="56" height="236" rx="28" fill="url(#splashIconOrangeGrad)" />
+
+      <!-- Mái nhà che chở & Nét chữ N -->
+      <path d="M 134 200 
+               C 134 140, 206 96, 256 96 
+               C 306 96, 378 140, 378 200 
+               L 378 388 
+               C 378 403, 366 416, 350 416 
+               C 334 416, 322 403, 322 388 
+               L 322 220 
+               C 322 176, 280 152, 256 152 
+               C 232 152, 190 176, 190 220 
+               L 190 388 
+               C 190 403, 178 416, 162 416 
+               C 146 416, 134 403, 134 388 
+               Z" 
+            fill="url(#splashIconOrangeGrad)" />
+
+      <!-- Nụ cười sum vầy -->
+      <path d="M 188 280 
+               C 214 340, 298 340, 324 280 
+               C 332 262, 310 250, 298 266 
+               C 280 292, 232 292, 214 266 
+               C 202 250, 180 262, 188 280 Z" 
+            fill="url(#splashIconSmileGold)" />
+
+      <!-- Ngôi sao vàng đỉnh mái -->
+      <circle cx="256" cy="62" r="16" fill="url(#splashIconSmileGold)" />
+    </g>
+
+    <!-- Wordmark "NhàTa" -->
+    <text x="0" y="240" font-family="'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="64" font-weight="700" fill="#1C1917" letter-spacing="-1">
+      Nhà<tspan fill="#F97316">Ta</tspan>
+    </text>
+
+    <!-- Tagline: "Một mái nhà, vạn niềm vui" -->
+    <text x="0" y="284" font-family="'Work Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="500" fill="#57534E" letter-spacing="0.3">
+      Một mái nhà, vạn niềm vui
+    </text>
+  </g>
+</svg>
