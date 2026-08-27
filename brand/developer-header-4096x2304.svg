@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4096 2304" width="4096" height="2304" fill="none">
+  <defs>
+    <!-- Background Obsidian Gradient -->
+    <linearGradient id="hdr-bg-pub" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#02040A" />
+      <stop offset="35%" stop-color="#070D1E" />
+      <stop offset="70%" stop-color="#030712" />
+      <stop offset="100%" stop-color="#010206" />
+    </linearGradient>
+
+    <!-- Electric Blue Gradient -->
+    <linearGradient id="hdr-blue-grad-pub" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="45%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+
+    <!-- Cyber Cyan Laser Gradient -->
+    <linearGradient id="hdr-cyan-grad-pub" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="laser-glow-lg-pub" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="80" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="laser-glow-md-pub" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="35" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="laser-glow-sm-pub" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Matrix Pattern Definition -->
+    <pattern id="hdr-grid-pub" width="128" height="128" patternUnits="userSpaceOnUse">
+      <circle cx="64" cy="64" r="2.5" fill="#00F0FF" opacity="0.25" />
+      <line x1="0" y1="64" x2="128" y2="64" stroke="#2563EB" stroke-width="1" opacity="0.08" />
+      <line x1="64" y1="0" x2="64" y2="128" stroke="#2563EB" stroke-width="1" opacity="0.08" />
+    </pattern>
+  </defs>
+
+  <!-- 1. Master Canvas Background -->
+  <rect width="4096" height="2304" fill="url(#hdr-bg-pub)" />
+  <rect width="4096" height="2304" fill="url(#hdr-grid-pub)" />
+
+  <!-- 2. Ambient Volumetric Lighting & Laser Orbs -->
+  <ellipse cx="2800" cy="700" rx="1100" ry="600" fill="#2563EB" opacity="0.3" filter="url(#laser-glow-lg-pub)" />
+  <ellipse cx="3100" cy="1100" rx="750" ry="450" fill="#00F0FF" opacity="0.2" filter="url(#laser-glow-lg-pub)" />
+  <ellipse cx="3600" cy="1800" rx="600" ry="350" fill="#10B981" opacity="0.15" filter="url(#laser-glow-lg-pub)" />
+  <ellipse cx="800" cy="400" rx="600" ry="350" fill="#1D4ED8" opacity="0.2" filter="url(#laser-glow-lg-pub)" />
+
+  <!-- 3. Futuristic HUD Geometric Wireframe & Circuit Lines -->
+  <g opacity="0.4">
+    <line x1="200" y1="360" x2="3896" y2="360" stroke="#38BDF8" stroke-width="2" stroke-dasharray="16 8" opacity="0.4" />
+    <line x1="200" y1="1944" x2="3896" y2="1944" stroke="#38BDF8" stroke-width="2" stroke-dasharray="16 8" opacity="0.3" />
+    <line x1="400" y1="200" x2="400" y2="2104" stroke="#2563EB" stroke-width="2" opacity="0.2" />
+    <line x1="3696" y1="200" x2="3696" y2="2104" stroke="#2563EB" stroke-width="2" opacity="0.2" />
+    <path d="M 380 360 L 420 360 M 400 340 L 400 380" stroke="#00F0FF" stroke-width="4" />
+    <path d="M 3676 360 L 3716 360 M 3696 340 L 3696 380" stroke="#00F0FF" stroke-width="4" />
+    <path d="M 380 1944 L 420 1944 M 400 1924 L 400 1964" stroke="#00F0FF" stroke-width="4" />
+    <path d="M 3676 1944 L 3716 1944 M 3696 1924 L 3696 1964" stroke="#00F0FF" stroke-width="4" />
+  </g>
+
+  <!-- 4. Graphic Visual Elements on the Right -->
+  <g transform="translate(2550, 600)">
+    <rect x="0" y="0" width="1050" height="1050" rx="260" fill="#030712" fill-opacity="0.88" stroke="#1E293B" stroke-width="8" />
+    <rect x="16" y="16" width="1018" height="1018" rx="244" fill="none" stroke="url(#hdr-blue-grad-pub)" stroke-width="6" opacity="0.6" filter="url(#laser-glow-sm-pub)" />
+    
+    <path 
+      d="M 280 280 C 280 240, 310 210, 350 210 L 510 210 C 670 210, 780 320, 780 525 C 780 730, 670 840, 510 840 L 350 840 C 310 840, 280 810, 280 770 Z M 420 360 L 420 690 L 500 690 C 590 690, 640 620, 640 525 C 640 430, 590 360, 500 360 Z" 
+      fill="url(#hdr-blue-grad-pub)" 
+      filter="url(#laser-glow-md-pub)"
+    />
+
+    <circle cx="820" cy="720" r="75" fill="url(#hdr-cyan-grad-pub)" filter="url(#laser-glow-md-pub)" />
+    <circle cx="820" cy="720" r="40" fill="#FFFFFF" />
+
+    <path d="M -10 40 L -10 -10 L 40 -10" stroke="#00F0FF" stroke-width="8" fill="none" />
+    <path d="M 1060 40 L 1060 -10 L 1010 -10" stroke="#00F0FF" stroke-width="8" fill="none" />
+    <path d="M -10 1010 L -10 1060 L 40 1060" stroke="#00F0FF" stroke-width="8" fill="none" />
+    <path d="M 1060 1010 L 1060 1060 L 1010 1060" stroke="#00F0FF" stroke-width="8" fill="none" />
+  </g>
+
+  <!-- 5. Brand Identity & Typography -->
+  <g transform="translate(600, 680)">
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="760" height="76" rx="20" fill="#030712" stroke="#00F0FF" stroke-width="3" stroke-opacity="0.6" />
+      <circle cx="48" cy="38" r="12" fill="#00F0FF" filter="url(#laser-glow-sm-pub)" />
+      <circle cx="48" cy="38" r="6" fill="#FFFFFF" />
+      <text x="80" y="49" font-family="'JetBrains Mono', monospace" font-size="30" font-weight="700" fill="#00F0FF" letter-spacing="0.15em">
+        &gt; DOIT_STUDIO // GOOGLE PLAY DEV
+      </text>
+    </g>
+
+    <text x="0" y="240" font-family="'Space Grotesk', system-ui, sans-serif" font-size="148" font-weight="800" fill="#FFFFFF" letter-spacing="-0.03em">
+      DoIT-Studio
+    </text>
+
+    <text x="4" y="360" font-family="'Space Grotesk', system-ui, sans-serif" font-size="64" font-weight="700" fill="#38BDF8" letter-spacing="-0.01em">
+      Cybernetic Product &amp; Tech Mentorship Lab
+    </text>
+
+    <text x="4" y="460" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="42" font-weight="500" fill="#CBD5E1">
+      Biến ý tưởng thành sản phẩm số tinh gọn • Đột phá cùng IT &amp; AI
+    </text>
+
+    <g transform="translate(4, 560)">
+      <rect x="0" y="0" width="370" height="68" rx="18" fill="#030712" stroke="#2563EB" stroke-width="2.5" />
+      <text x="30" y="44" font-family="'JetBrains Mono', monospace" font-size="24" font-weight="700" fill="#93C5FD">
+        ⚡ PRODUCT VENTURE
+      </text>
+
+      <rect x="400" y="0" width="350" height="68" rx="18" fill="#030712" stroke="#00F0FF" stroke-width="2.5" />
+      <text x="430" y="44" font-family="'JetBrains Mono', monospace" font-size="24" font-weight="700" fill="#00F0FF">
+        🤖 AI &amp; IT COACHING
+      </text>
+
+      <rect x="780" y="0" width="370" height="68" rx="18" fill="#030712" stroke="#10B981" stroke-width="2.5" />
+      <text x="810" y="44" font-family="'JetBrains Mono', monospace" font-size="24" font-weight="700" fill="#34D399">
+        🔒 100% LOCAL-FIRST
+      </text>
+
+      <rect x="1180" y="0" width="340" height="68" rx="18" fill="#030712" stroke="#38BDF8" stroke-width="2.5" />
+      <text x="1210" y="44" font-family="'JetBrains Mono', monospace" font-size="24" font-weight="700" fill="#7DD3FC">
+        ✓ ZERO-BLOAT UI
+      </text>
+    </g>
+
+    <g transform="translate(4, 700)" opacity="0.85">
+      <text x="0" y="30" font-family="'JetBrains Mono', monospace" font-size="26" font-weight="600" fill="#94A3B8" letter-spacing="0.1em">
+        FEATURED APPS: NhàTa (Family) • SecureVault (Privacy) • NoduleTrack (HealthTech)
+      </text>
+    </g>
+  </g>
+
+  <!-- 6. Footer Telemetry Coordinates -->
+  <g transform="translate(600, 2040)" opacity="0.6">
+    <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="24" font-weight="500" fill="#64748B" letter-spacing="0.2em">
+      DOIT_STUDIO_CORE // RES: 4096x2304 [16:9] // HTTPS://DOITSTUDIO.TECH
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" fill="none">
+  <defs>
+    <linearGradient id="gplay-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B132B" />
+      <stop offset="50%" stop-color="#060A17" />
+      <stop offset="100%" stop-color="#02040A" />
+    </linearGradient>
+
+    <linearGradient id="gplay-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="40%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+
+    <linearGradient id="gplay-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+
+    <linearGradient id="gplay-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#2563EB" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#00F0FF" stop-opacity="0.6" />
+    </linearGradient>
+
+    <filter id="gplay-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="dot-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Outer Squircle Container for Google Play (512x512) -->
+  <rect x="16" y="16" width="480" height="480" rx="120" fill="url(#gplay-bg)" stroke="url(#gplay-border)" stroke-width="6" />
+
+  <!-- Inner Cyber Tech Grid Lines & Ambient Glow -->
+  <rect x="28" y="28" width="456" height="456" rx="108" fill="none" stroke="url(#gplay-blue)" stroke-width="2" opacity="0.3" />
+  <circle cx="256" cy="256" r="160" fill="url(#gplay-blue)" opacity="0.08" filter="url(#gplay-glow)" />
+
+  <!-- Core Emblem: Monogram "D" + Execution Spark -->
+  <g transform="translate(16, 0)">
+    <!-- Main Letter D -->
+    <path 
+      d="M 130 136 C 130 120, 142 108, 158 108 L 230 108 C 305 108, 355 158, 355 256 C 355 354, 305 404, 230 404 L 158 404 C 142 404, 130 392, 130 376 Z M 194 172 L 194 340 L 228 340 C 268 340, 290 308, 290 256 C 290 204, 268 172, 228 172 Z" 
+      fill="url(#gplay-blue)" 
+      filter="url(#gplay-glow)"
+    />
+
+    <!-- Cyan Spark Action Dot (Con trỏ thực thi AI) -->
+    <circle cx="372" cy="346" r="36" fill="url(#gplay-cyan)" filter="url(#dot-glow)" />
+    <circle cx="372" cy="346" r="20" fill="#FFFFFF" />
+  </g>
+</svg>
