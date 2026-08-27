@@ -119,7 +119,7 @@
             </a>
 
             <!-- Google Play -->
-            <a href="#download" class="store-btn open-qr-modal" aria-label="Get it on Google Play">
+            <a href="https://play.google.com/store/apps/details?id=com.doitstudio.noduletrack.app" target="_blank" rel="noopener noreferrer" class="store-btn" aria-label="Get it on Google Play">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186c-.37-.367-.61-.925-.61-1.579V3.393c0-.654.24-1.212.609-1.579zm11.597 11.599L6.877 21.758l9.646-5.467-1.317-2.878zm0-2.826L15.206 7.71 5.56 2.242l9.646 5.467 1.317 2.878zm1.414 1.413l3.66-2.075c.96-.544.96-1.43 0-1.974l-3.66-2.075-1.414 1.413 1.414 4.711z"/></svg>
               <div class="store-btn-text">
                 <span class="store-btn-sub">Get it on</span>
@@ -1087,7 +1087,7 @@
               </div>
             </a>
 
-            <a href="#" class="store-btn open-qr-modal" aria-label="Get it on Google Play">
+            <a href="https://play.google.com/store/apps/details?id=com.doitstudio.noduletrack.app" target="_blank" rel="noopener noreferrer" class="store-btn" aria-label="Get it on Google Play">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186c-.37-.367-.61-.925-.61-1.579V3.393c0-.654.24-1.212.609-1.579zm11.597 11.599L6.877 21.758l9.646-5.467-1.317-2.878zm0-2.826L15.206 7.71 5.56 2.242l9.646 5.467 1.317 2.878zm1.414 1.413l3.66-2.075c.96-.544.96-1.43 0-1.974l-3.66-2.075-1.414 1.413 1.414 4.711z"/></svg>
               <div class="store-btn-text">
                 <span class="store-btn-sub">Get it on</span>
@@ -1108,64 +1108,40 @@
        11. QR Code Popup Modal
        ======================================================================== -->
   <div id="qr-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="qr-modal-title">
-    <div class="modal-card">
+    <div class="modal-card" style="text-align: center; max-width: 420px; padding: 2rem 1.75rem;">
       <button type="button" id="qr-modal-close" class="modal-close-btn" aria-label="Close modal">
         <img src="/noduletrack/assets/icons/x.svg" alt="" width="18" height="18">
       </button>
 
-      <h3 id="qr-modal-title" style="font-size: 1.25rem; font-weight: 700; color: var(--nt-color-primary-dark); margin-bottom: 4px;" data-i18n="modal.title">
-        Quét mã QR để tải ứng dụng
+      <h3 id="qr-modal-title" style="font-size: 1.3rem; font-weight: 700; color: var(--nt-color-primary-dark); margin-bottom: 6px;" data-i18n="modal.title">
+        Tải NoduleTrack trên Google Play
       </h3>
-      <p style="font-size: 0.85rem; color: var(--nt-color-text-secondary);" data-i18n="modal.subtitle">
-        Sử dụng camera điện thoại (iOS / Android) để quét mã và cài đặt NoduleTrack tức thì.
+      <p style="font-size: 0.85rem; color: var(--nt-color-text-secondary); margin-bottom: 16px;" data-i18n="modal.subtitle">
+        Quét mã QR bằng camera điện thoại hoặc nhấn nút bên dưới để mở trực tiếp trên Google Play Store.
       </p>
 
-      <!-- Clean SVG QR Code Graphic -->
-      <div class="qr-code-graphic">
-        <svg viewBox="0 0 160 160" width="160" height="160" style="display: block;">
-          <!-- Corner Pos 1 -->
-          <rect x="10" y="10" width="40" height="40" fill="#003C90" rx="6"/>
-          <rect x="18" y="18" width="24" height="24" fill="#FFFFFF" rx="3"/>
-          <rect x="24" y="24" width="12" height="12" fill="#003C90" rx="2"/>
-          <!-- Corner Pos 2 -->
-          <rect x="110" y="10" width="40" height="40" fill="#003C90" rx="6"/>
-          <rect x="118" y="18" width="24" height="24" fill="#FFFFFF" rx="3"/>
-          <rect x="124" y="24" width="12" height="12" fill="#003C90" rx="2"/>
-          <!-- Corner Pos 3 -->
-          <rect x="10" y="110" width="40" height="40" fill="#003C90" rx="6"/>
-          <rect x="18" y="118" width="24" height="24" fill="#FFFFFF" rx="3"/>
-          <rect x="24" y="124" width="12" height="12" fill="#003C90" rx="2"/>
-          
-          <!-- Stylized Data Patterns -->
-          <rect x="60" y="15" width="10" height="10" fill="#00A896" rx="2"/>
-          <rect x="80" y="15" width="15" height="10" fill="#003C90" rx="2"/>
-          <rect x="60" y="35" width="20" height="10" fill="#003C90" rx="2"/>
-          <rect x="90" y="35" width="10" height="10" fill="#00A896" rx="2"/>
-
-          <rect x="15" y="60" width="10" height="20" fill="#00A896" rx="2"/>
-          <rect x="35" y="60" width="15" height="10" fill="#003C90" rx="2"/>
-          <rect x="15" y="90" width="25" height="10" fill="#003C90" rx="2"/>
-
-          <rect x="60" y="60" width="40" height="40" fill="#002B66" rx="8"/>
-          <!-- Center Logo inside QR -->
-          <circle cx="80" cy="80" r="14" fill="#FFFFFF"/>
-          <circle cx="80" cy="80" r="8" fill="#00A896"/>
-
-          <rect x="110" y="60" width="15" height="10" fill="#003C90" rx="2"/>
-          <rect x="135" y="60" width="15" height="20" fill="#00A896" rx="2"/>
-          <rect x="110" y="80" width="20" height="15" fill="#003C90" rx="2"/>
-
-          <rect x="60" y="110" width="15" height="15" fill="#003C90" rx="2"/>
-          <rect x="85" y="110" width="15" height="25" fill="#00A896" rx="2"/>
-          <rect x="110" y="110" width="25" height="10" fill="#003C90" rx="2"/>
-          <rect x="145" y="110" width="10" height="30" fill="#002B66" rx="2"/>
-          <rect x="60" y="135" width="20" height="15" fill="#002B66" rx="2"/>
-          <rect x="110" y="130" width="25" height="20" fill="#00A896" rx="2"/>
-        </svg>
+      <!-- Real Scannable Google Play QR Code Graphic -->
+      <div class="qr-code-graphic" style="background: #FFFFFF; padding: 12px; border-radius: 20px; box-shadow: 0 8px 30px rgba(0, 60, 144, 0.12); border: 2px solid var(--nt-color-primary-light, #E2E8F0); display: inline-block; margin-bottom: 16px;">
+        <img src="/noduletrack/assets/images/noduletrack-chplay-qr.svg" alt="Google Play QR Code NoduleTrack" width="180" height="180" style="display: block; border-radius: 8px;" />
       </div>
 
-      <div style="display: flex; justify-content: center; gap: 8px; margin-top: 12px;">
-        <span style="font-size: 0.75rem; color: var(--nt-color-text-muted);">iOS &bull; Android &bull; Direct APK</span>
+      <div style="display: flex; flex-direction: column; gap: 10px; align-items: center; width: 100%;">
+        <a 
+          href="https://play.google.com/store/apps/details?id=com.doitstudio.noduletrack.app" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="btn btn-primary" 
+          style="width: 100%; justify-content: center; font-size: 0.95rem; padding: 0.75rem 1.25rem; text-decoration: none;"
+        >
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186c-.37-.367-.61-.925-.61-1.579V3.393c0-.654.24-1.212.609-1.579zm11.597 11.599L6.877 21.758l9.646-5.467-1.317-2.878zm0-2.826L15.206 7.71 5.56 2.242l9.646 5.467 1.317 2.878zm1.414 1.413l3.66-2.075c.96-.544.96-1.43 0-1.974l-3.66-2.075-1.414 1.413 1.414 4.711z"/></svg>
+          <span>Cài đặt trên Google Play</span>
+          <span style="margin-left: 4px;">↗</span>
+        </a>
+        
+        <div style="font-size: 0.75rem; color: var(--nt-color-text-muted); display: flex; align-items: center; gap: 6px;">
+          <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #10B981;"></span>
+          <span>Android 8.0+ &bull; Google Play Verified</span>
+        </div>
       </div>
     </div>
   </div>
