@@ -1,5 +1,10 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
+
+const APP_STORE_URL =
+  "https://apps.apple.com/us/app/nhàta-quản-lý-gia-đình-con/id6804749534";
+const PLAY_STORE_URL =
+  "https://play.google.com/store/apps/details?id=com.doitstudio.nhata.app";
 ---
 
 <MainLayout
@@ -1757,7 +1762,7 @@ import MainLayout from "../../layouts/MainLayout.astro";
           <span
             class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"
           ></span>
-          <span>BETA RELEASE · BUILD v3.0</span>
+          <span>CHÍNH THỨC · ĐÃ CÓ MẶT TRÊN STORE</span>
         </div>
       </div>
     </div>
@@ -1869,8 +1874,10 @@ import MainLayout from "../../layouts/MainLayout.astro";
 
               <div class="hero-actions">
                 <a
-                  href="#download"
-                  class="btn-store btn-download-app"
+                  href={APP_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-store"
                   aria-label="Tải trên App Store"
                 >
                   <svg
@@ -1889,8 +1896,10 @@ import MainLayout from "../../layouts/MainLayout.astro";
                 </a>
 
                 <a
-                  href="#download"
-                  class="btn-store btn-download-app"
+                  href={PLAY_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-store"
                   aria-label="Tải trên Google Play"
                 >
                   <svg
@@ -2907,8 +2916,10 @@ import MainLayout from "../../layouts/MainLayout.astro";
 
               <div class="cta-badges">
                 <a
-                  href="#download"
-                  class="btn-store btn-download-app"
+                  href={APP_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-store"
                   aria-label="Tải NhàTa trên App Store"
                 >
                   <svg
@@ -2927,8 +2938,10 @@ import MainLayout from "../../layouts/MainLayout.astro";
                 </a>
 
                 <a
-                  href="#download"
-                  class="btn-store btn-download-app"
+                  href={PLAY_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-store"
                   aria-label="Tải NhàTa trên Google Play"
                 >
                   <svg
@@ -3007,6 +3020,16 @@ import MainLayout from "../../layouts/MainLayout.astro";
               <li><a href="#philosophy">Triết Lý Modern Zen</a></li>
               <li><a href="#testimonials">Cảm Nhận Khách Hàng</a></li>
               <li><a href="#faq">Câu Hỏi Thường Gặp</a></li>
+              <li>
+                <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer"
+                  >Tải trên App Store</a
+                >
+              </li>
+              <li>
+                <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer"
+                  >Tải trên Google Play</a
+                >
+              </li>
               <li><a href="/apps">DoIT-Studio Apps</a></li>
               <li>
                 <a href="mailto:thanhlh.developer@gmail.com">Liên Hệ Hỗ Trợ</a>
@@ -3226,54 +3249,6 @@ import MainLayout from "../../layouts/MainLayout.astro";
         }
       });
 
-      // --- 5. Download Toast Notification ---
-      const downloadBtns = document.querySelectorAll(".btn-download-app");
-      downloadBtns.forEach((btn) => {
-        btn.addEventListener("click", (e) => {
-          e.preventDefault();
-          showToast(
-            "🎉 NhàTa đang trong quá trình phát hành chính thức trên App Store & Google Play. Hãy quét mã QR để nhận thông báo sớm nhất!",
-          );
-        });
-      });
-
-      function showToast(message) {
-        let existingToast = document.querySelector(".zen-toast");
-        if (existingToast) existingToast.remove();
-
-        const toast = document.createElement("div");
-        toast.className = "zen-toast neu-card";
-        toast.style.position = "fixed";
-        toast.style.bottom = "30px";
-        toast.style.left = "50%";
-        toast.style.transform = "translateX(-50%) translateY(50px)";
-        toast.style.zIndex = "10000";
-        toast.style.padding = "16px 28px";
-        toast.style.borderRadius = "9999px";
-        toast.style.background = "#1C1917";
-        toast.style.color = "#FFFFFF";
-        toast.style.fontSize = "0.938rem";
-        toast.style.fontWeight = "600";
-        toast.style.boxShadow = "0 15px 35px rgba(0,0,0,0.25)";
-        toast.style.opacity = "0";
-        toast.style.transition = "all 0.35s cubic-bezier(0.25, 1, 0.5, 1)";
-        toast.style.maxWidth = "90%";
-        toast.style.textAlign = "center";
-        toast.textContent = message;
-
-        document.body.appendChild(toast);
-
-        setTimeout(() => {
-          toast.style.transform = "translateX(-50%) translateY(0)";
-          toast.style.opacity = "1";
-        }, 20);
-
-        setTimeout(() => {
-          toast.style.transform = "translateX(-50%) translateY(50px)";
-          toast.style.opacity = "0";
-          setTimeout(() => toast.remove(), 400);
-        }, 4500);
-      }
 
       // --- 6. Scroll Reveal & Parallax ---
       const revealElements = document.querySelectorAll(
