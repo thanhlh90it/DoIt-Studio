@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
 import BlogCard from '../../components/BlogCard.astro';
 
@@ -20,32 +21,8 @@ const principles = [
   }
 ];
 
-const articles = [
-  {
-    slug: 'suc-manh-cua-loi-song-toi-gian',
-    title: 'Sức mạnh của lối sống tối giản trong kỷ nguyên bội thông tin',
-    description: 'Làm thế nào để duy trì sự tập trung sâu trong một thế giới tràn ngập thông báo và sự xao nhãng liên tục.',
-    date: '14/08/2026',
-    readTime: '5 phút đọc',
-    category: 'Lối Sống'
-  },
-  {
-    slug: 'tu-duy-tu-nguyen-ly-dau-tien',
-    title: 'Tư duy từ nguyên lý đầu tiên khi thiết kế sản phẩm phần mềm',
-    description: 'Phân tích vấn đề về tận cùng bản chất nguyên thủy thay vì suy luận dựa trên tương tự.',
-    date: '02/08/2026',
-    readTime: '7 phút đọc',
-    category: 'Thiết Kế'
-  },
-  {
-    slug: 'xay-dung-nhip-lam-viec-ben-vung',
-    title: 'Xây dựng nhịp làm việc bền vững cho một Solopreneur / Creator',
-    description: 'Cân bằng giữa tốc độ phát triển sản phẩm và sức khỏe tinh thần dài hạn.',
-    date: '20/07/2026',
-    readTime: '4 phút đọc',
-    category: 'Hiệu Suất'
-  }
-];
+const rawPosts = await getCollection('philosophy');
+const posts = rawPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 ---
 
 <MainLayout title="Triết Lý Sống & Tư Duy | DoIT-Studio Telemetry" description="Chia sẻ các góc nhìn, quan niệm sống tối giản và nguyên tắc xây dựng sản phẩm bền vững.">
@@ -91,14 +68,14 @@ const articles = [
       </div>
 
       <div class="space-y-6">
-        {articles.map((post) => (
+        {posts.map((post) => (
           <BlogCard
-            title={post.title}
-            description={post.description}
-            date={post.date}
-            slug={post.slug}
-            readTime={post.readTime}
-            category={post.category}
+            title={post.data.title}
+            description={post.data.description}
+            date={post.data.date}
+            slug={post.id.replace(/\.(md|mdx)$/, '')}
+            readTime={post.data.readTime}
+            category={post.data.category}
           />
         ))}
       </div>

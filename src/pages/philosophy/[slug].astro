@@ -1,0 +1,150 @@
+---
+import { getCollection, render } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+import StructuredData from '../../components/StructuredData.astro';
+import { getArticleSchema } from '../../utils/seoSchemas';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('philosophy');
+  return posts.map((post) => ({
+    params: { slug: post.id.replace(/\.(md|mdx)$/, '') },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
+
+// Lọc các đề mục H2, H3 để tạo Mục Lục (TOC)
+const tocHeadings = headings.filter((h) => h.depth === 2 || h.depth === 3);
+
+const currentUrl = new URL(Astro.url.pathname, Astro.site || 'https://doitstudio.tech').href;
+
+const articleSchema = getArticleSchema({
+  title: post.data.title,
+  description: post.data.description,
+  url: currentUrl,
+  datePublished: post.data.date,
+  author: post.data.author,
+  image: post.data.ogImage,
+});
+---
+
+<MainLayout
+  title={post.data.title}
+  description={post.data.description}
+  ogType="article"
+  publishedTime={post.data.date}
+  author={post.data.author}
+  ogImage={post.data.ogImage}
+>
+  <StructuredData schema={articleSchema} />
+
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 w-full">
+    <!-- Back Navigation -->
+    <div class="mb-8 font-mono">
+      <a
+        href="/philosophy"
+        class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-cyan-400 hover:text-cyan-300 transition-colors"
+      >
+        <span>←</span>
+        <span>// QUAY LẠI DANH MỤC BÀI VIẾT</span>
+      </a>
+    </div>
+
+    <!-- Article Header -->
+    <header class="mb-10 pb-8 border-b border-slate-800">
+      <div class="flex items-center gap-3 text-xs sm:text-sm text-slate-400 mb-4 flex-wrap font-mono">
+        <span class="px-3 py-1 rounded-md bg-blue-600/25 text-cyan-300 font-bold border border-cyan-400/40 uppercase tracking-wider text-xs">
+          LOG // {post.data.category}
+        </span>
+        <span class="text-slate-600">•</span>
+        <span>[{post.data.date}]</span>
+        <span class="text-slate-600">•</span>
+        <span class="text-slate-300">{post.data.readTime}</span>
+        <span class="text-slate-600">•</span>
+        <span class="text-slate-400">Tác giả: {post.data.author}</span>
+      </div>
+
+      <h1 class="font-tech text-3xl sm:text-5xl font-extrabold text-white leading-tight tracking-tight mb-6">
+        {post.data.title}
+      </h1>
+
+      <p class="text-lg sm:text-xl text-slate-300 leading-relaxed font-['Plus_Jakarta_Sans',sans-serif]">
+        {post.data.description}
+      </p>
+
+      {post.data.tags.length > 0 && (
+        <div class="flex flex-wrap gap-2 mt-6">
+          {post.data.tags.map((tag: string) => (
+            <span class="text-xs font-mono px-2.5 py-1 rounded bg-slate-900 text-slate-400 border border-slate-800">
+              #{tag}
+            </span>
+          ))}
+        </div>
+      )}
+    </header>
+
+    <!-- Table of Contents (TOC) -->
+    {tocHeadings.length > 0 && (
+      <nav class="mb-12 p-6 rounded-2xl glass-card hud-corners border border-blue-900/60 bg-[#070d1e]/80">
+        <div class="flex items-center gap-2 mb-4 font-mono text-cyan-400 text-xs sm:text-sm font-bold uppercase tracking-wider">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+          </svg>
+          <span>MỤC LỤC BÀI VIẾT (TABLE OF CONTENTS)</span>
+        </div>
+        <ul class="space-y-2 text-sm font-mono">
+          {tocHeadings.map((h) => (
+            <li class={h.depth === 3 ? "pl-5 text-xs text-slate-400" : "text-slate-300 font-semibold"}>
+              <a
+                href={`#${h.slug}`}
+                class="hover:text-cyan-300 transition-colors flex items-center gap-2"
+              >
+                <span class="text-cyan-500/70">{h.depth === 2 ? "▸" : "•"}</span>
+                <span>{h.text}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )}
+
+    <!-- Article Content -->
+    <div class="prose prose-invert prose-cyan lg:prose-lg max-w-none font-['Plus_Jakarta_Sans',sans-serif] leading-relaxed prose-headings:font-tech prose-headings:font-bold prose-a:text-cyan-400 hover:prose-a:text-cyan-300 prose-img:rounded-2xl prose-pre:border prose-pre:border-slate-800">
+      <Content />
+    </div>
+
+    <!-- Author Bio & CTA Footer -->
+    <footer class="mt-16 pt-10 border-t border-slate-800/80">
+      <div class="glass-card hud-corners p-6 sm:p-8 rounded-2xl border border-blue-900/60 flex flex-col sm:flex-row items-center sm:items-start gap-6">
+        <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-blue-700 to-cyan-400 p-0.5 shrink-0 shadow-lg shadow-cyan-500/30">
+          <div class="w-full h-full bg-black rounded-[14px] flex items-center justify-center font-tech font-bold text-xl text-white">
+            TL
+          </div>
+        </div>
+        <div class="flex-grow text-center sm:text-left">
+          <h3 class="font-tech text-lg font-bold text-white mb-1">Thành Lê</h3>
+          <p class="text-xs font-mono text-cyan-400 mb-3">FOUNDER & PRINCIPAL ENGINEER // DOIT-STUDIO</p>
+          <p class="text-sm text-slate-300 mb-5 leading-relaxed">
+            Theo đuổi triết lý kỹ nghệ tinh gọn (Zero-Bloat), kiến trúc Local-First và nâng cao năng suất kỹ sư bằng AI Workflows. Xây dựng và chia sẻ các sản phẩm công nghệ thực chiến.
+          </p>
+          <div class="flex flex-wrap gap-3 justify-center sm:justify-start">
+            <a
+              href="/profile"
+              class="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-cyan-500 text-black hover:bg-cyan-400 transition-all shadow-md"
+            >
+              ĐĂNG KÝ COACHING 1-ON-1 →
+            </a>
+            <a
+              href="/apps"
+              class="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-black text-cyan-300 border border-cyan-500/50 hover:bg-blue-950/80 transition-all"
+            >
+              KHÁM PHÁ CÁC ỨNG DỤNG →
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </article>
+</MainLayout>
