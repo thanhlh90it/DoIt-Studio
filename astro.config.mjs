@@ -2,14 +2,20 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import mdx from '@astrojs/mdx';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://doitstudio.tech', // Thay 'username' bằng GitHub username của bạn
-  base: '/', // Tên repository trên GitHub
+  site: 'https://doitstudio.tech',
+  base: '/',
   output: 'static',
   vite: {
     plugins: [tailwindcss()]
   },
-  integrations: [mdx()]
+  integrations: [
+    sitemap({
+      filter: (page) => !page.includes('/sample-mdx'),
+    }),
+    mdx()
+  ]
 });
