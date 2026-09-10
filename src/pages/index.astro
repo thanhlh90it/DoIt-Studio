@@ -1,6 +1,10 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+import StructuredData from '../components/StructuredData.astro';
+import { getOrganizationSchema, getWebSiteSchema } from '../utils/seoSchemas';
+
+const homepageSchemas = [getOrganizationSchema(), getWebSiteSchema()];
 
 const featuredApps = [
   {
@@ -108,6 +112,8 @@ const engineeringValues = [
   title="DoIT-Studio | Cybernetic Product Venture & Tech Mentorship Lab" 
   description="Hiện thực hoá ý tưởng số — Đột phá cùng IT & Trí tuệ nhân tạo. Solo Tech Venture Studio, Coaching IT & AI thực chiến và Chuyển đổi số tinh gọn."
 >
+  <StructuredData schema={homepageSchemas} />
+
   <!-- Hero Section -->
   <section class="relative overflow-hidden pt-12 pb-20 sm:pt-20 sm:pb-28 md:pt-28 md:pb-36 border-b border-blue-900/40 w-full">
     <!-- Ultramarine & Cyan Ambient Laser Glow Orbs -->

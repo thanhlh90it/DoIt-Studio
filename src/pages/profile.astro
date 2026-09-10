@@ -1,5 +1,9 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import StructuredData from '../components/StructuredData.astro';
+import { getCourseAndServiceSchema } from '../utils/seoSchemas';
+
+const profileSchemas = getCourseAndServiceSchema();
 
 const skillGroups = [
   { category: 'Frontend Ecosystem', icon: '⚡', items: ['Astro 5', 'Tailwind CSS v4', 'TypeScript', 'React.js', 'Next.js', 'Vue.js'] },
@@ -27,6 +31,7 @@ const timeline = [
 ---
 
 <MainLayout title="Trang Cá Nhân | DoIT-Studio Telemetry" description="Thông tin giới thiệu cá nhân, kỹ năng chuyên môn và hành trình sáng tạo tại DoIT-Studio.">
+  <StructuredData schema={profileSchemas} />
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 w-full">
     <!-- Profile Banner & Cyber HUD Bio Card -->
     <div class="glass-card hud-corners p-7 sm:p-12 rounded-3xl mb-12 sm:mb-16 relative overflow-hidden flex flex-col md:flex-row items-center md:items-start gap-8 sm:gap-10 text-center md:text-left border border-blue-900/60 shadow-2xl">

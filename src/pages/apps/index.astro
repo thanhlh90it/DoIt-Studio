@@ -1,6 +1,30 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
+import StructuredData from '../../components/StructuredData.astro';
+import { getSoftwareAppSchema } from '../../utils/seoSchemas';
+
+const appsSchemas = [
+  getSoftwareAppSchema({
+    name: "SecureVault",
+    description: "Két sắt cá nhân bảo mật cao trên di động - 100% local-first privacy, không máy chủ, mã hóa AES-256-GCM.",
+    applicationCategory: "SecurityApplication",
+    url: "https://doitstudio.tech/apps/securevault",
+    downloadUrl: "https://apps.apple.com/us/app/securevault-ẩn-ảnh-mật-khẩu/id6800250737"
+  }),
+  getSoftwareAppSchema({
+    name: "NhàTa",
+    description: "Không gian số ấm áp, riêng tư cho tổ ấm gia đình: Lịch biểu chung & TKB, phân chia việc nhà, tích sao đổi quà.",
+    applicationCategory: "LifestyleApplication",
+    url: "https://doitstudio.tech/nhata"
+  }),
+  getSoftwareAppSchema({
+    name: "NoduleTrack",
+    description: "Ứng dụng di động y tế cá nhân chuyên biệt hỗ trợ số hóa hồ sơ siêu âm, theo dõi tốc độ tăng trưởng của nang, nhân, hạch chuẩn TI-RADS.",
+    applicationCategory: "HealthApplication",
+    url: "https://doitstudio.tech/noduletrack"
+  })
+];
 
 const appIdeas = [
   {
@@ -63,6 +87,7 @@ const appIdeas = [
 ---
 
 <MainLayout title="Ý Tưởng Ứng Dụng | DoIT-Studio Telemetry" description="Bộ sưu tập các ý tưởng và dự án ứng dụng phần mềm đang được phát triển tại DoIT-Studio.">
+  <StructuredData schema={appsSchemas} />
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 w-full">
     <!-- Header HUD -->
     <div class="max-w-4xl mb-14 font-mono">
