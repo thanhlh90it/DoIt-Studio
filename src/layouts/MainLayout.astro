@@ -1,9 +1,17 @@
 ---
 import '../styles/global.css';
+import SEO from '../components/SEO.astro';
 
 interface Props {
   title?: string;
   description?: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
+  noindex?: boolean;
   showHeader?: boolean;
   showFooter?: boolean;
 }
@@ -11,6 +19,13 @@ interface Props {
 const { 
   title = "DoIT-Studio | Cybernetic Digital Workspace", 
   description = "Tối giản, Sáng tạo và Xây dựng các ứng dụng chất lượng cao với tư duy kỹ thuật tương lai.",
+  canonical,
+  ogImage,
+  ogType,
+  publishedTime,
+  modifiedTime,
+  author,
+  noindex,
   showHeader = true,
   showFooter = true
 } = Astro.props;
@@ -37,8 +52,17 @@ function isActive(href: string) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-    <meta name="description" content={description} />
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonical}
+      ogImage={ogImage}
+      ogType={ogType}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
+      author={author}
+      noindex={noindex}
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
