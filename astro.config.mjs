@@ -28,6 +28,17 @@ function sitemapXmlAlias() {
   };
 }
 
+// Danh sách các route chuyển hướng (redirect) hoặc nháp/mẫu không đưa vào sitemap
+const EXCLUDED_SITEMAP_ROUTES = [
+  '/sample-mdx',
+  '/apps/nhata',
+  '/nhata/data-deletion',
+  '/nhata/delete-account',
+  '/nhata/privacy',
+  '/nhata/terms',
+  '/securevault/privacy'
+];
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://doitstudio.tech',
@@ -38,7 +49,17 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/sample-mdx'),
+      filter: (page) => {
+        try {
+          const url = new URL(page);
+          const cleanPath = url.pathname.replace(/\/$/, '');
+          return !EXCLUDED_SITEMAP_ROUTES.some(
+            (excluded) => cleanPath === excluded || cleanPath.startsWith(`${excluded}/`)
+          );
+        } catch {
+          return !EXCLUDED_SITEMAP_ROUTES.some((excluded) => page.includes(excluded));
+        }
+      },
     }),
     sitemapXmlAlias(),
     mdx()
