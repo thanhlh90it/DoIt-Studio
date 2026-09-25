@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="100%" height="100%">
+  <defs>
+    <!-- Rich iOS Gradient -->
+    <linearGradient id="iosBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="50%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+
+    <!-- TV Body Gradient -->
+    <linearGradient id="iosTvGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+
+    <linearGradient id="iosScreenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+
+    <linearGradient id="iosOrangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB923C"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+
+    <filter id="iosDropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="32" stdDeviation="36" flood-color="#0F172A" flood-opacity="0.32"/>
+    </filter>
+  </defs>
+
+  <!-- iOS App Store 1024x1024 Solid Canvas (No Alpha) -->
+  <rect width="1024" height="1024" fill="url(#iosBgGrad)"/>
+
+  <!-- Subtle Shield Geometric Halo -->
+  <path d="M 512 120 Q 740 150 780 380 Q 780 640 512 840 Q 244 640 244 380 Q 284 150 512 120 Z"
+        fill="none" stroke="#FFFFFF" stroke-width="8" stroke-opacity="0.16" stroke-dasharray="20 20"/>
+
+  <!-- Main Mascot & TV Group -->
+  <g filter="url(#iosDropShadow)">
+    <!-- Antennas -->
+    <path d="M 420 320 L 330 220" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round"/>
+    <circle cx="320" cy="210" r="28" fill="url(#iosOrangeGrad)"/>
+
+    <path d="M 604 320 L 694 220" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round"/>
+    <circle cx="704" cy="210" r="28" fill="url(#iosOrangeGrad)"/>
+
+    <!-- TV Body (Squircle) -->
+    <rect x="232" y="300" width="560" height="440" rx="92" fill="url(#iosTvGrad)"/>
+
+    <!-- TV Stand Legs -->
+    <path d="M 360 740 L 330 810 M 664 740 L 694 810" stroke="#CBD5E1" stroke-width="28" stroke-linecap="round"/>
+
+    <!-- TV Inner Screen -->
+    <rect x="280" y="348" width="464" height="344" rx="60" fill="url(#iosScreenGrad)"/>
+
+    <!-- Eyes -->
+    <circle cx="400" cy="490" r="36" fill="#60A5FA"/>
+    <circle cx="408" cy="482" r="14" fill="#FFFFFF"/>
+
+    <circle cx="624" cy="490" r="36" fill="#60A5FA"/>
+    <circle cx="632" cy="482" r="14" fill="#FFFFFF"/>
+
+    <!-- Cute Blush -->
+    <circle cx="356" cy="530" r="20" fill="#F43F5E" opacity="0.4"/>
+    <circle cx="668" cy="530" r="20" fill="#F43F5E" opacity="0.4"/>
+
+    <!-- Smiling Mouth -->
+    <path d="M 464 536 Q 512 584 560 536" fill="none" stroke="url(#iosOrangeGrad)" stroke-width="20" stroke-linecap="round"/>
+  </g>
+</svg>

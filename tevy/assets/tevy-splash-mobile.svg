@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 2340" width="100%" height="100%">
+  <defs>
+    <!-- Rich Background Gradient -->
+    <linearGradient id="splashBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A8A"/>
+      <stop offset="40%" stop-color="#1E40AF"/>
+      <stop offset="75%" stop-color="#1D4ED8"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+
+    <!-- Radial Glow Behind Mascot -->
+    <radialGradient id="mascotGlow" cx="50%" cy="45%" r="40%">
+      <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#2563EB" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#1E3A8A" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- TV Body Gradient -->
+    <linearGradient id="tvWhiteGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F8FAFC"/>
+    </linearGradient>
+
+    <!-- Screen Inner Gradient -->
+    <linearGradient id="tvScreenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1120"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+
+    <!-- Orange Gradient -->
+    <linearGradient id="splashOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB923C"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+
+    <!-- Drop Shadow for Float Effect -->
+    <filter id="splashShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1080" height="2340" fill="url(#splashBgGrad)"/>
+  <rect width="1080" height="2340" fill="url(#mascotGlow)"/>
+
+  <!-- Subtle Ambient Circuit / Star Dots -->
+  <g fill="#93C5FD" opacity="0.25">
+    <circle cx="180" cy="420" r="4"/>
+    <circle cx="280" cy="360" r="6"/>
+    <circle cx="820" cy="520" r="5"/>
+    <circle cx="920" cy="380" r="3"/>
+    <circle cx="140" cy="1580" r="5"/>
+    <circle cx="880" cy="1640" r="6"/>
+    <circle cx="320" cy="1820" r="4"/>
+  </g>
+
+  <!-- Protective Shield Arc Line (Subtle) -->
+  <path d="M 540 680 Q 780 720 820 950 Q 820 1200 540 1420 Q 260 1200 260 950 Q 300 720 540 680 Z"
+        fill="none" stroke="#60A5FA" stroke-width="3" stroke-dasharray="14 14" opacity="0.3"/>
+
+  <!-- Center Mascot Group -->
+  <g transform="translate(540, 1020)" filter="url(#splashShadow)">
+    <!-- Antennas -->
+    <path d="M -80 -190 L -150 -280" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round"/>
+    <circle cx="-160" cy="-290" r="22" fill="url(#splashOrange)"/>
+
+    <path d="M 80 -190 L 150 -280" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round"/>
+    <circle cx="160" cy="-290" r="22" fill="url(#splashOrange)"/>
+
+    <!-- TV Body -->
+    <rect x="-220" y="-190" width="440" height="340" rx="72" fill="url(#tvWhiteGrad)"/>
+
+    <!-- TV Legs -->
+    <path d="M -120 150 L -150 210 M 120 150 L 150 210" stroke="#CBD5E1" stroke-width="22" stroke-linecap="round"/>
+
+    <!-- TV Screen Inner -->
+    <rect x="-180" y="-150" width="360" height="260" rx="46" fill="url(#tvScreenGrad)"/>
+
+    <!-- Mascot Eyes (Friendly Glow) -->
+    <circle cx="-85" cy="-35" r="28" fill="#60A5FA"/>
+    <circle cx="-77" cy="-43" r="10" fill="#FFFFFF"/>
+
+    <circle cx="85" cy="-35" r="28" fill="#60A5FA"/>
+    <circle cx="93" cy="-43" r="10" fill="#FFFFFF"/>
+
+    <!-- Blushing Cheeks -->
+    <circle cx="-125" cy="0" r="16" fill="#F43F5E" opacity="0.35"/>
+    <circle cx="125" cy="0" r="16" fill="#F43F5E" opacity="0.35"/>
+
+    <!-- Smiling Mouth -->
+    <path d="M -40 5 Q 0 45 40 5" fill="none" stroke="url(#splashOrange)" stroke-width="16" stroke-linecap="round"/>
+  </g>
+
+  <!-- Brand Typography -->
+  <!-- Name: Tevy -->
+  <text x="540" y="1480" font-family="'Plus Jakarta Sans', 'Inter', system-ui, sans-serif" font-size="110" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="-2">
+    Tev<tspan fill="#F97316">y</tspan>
+  </text>
+
+  <!-- Tagline / Subtitle -->
+  <text x="540" y="1545" font-family="'Plus Jakarta Sans', 'Inter', system-ui, sans-serif" font-size="28" font-weight="700" fill="#93C5FD" text-anchor="middle" letter-spacing="4">
+    KIDS TV PARENTAL CONTROL
+  </text>
+
+  <!-- Vietnamese Slogan Subtext -->
+  <text x="540" y="1600" font-family="'Plus Jakarta Sans', 'Inter', system-ui, sans-serif" font-size="22" font-weight="500" fill="#E2E8F0" text-anchor="middle" opacity="0.85">
+    Cân bằng giờ xem, bảo vệ đôi mắt trẻ
+  </text>
+
+  <!-- Bottom Loading Dots Animation Preview -->
+  <g transform="translate(540, 2120)">
+    <circle cx="-32" cy="0" r="7" fill="#60A5FA" opacity="0.5"/>
+    <circle cx="0" cy="0" r="9" fill="#FFFFFF"/>
+    <circle cx="32" cy="0" r="7" fill="#60A5FA" opacity="0.5"/>
+    <text x="0" y="55" font-family="'Plus Jakarta Sans', 'Inter', system-ui, sans-serif" font-size="18" font-weight="500" fill="#94A3B8" text-anchor="middle" letter-spacing="1">
+      Đang đồng bộ với thiết bị...
+    </text>
+  </g>
+</svg>

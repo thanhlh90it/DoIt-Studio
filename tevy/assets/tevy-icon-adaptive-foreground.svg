@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 432 432" width="100%" height="100%">
+  <defs>
+    <!-- TV Gradient -->
+    <linearGradient id="adaptTvGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="adaptScreenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="adaptOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB923C"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+    <filter id="adaptShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#0F172A" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- 432x432 Android Adaptive Foreground - Content centered in 264x264 safe mask (center 216,216) -->
+  <g transform="translate(216, 216)" filter="url(#adaptShadow)">
+    <!-- Antennas -->
+    <path d="M -36 -48 L -68 -84" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+    <circle cx="-72" cy="-88" r="10" fill="url(#adaptOrange)"/>
+
+    <path d="M 36 -48 L 68 -84" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+    <circle cx="72" cy="-88" r="10" fill="url(#adaptOrange)"/>
+
+    <!-- TV Body -->
+    <rect x="-95" y="-55" width="190" height="150" rx="32" fill="url(#adaptTvGrad)"/>
+
+    <!-- TV Legs -->
+    <path d="M -52 95 L -62 118 M 52 95 L 62 118" stroke="#CBD5E1" stroke-width="9" stroke-linecap="round"/>
+
+    <!-- Screen -->
+    <rect x="-78" y="-38" width="156" height="116" rx="20" fill="url(#adaptScreenGrad)"/>
+
+    <!-- Eyes -->
+    <circle cx="-38" cy="10" r="12" fill="#60A5FA"/>
+    <circle cx="-35" cy="7" r="4.5" fill="#FFFFFF"/>
+
+    <circle cx="38" cy="10" r="12" fill="#60A5FA"/>
+    <circle cx="41" cy="7" r="4.5" fill="#FFFFFF"/>
+
+    <!-- Blushing cheeks -->
+    <circle cx="-56" cy="24" r="7" fill="#F43F5E" opacity="0.4"/>
+    <circle cx="56" cy="24" r="7" fill="#F43F5E" opacity="0.4"/>
+
+    <!-- Smile -->
+    <path d="M -18 26 Q 0 42 18 26" fill="none" stroke="url(#adaptOrange)" stroke-width="7" stroke-linecap="round"/>
+  </g>
+</svg>

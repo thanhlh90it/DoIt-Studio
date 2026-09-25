@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="100%" height="100%">
+  <defs>
+    <!-- Deep TV Slate Gradient -->
+    <linearGradient id="tvBannerBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="50%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0B1120"/>
+    </linearGradient>
+
+    <!-- Glowing Aura -->
+    <radialGradient id="auraGlow" cx="30%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2563EB" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="tvMascotOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB923C"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="640" height="360" fill="url(#tvBannerBg)"/>
+  <rect width="640" height="360" fill="url(#auraGlow)"/>
+
+  <!-- Left Side: Tevy Mascot (Luminous TV Icon) -->
+  <g transform="translate(70, 75)">
+    <!-- Shield Outline Glow -->
+    <path d="M 100 10 Q 160 20 170 85 Q 170 160 100 205 Q 30 160 30 85 Q 40 20 100 10 Z"
+          fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-opacity="0.4" stroke-dasharray="6 6"/>
+
+    <!-- Antennas -->
+    <path d="M 80 60 L 60 35" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="56" cy="30" r="7" fill="url(#tvMascotOrange)"/>
+    <path d="M 120 60 L 140 35" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="144" cy="30" r="7" fill="url(#tvMascotOrange)"/>
+
+    <!-- TV Body -->
+    <rect x="44" y="55" width="112" height="90" rx="22" fill="#FFFFFF"/>
+    <!-- Legs -->
+    <path d="M 68 145 L 60 160 M 132 145 L 140 160" stroke="#94A3B8" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Screen -->
+    <rect x="54" y="65" width="92" height="70" rx="14" fill="#0B1120"/>
+
+    <!-- Luminous Friendly Eyes -->
+    <circle cx="78" cy="94" r="8" fill="#60A5FA"/>
+    <circle cx="80" cy="92" r="3" fill="#FFFFFF"/>
+    <circle cx="122" cy="94" r="8" fill="#60A5FA"/>
+    <circle cx="124" cy="92" r="3" fill="#FFFFFF"/>
+
+    <!-- Smile -->
+    <path d="M 92 106 Q 100 116 108 106" fill="none" stroke="url(#tvMascotOrange)" stroke-width="4.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Right Side: Big Screen Typography -->
+  <g transform="translate(290, 115)">
+    <!-- Title: Tevy -->
+    <text x="0" y="85" font-family="'Plus Jakarta Sans', 'Inter', system-ui, sans-serif" font-size="92" font-weight="900" fill="#FFFFFF" letter-spacing="-2">
+      Tev<tspan fill="#F97316">y</tspan>
+    </text>
+
+    <!-- Subtitle pill badge -->
+    <rect x="0" y="115" width="280" height="34" rx="17" fill="#2563EB" fill-opacity="0.2" stroke="#3B82F6" stroke-width="1.5"/>
+    <text x="140" y="138" font-family="'Plus Jakarta Sans', 'Inter', system-ui, sans-serif" font-size="14" font-weight="700" fill="#93C5FD" text-anchor="middle" letter-spacing="1.5">
+      KIDS TV PARENTAL CONTROL
+    </text>
+
+    <!-- TV Feature Indicator -->
+    <circle cx="10" cy="180" r="5" fill="#10B981"/>
+    <text x="25" y="184" font-family="'Plus Jakarta Sans', 'Inter', system-ui, sans-serif" font-size="14" font-weight="600" fill="#94A3B8">
+      Android TV Leanback Certified
+    </text>
+  </g>
+</svg>
