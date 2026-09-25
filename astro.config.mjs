@@ -32,6 +32,7 @@ function sitemapXmlAlias() {
 const EXCLUDED_SITEMAP_ROUTES = [
   '/sample-mdx',
   '/apps/nhata',
+  '/apps/tevy',
   '/nhata/data-deletion',
   '/nhata/delete-account',
   '/nhata/privacy',

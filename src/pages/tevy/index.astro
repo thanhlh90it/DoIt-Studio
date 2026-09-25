@@ -10,24 +10,32 @@
   
   <!-- SEO & ASO Metadata -->
   <meta name="description" content="Quản lý giờ xem TV thông minh, khóa màn hình từ xa và bảo vệ thị lực cho trẻ với Tevy. Không còn tranh giành remote hay tiếng khóc khi tắt TV!">
-  <meta name="keywords" content="tevy, quan ly tv tre em, khoa tivi tu xa, bao ve mat tre em, gioi han xem tv, parental control tv, android tv">
+  <meta name="keywords" content="tevy, quan ly tv tre em, khoa tivi tu xa, bao ve mat tre em, gioi han xem tv, parental control tv, android tv, google tv">
   <meta name="author" content="DOIT Studio">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://doitstudio.tech/tevy/">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DoIT-Studio">
   <meta property="og:url" content="https://doitstudio.tech/tevy/">
-  <meta property="og:title" content="Tevy: Giám Sát Xem TV Trẻ Em - Cân Bằng Giờ Xem, Bảo Vệ Mắt">
+  <meta property="og:title" content="Tevy: Giám Sát Xem TV Trẻ Em - Cân Bằng Giờ Xem, Bảo Vệ Mắt | DoIT-Studio">
   <meta property="og:description" content="Giải pháp thông minh đồng hành cùng cha mẹ: Tự động nhắc nhở nghỉ mắt sau 30 phút, khóa TV tức thì từ xa bằng điện thoại chỉ với 1 chạm.">
-  <meta property="og:image" content="https://doitstudio.tech/tevy/assets/tevy-tv-banner.svg">
+  <meta property="og:image" content="https://doitstudio.tech/tevy/assets/tevy-og-banner.png">
+  <meta property="og:image:secure_url" content="https://doitstudio.tech/tevy/assets/tevy-og-banner.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Tevy - Ứng dụng Giám Sát Xem TV Trẻ Em & Bảo Vệ Thị Lực">
   <meta property="og:locale" content="vi_VN">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Tevy: Giám Sát Xem TV Trẻ Em">
-  <meta name="twitter:description" content="Quản lý giờ xem TV thông minh, khóa màn hình từ xa và bảo vệ thị lực cho trẻ.">
-  <meta name="twitter:image" content="https://doitstudio.tech/tevy/assets/tevy-tv-banner.svg">
+  <meta name="twitter:url" content="https://doitstudio.tech/tevy/">
+  <meta name="twitter:title" content="Tevy: Giám Sát Xem TV Trẻ Em - DoIT-Studio">
+  <meta name="twitter:description" content="Quản lý giờ xem TV thông minh, khóa màn hình từ xa và bảo vệ thị lực cho trẻ với Tevy.">
+  <meta name="twitter:image" content="https://doitstudio.tech/tevy/assets/tevy-og-banner.png">
+  <meta name="twitter:image:alt" content="Tevy - Kids TV Parental Control & Eye Protection">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/tevy/assets/favicon.svg">
@@ -42,25 +50,117 @@
   <link rel="stylesheet" href="/tevy/css/main.css">
   <link rel="stylesheet" href="/tevy/css/sandbox.css">
 
-  <!-- Structured Data (JSON-LD) -->
+  <!-- Google Analytics 4 (Only loaded in Production) -->
+  {import.meta.env.PROD && (
+    <>
+      <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-64YJ3QLMEM"></script>
+      <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-64YJ3QLMEM', {
+          page_path: window.location.pathname,
+        });
+      </script>
+    </>
+  )}
+
+  <!-- Structured Data (JSON-LD) with SoftwareApplication, BreadcrumbList & FAQPage -->
   <script is:inline type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Tevy Parent & TV Client",
-    "operatingSystem": "iOS, Android, Android TV, Google TV",
-    "applicationCategory": "ParentingApplication",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "VND"
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "DOIT Studio",
-      "url": "https://doitstudio.tech"
-    },
-    "description": "Giải pháp giám sát thời gian xem TV cho trẻ em, khóa từ xa 1 chạm và bảo vệ thị lực với quy tắc 30 phút khoa học."
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://doitstudio.tech/tevy/#software",
+        "name": "Tevy Parent & TV Client",
+        "operatingSystem": "Android TV, Google TV, iOS, Android",
+        "applicationCategory": "ParentingApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "VND"
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "DOIT Studio",
+          "url": "https://doitstudio.tech"
+        },
+        "description": "Giải pháp giám sát thời gian xem TV cho trẻ em, khóa từ xa 1 chạm và bảo vệ thị lực với quy tắc 30 phút khoa học.",
+        "url": "https://doitstudio.tech/tevy",
+        "image": "https://doitstudio.tech/tevy/assets/tevy-og-banner.png"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://doitstudio.tech/tevy/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "DoIT Studio",
+            "item": "https://doitstudio.tech"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Ý Tưởng Ứng Dụng",
+            "item": "https://doitstudio.tech/apps"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Tevy",
+            "item": "https://doitstudio.tech/tevy"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://doitstudio.tech/tevy/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Tevy tương thích với những dòng Smart TV nào?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tevy TV Client tương thích với toàn bộ các Smart TV chạy hệ điều hành Android TV hoặc Google TV (phiên bản Android 8.0 trở lên), bao gồm các thương hiệu phổ biến như Sony, TCL, Casper, Xiaomi, Panasonic, Sharp, Coocaa, và các TV Box / Chromecast with Google TV."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Bé có thể tự dùng remote gỡ ứng dụng hoặc vượt qua màn hình khóa không?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Hoàn toàn không thể. Tevy TV Client được trang bị cơ chế bảo mật ngăn chặn thoát ứng dụng trái phép (Anti-Bypass). Màn hình khóa sẽ tự động giữ quyền hiển thị ưu tiên cao nhất (System Alert Window). Muốn mở khóa hoặc vào cài đặt gỡ ứng dụng, bắt buộc phải nhập mã PIN phụ huynh 4 số do cha mẹ thiết lập."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Tôi đang đi làm ở cơ quan có điều khiển được TV ở nhà không?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Có! Miễn là Smart TV ở nhà có kết nối mạng Internet (Wifi/Dây LAN) và điện thoại của bạn có 4G/Wifi, bạn có thể theo dõi thời lượng xem và gửi lệnh khóa TV ngay lập tức từ bất kỳ nơi đâu trên thế giới với độ trễ dưới 300 mili-giây."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ứng dụng có thu thập hình ảnh hay video riêng tư của gia đình tôi không?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tuyệt đối không. Tevy tuân thủ nghiêm ngặt chuẩn quyền riêng tư của trẻ em (COPPA & GDPR-K). Chúng tôi không kích hoạt camera, không ghi âm micro, và không thu thập bất kỳ nội dung video cá nhân nào. Hệ thống chỉ ghi nhận thời gian bật/tắt và đếm số phút xem để phục vụ tính năng bảo vệ thị lực."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Tevy có miễn phí không?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tevy cung cấp gói trải nghiệm miễn phí trọn đời cho các tính năng cốt lõi: Ghép đôi 1 TV, Theo dõi thời gian thực, và Cảnh báo nghỉ mắt 30 phút. Các tính năng nâng cao như Quản lý không giới hạn TV, Báo cáo biểu đồ lịch sử tuần/tháng có thể nâng cấp thêm tùy theo nhu cầu của gia đình."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
