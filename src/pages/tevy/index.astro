@@ -1,0 +1,808 @@
+---
+// Tevy Landing Page - DoIT Studio
+---
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tevy: Giám Sát Xem TV Trẻ Em - Cân Bằng Giờ Xem, Bảo Vệ Mắt | DoIT-Studio</title>
+  
+  <!-- SEO & ASO Metadata -->
+  <meta name="description" content="Quản lý giờ xem TV thông minh, khóa màn hình từ xa và bảo vệ thị lực cho trẻ với Tevy. Không còn tranh giành remote hay tiếng khóc khi tắt TV!">
+  <meta name="keywords" content="tevy, quan ly tv tre em, khoa tivi tu xa, bao ve mat tre em, gioi han xem tv, parental control tv, android tv">
+  <meta name="author" content="DOIT Studio">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://doitstudio.tech/tevy/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://doitstudio.tech/tevy/">
+  <meta property="og:title" content="Tevy: Giám Sát Xem TV Trẻ Em - Cân Bằng Giờ Xem, Bảo Vệ Mắt">
+  <meta property="og:description" content="Giải pháp thông minh đồng hành cùng cha mẹ: Tự động nhắc nhở nghỉ mắt sau 30 phút, khóa TV tức thì từ xa bằng điện thoại chỉ với 1 chạm.">
+  <meta property="og:image" content="https://doitstudio.tech/tevy/assets/tevy-tv-banner.svg">
+  <meta property="og:locale" content="vi_VN">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tevy: Giám Sát Xem TV Trẻ Em">
+  <meta name="twitter:description" content="Quản lý giờ xem TV thông minh, khóa màn hình từ xa và bảo vệ thị lực cho trẻ.">
+  <meta name="twitter:image" content="https://doitstudio.tech/tevy/assets/tevy-tv-banner.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/tevy/assets/favicon.svg">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/tevy/css/tokens.css">
+  <link rel="stylesheet" href="/tevy/css/main.css">
+  <link rel="stylesheet" href="/tevy/css/sandbox.css">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script is:inline type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Tevy Parent & TV Client",
+    "operatingSystem": "iOS, Android, Android TV, Google TV",
+    "applicationCategory": "ParentingApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "VND"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "DOIT Studio",
+      "url": "https://doitstudio.tech"
+    },
+    "description": "Giải pháp giám sát thời gian xem TV cho trẻ em, khóa từ xa 1 chạm và bảo vệ thị lực với quy tắc 30 phút khoa học."
+  }
+  </script>
+</head>
+<body>
+  <!-- DoIT Studio Header Bar -->
+  <div class="top-studio-bar" style="background: #0B1120; border-bottom: 1px solid #1E293B; padding: 10px 16px; font-family: 'JetBrains Mono', monospace; font-size: 13px; position: relative; z-index: 1001;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+      <a href="/apps" style="display: inline-flex; align-items: center; gap: 8px; color: #94A3B8; text-decoration: none; font-weight: 500; transition: color 0.2s ease;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>Quay lại DoIT-Studio // Ý Tưởng &amp; Ứng Dụng</span>
+      </a>
+      <div style="display: inline-flex; align-items: center; gap: 8px; color: #60A5FA; font-size: 12px;">
+        <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #10B981;"></span>
+        <span>DOIT STUDIO ECOSYSTEM · TEVY PROJECT</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= 1. Sticky Navigation Bar ================= -->
+  <header class="navbar" role="banner">
+    <div class="container">
+      <a href="#" class="navbar-brand" aria-label="Tevy Trang chủ">
+        <img src="/tevy/assets/tevy-logo-horizontal.svg" alt="Tevy Logo" width="130" height="38">
+      </a>
+
+      <nav aria-label="Menu chính">
+        <ul class="navbar-menu">
+          <li><a href="#features" class="navbar-link">Tính năng</a></li>
+          <li><a href="#demo" class="navbar-link">Trải nghiệm thử</a></li>
+          <li><a href="#how-it-works" class="navbar-link">Cách hoạt động</a></li>
+          <li><a href="#testimonials" class="navbar-link">Đánh giá</a></li>
+          <li><a href="#faq" class="navbar-link">Hỏi đáp</a></li>
+        </ul>
+      </nav>
+
+      <div class="navbar-actions">
+        <a href="#download" class="btn btn-primary" style="min-height: 42px; padding: 8px 18px; font-size: 0.9rem;">
+          Tải ứng dụng
+        </a>
+        <button type="button" class="mobile-toggle" aria-label="Mở menu điều hướng" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= 2. Hero Section ================= -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-pill">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z"/>
+            </svg>
+            <span>Giải pháp quản lý Smart TV thế hệ mới cho cha mẹ</span>
+          </div>
+
+          <h1 class="hero-title">
+            Cân Bằng Giờ Xem TV, Bảo Vệ Mắt Cho Bé <span class="highlight">Không Tiếng Khóc</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Dứt điểm cảnh tranh giành remote mỗi tối! Tevy giúp cha mẹ tự động nhắc nghỉ mắt sau 30 phút, khóa TV tức thì từ xa bằng điện thoại chỉ với 1 chạm, rèn cho bé thói quen tự giác lành mạnh.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#demo" class="btn btn-primary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+              Trải nghiệm tương tác ngay
+            </a>
+            <a href="#how-it-works" class="btn btn-secondary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+              </svg>
+              Xem hướng dẫn 30s
+            </a>
+          </div>
+
+          <!-- Store Badges -->
+          <div class="store-badges" style="justify-content: center; margin-bottom: var(--tevy-space-xl);">
+            <!-- iOS App Store -->
+            <a href="#download" class="btn-store" aria-label="Tải trên Apple App Store">
+              <svg viewBox="0 0 24 24">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.85c.66-.8 1.11-1.92.99-3.04-1 .04-2.13.67-2.81 1.47-.6.69-1.12 1.83-.98 2.92 1.11.09 2.16-.57 2.8-1.35z"/>
+              </svg>
+              <div class="store-text">
+                <span class="store-label">Tải trên</span>
+                <span class="store-platform">App Store</span>
+              </div>
+            </a>
+
+            <!-- Google Play Store -->
+            <a href="#download" class="btn-store" aria-label="Tải trên Google Play">
+              <svg viewBox="0 0 24 24">
+                <path d="M3.609 1.814L13.793 12 3.61 22.186c-.37-.367-.61-.884-.61-1.468V3.282c0-.584.24-1.1.61-1.468zM15.207 13.414l2.586 2.586-12.77 7.373 10.184-9.959zm0-2.828L5.023.627l12.77 7.373-2.586 2.586zm1.414 1.414l3.586-2.071c.78-.451.78-1.187 0-1.638l-3.586-2.071-2.121 2.121 2.121 2.121z"/>
+              </svg>
+              <div class="store-text">
+                <span class="store-label">Tải trên</span>
+                <span class="store-platform">Google Play</span>
+              </div>
+            </a>
+
+            <!-- Android TV -->
+            <a href="#download" class="btn-store" aria-label="Tải cho Android TV">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/>
+              </svg>
+              <div class="store-text">
+                <span class="store-label">Cài đặt cho</span>
+                <span class="store-platform">Android TV</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="hero-trust-bar">
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+              </svg>
+              <span>4.9/5 Đánh giá tin cậy</span>
+            </div>
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+              <span>Ghép đôi 30 giây bảo mật</span>
+            </div>
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              <span>Chuẩn an toàn trẻ em COPPA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. Live Interactive Sandbox ================= -->
+    <section id="demo" class="sandbox-section">
+      <div class="container sandbox-container">
+        <div class="section-header">
+          <div class="sandbox-badge">
+            <span class="pulse-dot"></span>
+            <span>Live Interactive Sandbox</span>
+          </div>
+          <h2 class="section-title sandbox-title">Thử Nghiệm Tương Tác 2 Chiều: Phone ↔ Smart TV</h2>
+          <p class="sandbox-subtitle">
+            Bấm thử các nút điều khiển trên điện thoại ảo bên trái để thấy màn hình Smart TV bên phải phản hồi tức thì qua cơ chế đồng bộ thời gian thực.
+          </p>
+        </div>
+
+        <div class="sandbox-stage">
+          <!-- Left: Phone Mockup -->
+          <div class="phone-mockup" aria-label="Mô phỏng Ứng dụng Phụ huynh Tevy Parent">
+            <div class="phone-screen">
+              <div class="phone-notch">
+                <div class="phone-speaker"></div>
+                <div class="phone-camera"></div>
+              </div>
+              <div class="phone-status-bar">
+                <span>09:41</span>
+                <span>5G • 100%</span>
+              </div>
+
+              <div class="phone-app-header">
+                <div class="phone-device-info">
+                  <div class="phone-device-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="phone-device-name">TV Phòng Khách</div>
+                    <div id="phoneDeviceStatus" class="phone-device-status">Đang xem an toàn</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="phone-body">
+                <!-- Watch Timer Widget -->
+                <div class="phone-timer-card">
+                  <div class="phone-timer-label">Thời gian xem phiên</div>
+                  <div id="phoneTimerVal" class="phone-timer-val">28:15</div>
+                  <div class="phone-timer-bar">
+                    <div id="phoneTimerProgress" class="phone-timer-progress"></div>
+                  </div>
+                </div>
+
+                <!-- Simulation Trigger Buttons -->
+                <div class="phone-controls-title">Bấm thử chế độ điều khiển:</div>
+                <div class="phone-triggers" role="group" aria-label="Các chế độ thử nghiệm">
+                  <button type="button" class="phone-btn active" data-state="normal">
+                    <span class="phone-btn-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <span>1. Đang xem an toàn</span>
+                  </button>
+
+                  <button type="button" class="phone-btn" data-state="warning">
+                    <span class="phone-btn-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    </span>
+                    <span>2. Cảnh báo nghỉ mắt 30p</span>
+                  </button>
+
+                  <button type="button" class="phone-btn" data-state="locked">
+                    <span class="phone-btn-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    </span>
+                    <span>3. Khóa TV tức thì (1 Chạm)</span>
+                  </button>
+
+                  <button type="button" class="phone-btn" data-state="bedtime">
+                    <span class="phone-btn-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    </span>
+                    <span>4. Kích hoạt Giờ đi ngủ</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Smart TV 16:9 Mockup -->
+          <div class="tv-mockup" aria-label="Mô phỏng Màn hình Android TV Tevy Client">
+            <div class="tv-bezel">
+              <div id="tvScreen" class="tv-screen">
+                <!-- Top bar in TV -->
+                <div class="tv-top-bar">
+                  <div id="tvStatusBadge" class="tv-badge-pill" style="border-color: #10B981; color: #10B981;">
+                    Đang phát • HD 1080p
+                  </div>
+                  <div id="tvLiveClock" class="tv-live-clock">18:42:30</div>
+                </div>
+
+                <!-- Center Graphic & Message -->
+                <div class="tv-content-box">
+                  <img id="tvGraphic" class="tv-graphic-holder" src="/tevy/assets/tevy-tv-banner.svg" alt="TV Display Graphic">
+                  <h3 id="tvTitle" class="tv-title">Phim Hoạt Hình: Chú Gấu Thông Thái</h3>
+                  <p id="tvDesc" class="tv-desc">Thời gian đã xem liên tục: 28 phút / Giới hạn: 30 phút. TV đang hoạt động an toàn.</p>
+                  
+                  <!-- PIN Display for Locked mode -->
+                  <div id="tvPinRow" class="tv-pin-row" style="display: none;">
+                    <div class="tv-pin-box">•</div>
+                    <div class="tv-pin-box">•</div>
+                    <div class="tv-pin-box">•</div>
+                    <div class="tv-pin-box">•</div>
+                  </div>
+                </div>
+
+                <!-- Subtle TV brand footer -->
+                <div style="display: flex; justify-content: space-between; align-items: center; opacity: 0.5; font-size: 0.75rem;">
+                  <span>Tevy Android TV Client v1.0.0</span>
+                  <span>Nhấn MENU trên Remote để cài đặt</span>
+                </div>
+              </div>
+            </div>
+            <!-- TV Stand -->
+            <div class="tv-stand"></div>
+            <div class="tv-stand-base"></div>
+          </div>
+        </div>
+
+        <!-- Latency Note -->
+        <div class="sandbox-footer-note">
+          <span class="pulse-dot"></span>
+          <span>Tín hiệu truyền thời gian thực qua Firebase Realtime Database với độ trễ &lt; 300ms.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4. Problem vs Solution ================= -->
+    <section class="problem-solution section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Thấu cảm & Đột phá</div>
+          <h2 class="section-title">Tại Sao Các Gia Đình Hiện Đại Cần Tevy?</h2>
+          <p class="section-subtitle">
+            Nuôi dạy con trong kỷ nguyên số không phải là cấm đoán hoàn toàn chiếc TV, mà là trang bị cho con phương pháp tiếp cận khoa học, nhân văn và điều độ.
+          </p>
+        </div>
+
+        <div class="ps-grid">
+          <!-- Pain points -->
+          <div class="ps-card pain">
+            <div class="ps-card-header">
+              <span class="ps-badge">Khi chưa có Tevy</span>
+            </div>
+            <h3 class="ps-title">Nỗi mệt mỏi quen thuộc mỗi ngày</h3>
+            <ul class="ps-list">
+              <li class="ps-item">
+                <svg class="ps-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/>
+                </svg>
+                <span><strong>Cuộc chiến tranh giành chiếc remote:</strong> Cứ mỗi lần ba mẹ tắt TV là con lại khóc lóc, cáu gắt và chống đối kịch liệt.</span>
+              </li>
+              <li class="ps-item">
+                <svg class="ps-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/>
+                </svg>
+                <span><strong>Xem tì tì 2-3 tiếng không chớp mắt:</strong> Nguy cơ nhược thị, cận thị học đường và khô rát giác mạc vì dán mắt màn hình quá lâu.</span>
+              </li>
+              <li class="ps-item">
+                <svg class="ps-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/>
+                </svg>
+                <span><strong>Bất an khi vắng nhà:</strong> Đi làm cả ngày ở công ty mà không biết con ở nhà với ông bà hay người giúp việc đã xem TV bao nhiêu tiếng.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Relief & Solution -->
+          <div class="ps-card relief">
+            <div class="ps-card-header">
+              <span class="ps-badge">Đồng hành cùng Tevy</span>
+            </div>
+            <h3 class="ps-title">Gia đình êm ấm, con tự giác vui vẻ</h3>
+            <ul class="ps-list">
+              <li class="ps-item">
+                <svg class="ps-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <span><strong>Bạn gấu Tevy nhắc nhở dịu dàng:</strong> Màn hình chuyển sang lời khuyên thân thiện sau 30 phút, con vui vẻ đứng lên uống nước mà không bị ức chế.</span>
+              </li>
+              <li class="ps-item">
+                <svg class="ps-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <span><strong>Khóa tức thì từ xa chỉ với 1 chạm:</strong> Dù đang ở văn phòng hay công tác, cha mẹ kiểm soát TV ở nhà bất cứ lúc nào qua smartphone.</span>
+              </li>
+              <li class="ps-item">
+                <svg class="ps-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <span><strong>Tự động hóa giờ đi ngủ:</strong> Đến 21:00 TV tự động chuyển sang chế độ ru ngủ, giúp trẻ hình thành nhịp sinh học tự nhiên chuẩn khoa học.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 5. Bento Grid Features ================= -->
+    <section id="features" class="bento-section section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Tính năng vượt trội</div>
+          <h2 class="section-title">4 Trụ Cột Công Nghệ Bảo Vệ Trẻ Toàn Diện</h2>
+          <p class="section-subtitle">
+            Được nghiên cứu và thiết kế chuyên sâu bởi các chuyên gia công nghệ và giáo dục mầm non, mang lại trải nghiệm tiện ích nhất cho phụ huynh.
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Card 1: 6-Digit Pairing (Span 8) -->
+          <div class="bento-card bento-col-8">
+            <div>
+              <div class="bento-icon" style="background: var(--tevy-pairing-bg); color: var(--tevy-pairing);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                  <line x1="12" y1="18" x2="12.01" y2="18"/>
+                </svg>
+              </div>
+              <h3 class="bento-card-title">Ghép Đôi Siêu Tốc 30 Giây Với Mã PIN 6 Số</h3>
+              <p class="bento-card-desc">
+                Không cần cấu hình mạng nội bộ phức tạp, không cần Bluetooth lằng nhằng. Chỉ cần mở ứng dụng Tevy TV Client trên Smart TV, nhập mã kết nối 6 chữ số hiển thị trên TV vào điện thoại là bạn đã kết nối an toàn trọn đời.
+              </p>
+            </div>
+            <div class="bento-visual" style="display: flex; align-items: center; justify-content: center; gap: 12px; padding: 20px;">
+              <span style="font-size: 0.9rem; font-weight: 700; color: #64748B;">MÃ KẾT NỐI:</span>
+              <div style="display: flex; gap: 8px;">
+                <span style="font-family: var(--tevy-font-mono); font-size: 1.4rem; font-weight: 800; background: #FFFFFF; border: 1.5px solid #CBD5E1; padding: 6px 12px; border-radius: 8px; color: #2563EB;">8</span>
+                <span style="font-family: var(--tevy-font-mono); font-size: 1.4rem; font-weight: 800; background: #FFFFFF; border: 1.5px solid #CBD5E1; padding: 6px 12px; border-radius: 8px; color: #2563EB;">4</span>
+                <span style="font-family: var(--tevy-font-mono); font-size: 1.4rem; font-weight: 800; background: #FFFFFF; border: 1.5px solid #CBD5E1; padding: 6px 12px; border-radius: 8px; color: #2563EB;">2</span>
+                <span style="font-family: var(--tevy-font-mono); font-size: 1.4rem; font-weight: 800; background: #FFFFFF; border: 1.5px solid #CBD5E1; padding: 6px 12px; border-radius: 8px; color: #2563EB;">9</span>
+                <span style="font-family: var(--tevy-font-mono); font-size: 1.4rem; font-weight: 800; background: #FFFFFF; border: 1.5px solid #CBD5E1; padding: 6px 12px; border-radius: 8px; color: #2563EB;">1</span>
+                <span style="font-family: var(--tevy-font-mono); font-size: 1.4rem; font-weight: 800; background: #FFFFFF; border: 1.5px solid #CBD5E1; padding: 6px 12px; border-radius: 8px; color: #2563EB;">7</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: 30m Eye-Rest Alert (Span 4) -->
+          <div class="bento-card bento-col-4">
+            <div>
+              <div class="bento-icon" style="background: var(--tevy-warning-session-bg); color: var(--tevy-warning-session);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </div>
+              <h3 class="bento-card-title">Cảnh Báo Nghỉ Mắt 30 Phút</h3>
+              <p class="bento-card-desc">
+                Ứng dụng quy tắc nhãn khoa 20-20-20. Sau mỗi 30 phút xem liên tục, TV tự hiển thị lời nhắc dịu dàng từ bạn gấu Tevy giúp mắt con thư giãn 5 phút.
+              </p>
+            </div>
+            <div class="bento-visual" style="text-align: center;">
+              <img src="/tevy/assets/tevy-bear-alert.svg" alt="Tevy Bear Alert" style="height: 100px; margin: 0 auto;">
+            </div>
+          </div>
+
+          <!-- Card 3: Instant Remote Lock (Span 4) -->
+          <div class="bento-card bento-col-4">
+            <div>
+              <div class="bento-icon" style="background: var(--tevy-lock-daily-bg); color: var(--tevy-lock-daily);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+              </div>
+              <h3 class="bento-card-title">Khóa TV Tức Thì 1 Chạm</h3>
+              <p class="bento-card-desc">
+                Đến giờ ăn cơm hay học bài? Nhấn nút "Khóa ngay" trên điện thoại, màn hình TV sẽ lập tức dừng phát và khóa lại, ngăn bé tự ý bật kênh khác.
+              </p>
+            </div>
+            <div class="bento-visual" style="display: flex; align-items: center; justify-content: center; padding: 16px;">
+              <span class="btn btn-accent" style="min-height: 40px; padding: 8px 16px; font-size: 0.85rem; pointer-events: none;">
+                🔒 Đã khóa từ xa tức thì
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 4: Daily Quota & Bedtime Schedule (Span 8) -->
+          <div class="bento-card bento-col-8">
+            <div>
+              <div class="bento-icon" style="background: var(--tevy-bedtime-bg); color: var(--tevy-bedtime);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+              </div>
+              <h3 class="bento-card-title">Hạn Mức Trong Ngày & Tự Động Khóa Giờ Đi Ngủ</h3>
+              <p class="bento-card-desc">
+                Thiết lập hạn mức xem tối đa mỗi ngày (ví dụ 60 hoặc 90 phút). Khi hết thời lượng hoặc chạm mốc giờ đi ngủ (21:00), TV sẽ tự động hiển thị màn hình chúc bé ngủ ngon và tắt màn hình, bảo vệ giấc ngủ sâu của trẻ.
+              </p>
+            </div>
+            <div class="bento-visual" style="display: flex; align-items: center; justify-content: space-around; padding: 16px;">
+              <img src="/tevy/assets/tevy-bear-sleep.svg" alt="Tevy Bear Bedtime" style="height: 90px;">
+              <div style="text-align: left;">
+                <div style="font-size: 0.85rem; font-weight: 700; color: #4338CA;">LỊCH TỰ ĐỘNG KHÓA:</div>
+                <div style="font-size: 1.1rem; font-weight: 800; color: #1E1B4B;">21:00 Mỗi tối</div>
+                <div style="font-size: 0.8rem; color: #64748B;">Tổng thời lượng tối đa: 90 phút/ngày</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 6. How It Works Steps ================= -->
+    <section id="how-it-works" class="steps-section section" style="background-color: #FFFFFF;">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Đơn giản & Nhanh chóng</div>
+          <h2 class="section-title">Bắt Đầu Chỉ Với 3 Bước Đơn Giản</h2>
+          <p class="section-subtitle">
+            Không cần tài khoản phức tạp, chỉ mất chưa đầy 1 phút để thiết lập không gian giải trí an toàn cho con bạn.
+          </p>
+        </div>
+
+        <div class="steps-timeline">
+          <!-- Step 1 -->
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Cài Đặt Trên Smart TV</h3>
+            <p class="step-desc">
+              Tìm và cài đặt ứng dụng <strong>Tevy TV Client</strong> từ Google Play Store trên Smart TV của bạn (hỗ trợ Sony, TCL, Casper, Xiaomi...).
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Tải App Trên Điện Thoại</h3>
+            <p class="step-desc">
+              Tải ứng dụng <strong>Tevy Parent</strong> miễn phí trên App Store (dành cho iPhone) hoặc CH Play (dành cho điện thoại Android).
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Nhập Mã PIN 6 Số</h3>
+            <p class="step-desc">
+              Mở ứng dụng trên điện thoại, nhập mã PIN 6 số xuất hiện trên màn hình TV để hoàn tất kết nối. Bắt đầu quản lý ngay lập tức!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 7. Testimonials ================= -->
+    <section id="testimonials" class="testimonials-section section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Chia sẻ thực tế</div>
+          <h2 class="section-title">Phụ Huynh Nói Gì Về Tevy?</h2>
+          <p class="section-subtitle">
+            Hàng ngàn gia đình đã tìm lại được sự bình yên trong mỗi bữa tối và sự an tâm tuyệt đối khi cho con tiếp cận TV.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <!-- Review 1 -->
+          <div class="testimonial-card">
+            <div>
+              <div class="testimonial-stars" aria-label="5 sao">★★★★★</div>
+              <p class="testimonial-quote">
+                "Trước đây mỗi lần tắt TV là bé Bin nhà mình (4 tuổi) lại khóc thét và giật remote. Từ ngày có bạn gấu Tevy vẫy tay nhắc nghỉ mắt sau 30 phút, con tự giác bảo 'Mẹ ơi bạn gấu bảo Bin đi uống nước này'. Thật sự quá nhẹ nhàng!"
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">TM</div>
+              <div>
+                <div class="author-name">Chị Tuệ Minh</div>
+                <div class="author-role">Mẹ bé 4 tuổi • Hà Nội</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="testimonial-card">
+            <div>
+              <div class="testimonial-stars" aria-label="5 sao">★★★★★</div>
+              <p class="testimonial-quote">
+                "Mình đi làm cả ngày ở công ty, ở nhà có bà ngoại trông cháu. Nhiều khi không biết con xem TV bao lâu. Nhờ Tevy Parent, mình mở app ra là biết TV đang bật kênh gì, đã xem bao nhiêu phút. Nút khóa từ xa 1 chạm cực kỳ nhạy!"
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">HL</div>
+              <div>
+                <div class="author-name">Anh Hoàng Long</div>
+                <div class="author-role">Bố 2 bé • TP. Hồ Chí Minh</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="testimonial-card">
+            <div>
+              <div class="testimonial-stars" aria-label="5 sao">★★★★★</div>
+              <p class="testimonial-quote">
+                "Là một bác sĩ mắt, tôi đánh giá rất cao tính năng cảnh báo 30 phút của Tevy. Mắt trẻ em trong giai đoạn phát triển rất dễ bị mỏi điều tiết và cận thị nếu xem TV liên tục không nghỉ. Một ứng dụng nhân văn và rất khoa học!"
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">NM</div>
+              <div>
+                <div class="author-name">Bác sĩ Ngọc Mai</div>
+                <div class="author-role">Chuyên khoa Mắt • Đà Nẵng</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 8. FAQ Accordion ================= -->
+    <section id="faq" class="faq-section section" style="background-color: #FFFFFF;">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Giải đáp thắc mắc</div>
+          <h2 class="section-title">Câu Hỏi Thường Gặp (FAQ)</h2>
+          <p class="section-subtitle">
+            Mọi thông tin bạn cần biết về tính tương thích, độ an toàn và cách hoạt động của hệ sinh thái Tevy.
+          </p>
+        </div>
+
+        <div class="faq-accordion">
+          <!-- FAQ 1 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>Tevy tương thích với những dòng Smart TV nào?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              Tevy TV Client tương thích với toàn bộ các Smart TV chạy hệ điều hành <strong>Android TV</strong> hoặc <strong>Google TV</strong> (phiên bản Android 8.0 trở lên), bao gồm các thương hiệu phổ biến như Sony, TCL, Casper, Xiaomi, Panasonic, Sharp, Coocaa, và các TV Box / Chromecast with Google TV.
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>Bé có thể tự dùng remote gỡ ứng dụng hoặc vượt qua màn hình khóa không?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              Hoàn toàn không thể. Tevy TV Client được trang bị cơ chế bảo mật ngăn chặn thoát ứng dụng trái phép (Anti-Bypass). Màn hình khóa sẽ tự động giữ quyền hiển thị ưu tiên cao nhất (System Alert Window). Muốn mở khóa hoặc vào cài đặt gỡ ứng dụng, bắt buộc phải nhập mã PIN phụ huynh 4 số do cha mẹ thiết lập.
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>Tôi đang đi làm ở cơ quan có điều khiển được TV ở nhà không?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              Có! Miễn là Smart TV ở nhà có kết nối mạng Internet (Wifi/Dây LAN) và điện thoại của bạn có 4G/Wifi, bạn có thể theo dõi thời lượng xem và gửi lệnh khóa TV ngay lập tức từ bất kỳ nơi đâu trên thế giới với độ trễ dưới 300 mili-giây.
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>Ứng dụng có thu thập hình ảnh hay video riêng tư của gia đình tôi không?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              Tuyệt đối không. Tevy tuân thủ nghiêm ngặt chuẩn quyền riêng tư của trẻ em (COPPA & GDPR-K). Chúng tôi không kích hoạt camera, không ghi âm micro, và không thu thập bất kỳ nội dung video cá nhân nào. Hệ thống chỉ ghi nhận thời gian bật/tắt và đếm số phút xem để phục vụ tính năng bảo vệ thị lực.
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>Tevy có miễn phí không?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              Tevy cung cấp gói trải nghiệm miễn phí trọn đời cho các tính năng cốt lõi: Ghép đôi 1 TV, Theo dõi thời gian thực, và Cảnh báo nghỉ mắt 30 phút. Các tính năng nâng cao như Quản lý không giới hạn TV, Báo cáo biểu đồ lịch sử tuần/tháng có thể nâng cấp thêm tùy theo nhu cầu của gia đình.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 9. Final Download CTA ================= -->
+    <section id="download" class="cta-section section">
+      <div class="container">
+        <div class="cta-card">
+          <h2 class="cta-title">Bảo Vệ Đôi Mắt Bé Yêu Ngay Hôm Nay</h2>
+          <p class="cta-subtitle">
+            Cùng hơn 10.000+ phụ huynh xây dựng thói quen xem TV điều độ, lành mạnh và nói không với nước mắt mỗi bữa tối.
+          </p>
+
+          <div class="store-badges">
+            <!-- iOS App Store -->
+            <a href="#" class="btn-store" aria-label="Tải Tevy trên App Store">
+              <svg viewBox="0 0 24 24">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.85c.66-.8 1.11-1.92.99-3.04-1 .04-2.13.67-2.81 1.47-.6.69-1.12 1.83-.98 2.92 1.11.09 2.16-.57 2.8-1.35z"/>
+              </svg>
+              <div class="store-text">
+                <span class="store-label">Tải trên</span>
+                <span class="store-platform">App Store</span>
+              </div>
+            </a>
+
+            <!-- Google Play Store -->
+            <a href="#" class="btn-store" aria-label="Tải Tevy trên Google Play">
+              <svg viewBox="0 0 24 24">
+                <path d="M3.609 1.814L13.793 12 3.61 22.186c-.37-.367-.61-.884-.61-1.468V3.282c0-.584.24-1.1.61-1.468zM15.207 13.414l2.586 2.586-12.77 7.373 10.184-9.959zm0-2.828L5.023.627l12.77 7.373-2.586 2.586zm1.414 1.414l3.586-2.071c.78-.451.78-1.187 0-1.638l-3.586-2.071-2.121 2.121 2.121 2.121z"/>
+              </svg>
+              <div class="store-text">
+                <span class="store-label">Tải trên</span>
+                <span class="store-platform">Google Play</span>
+              </div>
+            </a>
+
+            <!-- Android TV -->
+            <a href="#" class="btn-store" aria-label="Tải Tevy cho Android TV">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/>
+              </svg>
+              <div class="store-text">
+                <span class="store-label">Cài đặt cho</span>
+                <span class="store-platform">Android TV</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= 10. Footer ================= -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="/tevy/assets/tevy-logo-horizontal.svg" alt="Tevy Logo" width="130" height="38">
+          <p>
+            Tevy - Giải pháp đồng hành thông minh giúp cha mẹ cân bằng thời gian xem TV của trẻ và bảo vệ đôi mắt sáng mà không cần quát mắng hay tranh giành remote.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-title">Sản phẩm</div>
+          <ul class="footer-links">
+            <li><a href="#features" class="footer-link">Tính năng</a></li>
+            <li><a href="#demo" class="footer-link">Trải nghiệm Sandbox</a></li>
+            <li><a href="#how-it-works" class="footer-link">Cách hoạt động</a></li>
+            <li><a href="#download" class="footer-link">Tải ứng dụng</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-title">Hỗ trợ</div>
+          <ul class="footer-links">
+            <li><a href="#faq" class="footer-link">Hỏi đáp (FAQ)</a></li>
+            <li><a href="mailto:support@doitstudio.com" class="footer-link">Trung tâm hỗ trợ</a></li>
+            <li><a href="mailto:contact@doitstudio.com" class="footer-link">Liên hệ hợp tác</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-title">Pháp lý & An toàn</div>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Điều khoản dịch vụ</a></li>
+            <li><a href="#" class="footer-link">Chính sách quyền riêng tư</a></li>
+            <li><a href="#" class="footer-link">Bảo vệ an toàn trẻ em (COPPA)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 DOIT Studio. Bản quyền đã được bảo lưu. Phát triển với tình yêu thương dành cho thế hệ tương lai.
+        </div>
+        <div style="display: flex; gap: 16px;">
+          <span>Phiên bản 1.0.0</span>
+          <span>•</span>
+          <span>Made for Kids & Parents</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script is:inline src="/tevy/js/sandbox.js"></script>
+  <script is:inline src="/tevy/js/main.js"></script>
+</body>
+</html>

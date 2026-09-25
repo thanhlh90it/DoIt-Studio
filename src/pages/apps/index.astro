@@ -23,10 +23,24 @@ const appsSchemas = [
     description: "Ứng dụng di động y tế cá nhân chuyên biệt hỗ trợ số hóa hồ sơ siêu âm, theo dõi tốc độ tăng trưởng của nang, nhân, hạch chuẩn TI-RADS.",
     applicationCategory: "HealthApplication",
     url: "https://doitstudio.tech/noduletrack"
+  }),
+  getSoftwareAppSchema({
+    name: "Tevy",
+    description: "Hệ sinh thái giám sát thời gian xem TV cho trẻ em thông minh: Khóa màn hình tức thì từ xa qua điện thoại, tự động ngắt nghỉ 30 phút bảo vệ mắt trẻ chuẩn y khoa.",
+    applicationCategory: "ParentingApplication",
+    url: "https://doitstudio.tech/tevy"
   })
 ];
 
 const appIdeas = [
+  {
+    slug: '/tevy',
+    title: 'Tevy',
+    description: 'Hệ sinh thái kiểm soát thời gian xem TV cho trẻ em thông minh: Khóa màn hình tức thì 1 chạm từ xa qua điện thoại, giới hạn phiên xem 30 phút bảo vệ thị lực chuẩn y khoa và chế độ ru ngủ ban đêm.',
+    date: '25/09/2026',
+    status: 'Đã hoàn thiện Landing Page & TV Simulator',
+    tags: ['Android TV', 'Google TV', 'Parental Control', 'Digital Wellbeing', 'React Native']
+  },
   {
     slug: '/nhata',
     title: 'NhàTa',

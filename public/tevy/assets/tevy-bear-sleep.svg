@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <radialGradient id="nightGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#818CF8" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#312E81" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="moonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="sleepBear" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <linearGradient id="nightCap" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#4338CA"/>
+    </linearGradient>
+    <filter id="moonShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Ambient Glow -->
+  <circle cx="100" cy="100" r="90" fill="url(#nightGlow)"/>
+
+  <!-- Stars -->
+  <circle cx="35" cy="45" r="2" fill="#E0E7FF" opacity="0.8"/>
+  <circle cx="55" cy="30" r="3" fill="#FDE047" opacity="0.9"/>
+  <circle cx="160" cy="40" r="2.5" fill="#E0E7FF" opacity="0.8"/>
+  <circle cx="175" cy="75" r="1.5" fill="#FDE047" opacity="0.7"/>
+  <circle cx="30" cy="130" r="2" fill="#E0E7FF" opacity="0.6"/>
+
+  <!-- Crescent Moon -->
+  <path d="M125 25 C65 30 35 85 45 145 C55 185 105 185 125 175 C90 160 80 100 115 55 C125 42 135 32 125 25 Z" 
+        fill="url(#moonGrad)" filter="url(#moonShadow)"/>
+
+  <!-- Sleeping Bear sitting/curled on Moon -->
+  <!-- Left Ear -->
+  <circle cx="85" cy="88" r="14" fill="url(#sleepBear)"/>
+  <circle cx="85" cy="88" r="8" fill="#FDE68A"/>
+
+  <!-- Right Ear -->
+  <circle cx="132" cy="88" r="14" fill="url(#sleepBear)"/>
+  <circle cx="132" cy="88" r="8" fill="#FDE68A"/>
+
+  <!-- Bear Head -->
+  <circle cx="108" cy="108" r="32" fill="url(#sleepBear)" filter="url(#moonShadow)"/>
+
+  <!-- Snout -->
+  <ellipse cx="108" cy="118" rx="16" ry="12" fill="#FEF3C7"/>
+  <ellipse cx="108" cy="112" rx="5" ry="4" fill="#78350F"/>
+  <!-- Sleeping mouth line -->
+  <path d="M104 121 Q108 124 112 121" fill="none" stroke="#78350F" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Sleeping Eyes (Curved lines) -->
+  <path d="M92 105 Q98 111 104 105" fill="none" stroke="#78350F" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M112 105 Q118 111 124 105" fill="none" stroke="#78350F" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Rosy Sleeping Cheeks -->
+  <circle cx="90" cy="114" r="6" fill="#F87171" opacity="0.5"/>
+  <circle cx="126" cy="114" r="6" fill="#F87171" opacity="0.5"/>
+
+  <!-- Night Cap on Head -->
+  <path d="M85 96 C85 70 140 60 145 75 C148 85 130 96 130 96 Z" fill="url(#nightCap)"/>
+  <circle cx="150" cy="72" r="7" fill="#FFFFFF"/>
+  <path d="M82 96 C98 90 120 90 133 96" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- ZZZ floating sleep bubbles -->
+  <text x="142" y="55" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="bold" fill="#A5B4FC" opacity="0.9">Z</text>
+  <text x="156" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="bold" fill="#C7D2FE" opacity="0.95">z</text>
+  <text x="172" y="28" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" font-weight="bold" fill="#E0E7FF">z</text>
+</svg>
