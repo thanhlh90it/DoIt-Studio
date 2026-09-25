@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070D18"/>
+      <stop offset="45%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#081020"/>
+    </linearGradient>
+
+    <radialGradient id="blueGlow" cx="25%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#2563EB" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="orangeGlow" cx="80%" cy="30%" r="45%">
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB923C"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+
+    <filter id="shadowFilter" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <rect width="1200" height="630" fill="url(#blueGlow)"/>
+  <rect width="1200" height="630" fill="url(#orangeGlow)"/>
+
+  <!-- Subtle Cyber Tech Grid Pattern -->
+  <g opacity="0.07" stroke="#38BDF8" stroke-width="1">
+    <line x1="0" y1="90" x2="1200" y2="90"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/>
+    <line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="360" x2="1200" y2="360"/>
+    <line x1="0" y1="450" x2="1200" y2="450"/>
+    <line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="150" y1="0" x2="150" y2="630"/>
+    <line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="450" y1="0" x2="450" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="750" y1="0" x2="750" y2="630"/>
+    <line x1="900" y1="0" x2="900" y2="630"/>
+    <line x1="1050" y1="0" x2="1050" y2="630"/>
+  </g>
+
+  <!-- Top Studio HUD Brand -->
+  <g transform="translate(80, 56)">
+    <rect width="310" height="34" rx="8" fill="#1E293B" fill-opacity="0.8" stroke="#334155" stroke-width="1"/>
+    <circle cx="18" cy="17" r="5" fill="#10B981"/>
+    <text x="32" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#94A3B8" letter-spacing="1.5">
+      DOIT-STUDIO ECOSYSTEM
+    </text>
+    <text x="215" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#38BDF8">
+      // TEVY
+    </text>
+  </g>
+
+  <!-- Left Side: Mascot Device Card with Glow & Shadow -->
+  <g transform="translate(80, 115)" filter="url(#shadowFilter)">
+    <!-- Container Card -->
+    <rect width="360" height="430" rx="28" fill="#0E1626" stroke="#2563EB" stroke-width="2" stroke-opacity="0.5"/>
+    <rect x="2" y="2" width="356" height="426" rx="26" fill="none" stroke="#60A5FA" stroke-width="1" stroke-opacity="0.2"/>
+
+    <!-- Subtle Radar Arc inside Card -->
+    <path d="M 180 50 Q 280 65 295 160 Q 295 270 180 340 Q 65 270 65 160 Q 80 65 180 50 Z"
+          fill="none" stroke="#3B82F6" stroke-width="2" stroke-opacity="0.25" stroke-dasharray="8 8"/>
+
+    <!-- Mascot TV Icon -->
+    <g transform="translate(90, 75)">
+      <!-- Antennas -->
+      <path d="M 65 50 L 40 20" stroke="#E2E8F0" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="36" cy="15" r="9" fill="url(#orangeGrad)"/>
+      <path d="M 115 50 L 140 20" stroke="#E2E8F0" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="144" cy="15" r="9" fill="url(#orangeGrad)"/>
+
+      <!-- TV Main Frame -->
+      <rect x="20" y="45" width="140" height="114" rx="24" fill="#FFFFFF"/>
+      <path d="M 45 159 L 36 178 M 135 159 L 144 178" stroke="#94A3B8" stroke-width="7" stroke-linecap="round"/>
+
+      <!-- TV Inner Screen -->
+      <rect x="32" y="57" width="116" height="90" rx="16" fill="#0B1120"/>
+
+      <!-- Friendly Luminous Eyes -->
+      <circle cx="62" cy="94" r="10" fill="#60A5FA"/>
+      <circle cx="65" cy="91" r="4" fill="#FFFFFF"/>
+      <circle cx="118" cy="94" r="10" fill="#60A5FA"/>
+      <circle cx="121" cy="91" r="4" fill="#FFFFFF"/>
+
+      <!-- Warm Smile -->
+      <path d="M 80 110 Q 90 122 100 110" fill="none" stroke="url(#orangeGrad)" stroke-width="5" stroke-linecap="round"/>
+    </g>
+
+    <!-- Card Status Badge -->
+    <g transform="translate(50, 310)">
+      <rect width="260" height="42" rx="21" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5" stroke-opacity="0.4"/>
+      <circle cx="24" cy="21" r="6" fill="#10B981"/>
+      <text x="38" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#E2E8F0">
+        Smart TV Client Connected
+      </text>
+    </g>
+
+    <text x="180" y="385" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="middle">
+      Bảo vệ thị lực · Khóa màn hình từ xa
+    </text>
+  </g>
+
+  <!-- Right Side: Big Catchy Typography & Features -->
+  <g transform="translate(485, 115)">
+    <!-- App Main Logo / Title -->
+    <text x="0" y="75" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="78" font-weight="900" fill="#FFFFFF" letter-spacing="-2">
+      Tev<tspan fill="#F97316">y</tspan>
+    </text>
+
+    <!-- Tagline Badge -->
+    <rect x="200" y="24" width="280" height="34" rx="17" fill="#2563EB" fill-opacity="0.25" stroke="#3B82F6" stroke-width="1.5"/>
+    <text x="340" y="46" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#93C5FD" text-anchor="middle" letter-spacing="1.5">
+      KIDS TV PARENTAL CONTROL
+    </text>
+
+    <!-- Main Headline -->
+    <text x="0" y="135" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="30" font-weight="800" fill="#F8FAFC" letter-spacing="-0.5">
+      Giám Sát TV Trẻ Em Thông Minh
+    </text>
+    <text x="0" y="172" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="500" fill="#94A3B8">
+      Cân bằng giờ xem, bảo vệ đôi mắt sáng cho con mỗi ngày
+    </text>
+
+    <!-- Key Feature Pills Grid -->
+    <g transform="translate(0, 215)">
+      <!-- Pill 1 -->
+      <g transform="translate(0, 0)">
+        <rect width="300" height="46" rx="12" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+        <text x="18" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" fill="#FB923C">⚡ Khóa TV Tức Thì 1 Chạm</text>
+      </g>
+
+      <!-- Pill 2 -->
+      <g transform="translate(320, 0)">
+        <rect width="300" height="46" rx="12" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+        <text x="18" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" fill="#38BDF8">👁️ Nhắc Nghỉ Mắt 30 Phút</text>
+      </g>
+
+      <!-- Pill 3 -->
+      <g transform="translate(0, 60)">
+        <rect width="300" height="46" rx="12" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+        <text x="18" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" fill="#A78BFA">🌙 Tự Động Khóa Giờ Đi Ngủ</text>
+      </g>
+
+      <!-- Pill 4 -->
+      <g transform="translate(320, 60)">
+        <rect width="300" height="46" rx="12" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+        <text x="18" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" fill="#34D399">🔒 Chống Bé Tự Vượt Rào</text>
+      </g>
+    </g>
+
+    <!-- Bottom Platform Indicators -->
+    <g transform="translate(0, 360)">
+      <text x="0" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600" fill="#64748B">
+        Hỗ trợ: <tspan fill="#E2E8F0" font-weight="700">Android TV · Google TV · Sony · TCL · Xiaomi · iOS &amp; Android</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Bottom Bar: URL & Studio info -->
+  <g transform="translate(80, 580)">
+    <line x1="0" y1="0" x2="1040" y2="0" stroke="#1E293B" stroke-width="1.5"/>
+    <text x="0" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600" fill="#64748B">
+      https://doitstudio.tech/tevy
+    </text>
+    <text x="1040" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600" fill="#64748B" text-anchor="end">
+      © 2026 DOIT Studio · All Rights Reserved
+    </text>
+  </g>
+</svg>
