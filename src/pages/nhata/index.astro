@@ -1,7 +1,7 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
 import StructuredData from "../../components/StructuredData.astro";
-import { getSoftwareAppSchema } from "../../utils/seoSchemas";
+import { getSoftwareAppSchema, getBreadcrumbSchema } from "../../utils/seoSchemas";
 
 const APP_STORE_URL =
   "https://apps.apple.com/us/app/nhàta-quản-lý-gia-đình-con/id6804749534";
@@ -14,8 +14,20 @@ const appSchema = getSoftwareAppSchema({
     "NhàTa là ứng dụng quản lý gia đình thông minh: Giao việc nhà cho con tích sao đổi quà, quản lý thời khóa biểu học tập 9s, lịch chung và sổ chi tiêu riêng tư.",
   applicationCategory: "LifestyleApplication",
   operatingSystem: "iOS, Android",
-  url: "https://doitstudio.tech/nhata",
+  url: "https://doitstudio.tech/nhata/",
   downloadUrl: APP_STORE_URL,
+  screenshot: [
+    "https://doitstudio.tech/nhata/screenshots/01_01_home_privacy.webp",
+    "https://doitstudio.tech/nhata/screenshots/02_02_tasks_rewards.webp",
+    "https://doitstudio.tech/nhata/screenshots/03_03_timetable.webp",
+    "https://doitstudio.tech/nhata/screenshots/04_04_moments.webp",
+    "https://doitstudio.tech/nhata/screenshots/05_05_calendar.webp",
+    "https://doitstudio.tech/nhata/screenshots/06_06_finance.webp",
+  ],
+  author: {
+    name: "DoIT-Studio",
+    url: "https://doitstudio.tech",
+  },
 });
 
 const faqSchema = {
@@ -57,7 +69,12 @@ const faqSchema = {
   ],
 };
 
-const nhataSchemas = [appSchema, faqSchema];
+const breadcrumbSchema = getBreadcrumbSchema([
+  { name: "Trang chủ", url: "https://doitstudio.tech/" },
+  { name: "NhàTa", url: "https://doitstudio.tech/nhata/" },
+]);
+
+const nhataSchemas = [appSchema, faqSchema, breadcrumbSchema];
 ---
 
 <MainLayout
@@ -74,7 +91,6 @@ const nhataSchemas = [appSchema, faqSchema];
        NhàTa Landing Page — Modern Zen & Soft Neumorphism Design System v3.0
        Brand: NhàTa ("Một mái nhà, vạn niềm vui")
        ========================================================================== */
-    @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
 
     :root {
       /* Brand Primary: Sunset Orange 500 */
@@ -778,7 +794,8 @@ const nhataSchemas = [appSchema, faqSchema];
       color: var(--nt-accent-dark);
     }
 
-    .float-info h4 {
+    .float-info h4,
+    .float-info .float-title {
       font-size: 0.938rem;
       font-weight: 700;
       margin-bottom: 2px;
@@ -1312,6 +1329,7 @@ const nhataSchemas = [appSchema, faqSchema];
       font-size: 1.1rem;
     }
 
+    .author-info h3,
     .author-info h4 {
       font-size: 1rem;
       font-weight: 700;
@@ -1512,7 +1530,8 @@ const nhataSchemas = [appSchema, faqSchema];
       max-width: 320px;
     }
 
-    .footer-col h4 {
+    .footer-col h4,
+    .footer-col .footer-col-title {
       font-size: 1.05rem;
       font-weight: 700;
       margin-bottom: 20px;
@@ -2044,7 +2063,7 @@ const nhataSchemas = [appSchema, faqSchema];
                     </svg>
                   </div>
                   <div class="float-info">
-                    <h4>Bé Na +10★</h4>
+                    <div class="float-title">Bé Na +10★</div>
                     <p>Hoàn thành: Gấp quần áo</p>
                   </div>
                 </div>
@@ -2056,6 +2075,8 @@ const nhataSchemas = [appSchema, faqSchema];
                       src="/nhata/screenshots/01_01_home_privacy.webp"
                       alt="Màn hình Trang chủ ứng dụng quản lý gia đình NhàTa"
                       loading="eager"
+                      fetchpriority="high"
+                      decoding="async"
                       width="360"
                       height="780"
                     />
@@ -2078,7 +2099,7 @@ const nhataSchemas = [appSchema, faqSchema];
                     </svg>
                   </div>
                   <div class="float-info">
-                    <h4>Đổi Quà Bé Bông</h4>
+                    <div class="float-title">Đổi Quà Bé Bông</div>
                     <p>Vé đi công viên nước 🎡</p>
                   </div>
                 </div>
@@ -2753,7 +2774,7 @@ const nhataSchemas = [appSchema, faqSchema];
               <div class="test-author">
                 <div class="author-avatar">T</div>
                 <div class="author-info">
-                  <h4>Mẹ Thu Thảo</h4>
+                  <h3 class="author-name">Mẹ Thu Thảo</h3>
                   <p>Hà Nội · Gia đình 2 con</p>
                 </div>
               </div>
@@ -2777,7 +2798,7 @@ const nhataSchemas = [appSchema, faqSchema];
                   M
                 </div>
                 <div class="author-info">
-                  <h4>Bố Quang Minh</h4>
+                  <h3 class="author-name">Bố Quang Minh</h3>
                   <p>TP. Hồ Chí Minh · Kỹ sư phần mềm</p>
                 </div>
               </div>
@@ -2801,7 +2822,7 @@ const nhataSchemas = [appSchema, faqSchema];
                   T
                 </div>
                 <div class="author-info">
-                  <h4>Ông Tuấn</h4>
+                  <h3 class="author-name">Ông Tuấn</h3>
                   <p>Đà Nẵng · Ông ngoại bé Bông</p>
                 </div>
               </div>
@@ -3060,7 +3081,7 @@ const nhataSchemas = [appSchema, faqSchema];
           </div>
 
           <div class="footer-col">
-            <h4>Tính Năng</h4>
+            <p class="footer-col-title">Tính Năng</p>
             <ul class="footer-links">
               <li><a href="#showcase">Trang Chủ "Hôm Nay"</a></li>
               <li><a href="#showcase">Việc Nhà Tích Sao</a></li>
@@ -3071,7 +3092,7 @@ const nhataSchemas = [appSchema, faqSchema];
           </div>
 
           <div class="footer-col">
-            <h4>Về Chúng Tôi</h4>
+            <p class="footer-col-title">Về Chúng Tôi</p>
             <ul class="footer-links">
               <li><a href="#philosophy">Triết Lý Modern Zen</a></li>
               <li><a href="#testimonials">Cảm Nhận Khách Hàng</a></li>
@@ -3094,7 +3115,7 @@ const nhataSchemas = [appSchema, faqSchema];
           </div>
 
           <div class="footer-col">
-            <h4>Pháp Lý &amp; An Toàn</h4>
+            <p class="footer-col-title">Pháp Lý &amp; An Toàn</p>
             <ul class="footer-links">
               <li>
                 <a href="/nhata/phap-ly-an-toan#chinh-sach-bao-mat"

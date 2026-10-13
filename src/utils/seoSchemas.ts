@@ -9,6 +9,16 @@ export interface AppSchemaOptions {
   };
   url?: string;
   downloadUrl?: string;
+  screenshot?: string[];
+  aggregateRating?: {
+    ratingValue: string;
+    reviewCount: string;
+    bestRating?: string;
+  };
+  author?: {
+    name: string;
+    url: string;
+  };
 }
 
 export interface ArticleSchemaOptions {
@@ -52,6 +62,19 @@ export function getWebSiteSchema() {
   };
 }
 
+export function getBreadcrumbSchema(items: Array<{ name: string; url: string }>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": item.url
+    }))
+  };
+}
+
 export function getSoftwareAppSchema(app: AppSchemaOptions) {
   return {
     "@context": "https://schema.org",
@@ -66,7 +89,23 @@ export function getSoftwareAppSchema(app: AppSchemaOptions) {
     },
     "description": app.description,
     ...(app.url && { "url": app.url }),
-    ...(app.downloadUrl && { "downloadUrl": app.downloadUrl })
+    ...(app.downloadUrl && { "downloadUrl": app.downloadUrl }),
+    ...(app.screenshot && { "screenshot": app.screenshot }),
+    ...(app.aggregateRating && {
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": app.aggregateRating.ratingValue,
+        "reviewCount": app.aggregateRating.reviewCount,
+        "bestRating": app.aggregateRating.bestRating || "5"
+      }
+    }),
+    ...(app.author && {
+      "author": {
+        "@type": "Organization",
+        "name": app.author.name,
+        "url": app.author.url
+      }
+    })
   };
 }
 
