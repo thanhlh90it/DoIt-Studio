@@ -37,7 +37,10 @@ const EXCLUDED_SITEMAP_ROUTES = [
   '/nhata/delete-account',
   '/nhata/privacy',
   '/nhata/terms',
-  '/securevault/privacy'
+  '/securevault/privacy',
+  '/tevy/child-safety',
+  '/tevy/privacy',
+  '/tevy/terms'
 ];
 
 // https://astro.build/config
