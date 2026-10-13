@@ -1,15 +1,71 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
+import StructuredData from "../../components/StructuredData.astro";
+import { getSoftwareAppSchema } from "../../utils/seoSchemas";
 
 const APP_STORE_URL =
   "https://apps.apple.com/us/app/nhàta-quản-lý-gia-đình-con/id6804749534";
 const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.doitstudio.nhata.app";
+
+const appSchema = getSoftwareAppSchema({
+  name: "NhàTa",
+  description:
+    "NhàTa là ứng dụng quản lý gia đình thông minh: Giao việc nhà cho con tích sao đổi quà, quản lý thời khóa biểu học tập 9s, lịch chung và sổ chi tiêu riêng tư.",
+  applicationCategory: "LifestyleApplication",
+  operatingSystem: "iOS, Android",
+  url: "https://doitstudio.tech/nhata",
+  downloadUrl: APP_STORE_URL,
+});
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "NhàTa có tính phí sử dụng không?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "NhàTa hoàn toàn miễn phí với các tính năng cốt lõi (việc nhà tích sao, thời khóa biểu con, lịch chung, nhật ký gia đình). Chúng tôi cam kết 100% không gắn quảng cáo thương mại và không bán dữ liệu người dùng.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Làm thế nào để mời ông bà và con cùng tham gia?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Sau khi tạo tổ ấm, bạn chỉ cần gửi mã mời (Invite Code) hoặc đường link chia sẻ qua Zalo/Tin nhắn cho các thành viên. Người nhận chỉ cần tải ứng dụng và nhập mã để vào ngay gia đình.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Dữ liệu ảnh và tài chính của gia đình có an toàn không?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Toàn bộ dữ liệu của bạn được lưu trữ trên nền tảng đám mây bảo mật cao cấp (Google Cloud / Firebase BaaS) với các quy tắc kiểm soát truy cập nghiêm ngặt. Chỉ những thành viên được cấp quyền trong tổ ấm mới có thể xem được nội dung.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Trẻ em chưa có số điện thoại thì đăng nhập thế nào?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Bố mẹ có thể tạo hồ sơ riêng cho bé ngay trong ứng dụng của bố mẹ. Trẻ có thể sử dụng máy tính bảng (iPad/Tablet) hoặc điện thoại của gia đình với mã PIN 4 số đơn giản mà không cần tài khoản mạng xã hội hay số điện thoại riêng.",
+      },
+    },
+  ],
+};
+
+const nhataSchemas = [appSchema, faqSchema];
 ---
 
 <MainLayout
-  title="NhàTa – Không Gian Gia Đình Số | Một Mái Nhà, Vạn Niềm Vui"
-  description="NhàTa — Không gian số khép kín, an toàn và tràn đầy tình yêu thương cho mọi gia đình Việt. Cùng con phân chia việc nhà tích sao đổi quà, quản lý thời khóa biểu 9s, lưu giữ kỷ niệm và cân bằng tài chính."
+  title="NhàTa – Ứng Dụng Quản Lý Gia Đình, Giao Việc Cho Con & Lịch Chung"
+  description="NhàTa là ứng dụng quản lý gia đình thông minh: Giao việc nhà cho con tích sao đổi quà, quản lý thời khóa biểu học tập 9s, lịch chung và sổ chi tiêu riêng tư."
+  keywords="NhàTa, ứng dụng quản lý gia đình, app quản lý gia đình, app giao việc nhà cho con, việc nhà tích sao đổi quà, thời khóa biểu cho con, lịch chung gia đình, sổ thu chi gia đình, album kỷ niệm gia đình, nuôi dạy con tự lập"
+  ogImage="/DOCS/NhaTa/Design/assets/infographic-nhata-horizontal.jpg"
+  siteName="NhàTa"
   showHeader={false}
   showFooter={false}
 >
@@ -1860,7 +1916,7 @@ const PLAY_STORE_URL =
               </div>
 
               <h1 class="hero-title">
-                Tổ ấm số an lành, gắn kết trọn vẹn <span class="zen-text"
+                Ứng dụng quản lý gia đình &amp; gắn kết trọn vẹn <span class="zen-text"
                   >mọi thế hệ</span
                 >
               </h1>
@@ -1998,7 +2054,7 @@ const PLAY_STORE_URL =
                   <div class="phone-screen">
                     <img
                       src="/nhata/screenshots/01_01_home_privacy.webp"
-                      alt="Màn hình Trang chủ NhàTa"
+                      alt="Màn hình Trang chủ ứng dụng quản lý gia đình NhàTa"
                       loading="eager"
                       width="360"
                       height="780"
@@ -2309,7 +2365,7 @@ const PLAY_STORE_URL =
                 <div class="showcase-screen">
                   <img
                     src="/nhata/screenshots/01_01_home_privacy.webp"
-                    alt="Trang chủ NhàTa"
+                    alt="Trang chủ NhàTa – Không gian số gia đình khép kín"
                     class="screen-slide active"
                     loading="lazy"
                     width="360"
@@ -2317,7 +2373,7 @@ const PLAY_STORE_URL =
                   />
                   <img
                     src="/nhata/screenshots/02_02_tasks_rewards.webp"
-                    alt="Việc nhà tích sao"
+                    alt="Giao việc nhà cho con tích sao đổi quà trên ứng dụng NhàTa"
                     class="screen-slide"
                     loading="lazy"
                     width="360"
@@ -2325,7 +2381,7 @@ const PLAY_STORE_URL =
                   />
                   <img
                     src="/nhata/screenshots/03_03_timetable.webp"
-                    alt="Thời khóa biểu con"
+                    alt="Quản lý thời khóa biểu học tập của con trong 9 giây"
                     class="screen-slide"
                     loading="lazy"
                     width="360"
@@ -2333,7 +2389,7 @@ const PLAY_STORE_URL =
                   />
                   <img
                     src="/nhata/screenshots/04_04_moments.webp"
-                    alt="Kỷ niệm gia đình"
+                    alt="Album kỷ niệm gia đình và nhật ký sum vầy riêng tư"
                     class="screen-slide"
                     loading="lazy"
                     width="360"
@@ -2341,7 +2397,7 @@ const PLAY_STORE_URL =
                   />
                   <img
                     src="/nhata/screenshots/05_05_calendar.webp"
-                    alt="Lịch chung gia đình"
+                    alt="Lịch dùng chung và nhắc nhở sự kiện gia đình NhàTa"
                     class="screen-slide"
                     loading="lazy"
                     width="360"
@@ -2349,7 +2405,7 @@ const PLAY_STORE_URL =
                   />
                   <img
                     src="/nhata/screenshots/06_06_finance.webp"
-                    alt="Sổ thu chi tổ ấm"
+                    alt="Sổ thu chi gia đình và quản lý quỹ chung NhàTa"
                     class="screen-slide"
                     loading="lazy"
                     width="360"
@@ -3313,4 +3369,5 @@ const PLAY_STORE_URL =
       });
     })();
   </script>
+  <StructuredData schema={nhataSchemas} />
 </MainLayout>

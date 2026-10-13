@@ -8,9 +8,11 @@ interface Props {
   canonical?: string;
   ogImage?: string;
   ogType?: 'website' | 'article';
+  siteName?: string;
   publishedTime?: string;
   modifiedTime?: string;
   author?: string;
+  keywords?: string;
   noindex?: boolean;
   showHeader?: boolean;
   showFooter?: boolean;
@@ -22,9 +24,11 @@ const {
   canonical,
   ogImage,
   ogType,
+  siteName,
   publishedTime,
   modifiedTime,
   author,
+  keywords,
   noindex,
   showHeader = true,
   showFooter = true
@@ -58,9 +62,11 @@ function isActive(href: string) {
       canonical={canonical}
       ogImage={ogImage}
       ogType={ogType}
+      siteName={siteName}
       publishedTime={publishedTime}
       modifiedTime={modifiedTime}
       author={author}
+      keywords={keywords}
       noindex={noindex}
     />
     <link rel="preconnect" href="https://fonts.googleapis.com">

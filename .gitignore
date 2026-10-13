@@ -24,4 +24,5 @@ pnpm-debug.log*
 .idea/
 
 # internal documentation & design briefs
-DOCS/
+/DOCS/
+!public/DOCS/
