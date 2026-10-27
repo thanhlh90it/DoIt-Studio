@@ -160,7 +160,7 @@ export function getArticleSchema(article: ArticleSchemaOptions) {
     "dateModified": article.dateModified || article.datePublished,
     "author": {
       "@type": "Person",
-      "name": article.author || "Thành Lê",
+      "name": article.author || "Justin Le",
       "url": "https://doitstudio.tech/profile"
     },
     "publisher": {

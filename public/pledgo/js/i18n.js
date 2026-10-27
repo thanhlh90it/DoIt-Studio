@@ -93,6 +93,7 @@ window.PLEDGO_I18N = {
 
     'cta.title': 'Năm nay, hãy tuyên thệ.',
     'cta.sub': 'Kỷ luật không phải là sự trừng phạt. Kỷ luật là sự tự do tuyệt đối trước thời gian.',
+    'cta.available': 'Đã chính thức có mặt trên App Store & Google Play.',
 
     'footer.privacy': 'Quyền riêng tư',
     'footer.terms': 'Điều khoản',
@@ -199,6 +200,7 @@ window.PLEDGO_I18N = {
 
     'cta.title': 'This year, make the pledge.',
     'cta.sub': 'Discipline is not punishment. Discipline is absolute freedom in the face of time.',
+    'cta.available': 'Now officially available on the App Store & Google Play.',
 
     'footer.privacy': 'Privacy',
     'footer.terms': 'Terms',

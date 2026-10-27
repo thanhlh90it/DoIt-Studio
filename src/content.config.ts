@@ -9,7 +9,7 @@ const philosophy = defineCollection({
     date: z.string(),
     category: z.string().default('Kỹ Nghệ & Triết Lý'),
     readTime: z.string().default('8 phút đọc'),
-    author: z.string().default('Thành Lê'),
+    author: z.string().default('Justin Le'),
     ogImage: z.string().optional(),
     tags: z.array(z.string()).default([]),
   }),
