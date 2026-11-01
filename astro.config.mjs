@@ -34,14 +34,19 @@ const EXCLUDED_SITEMAP_ROUTES = [
   '/apps/nhata',
   '/apps/pledgo',
   '/apps/tevy',
+  '/apps/yopolo',
   '/nhata/data-deletion',
   '/nhata/delete-account',
   '/nhata/privacy',
   '/nhata/terms',
+  '/pledgo/privacy',
+  '/pledgo/terms',
   '/securevault/privacy',
   '/tevy/child-safety',
   '/tevy/privacy',
-  '/tevy/terms'
+  '/tevy/terms',
+  '/yopolo/privacy',
+  '/yopolo/terms'
 ];
 
 // https://astro.build/config

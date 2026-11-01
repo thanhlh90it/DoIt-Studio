@@ -1,0 +1,1296 @@
+---
+// Yopolo Landing Page - DoIT Studio
+// Route: /yopolo/
+---
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yopolo: Trợ Lý Ngoại Ngữ AI · Luyện Phản Xạ 24/7 | DoIT-Studio</title>
+  <meta name="description"
+    content="Yopolo là trợ lý luyện giao tiếp ngoại ngữ AI đa nền tảng. Khởi tạo chủ đề hàng ngày, bóc tách từ vựng, sửa lỗi ngữ pháp tức thì và lưu flashcards 1 chạm.">
+  <meta name="keywords"
+    content="yopolo, học ngoại ngữ ai, luyện phản xạ giao tiếp, sửa lỗi ngữ pháp, flashcard, ai language partner, gemini ai, doit studio">
+  <meta name="author" content="DoIT Studio" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://doitstudio.tech/yopolo/" />
+  <meta name="theme-color" content="#05070B" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/yopolo/assets/yopolo-monogram.svg">
+  <link rel="apple-touch-icon" href="/yopolo/assets/yopolo-icon.svg">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Yopolo" />
+  <meta property="og:url" content="https://doitstudio.tech/yopolo/" />
+  <meta property="og:title" content="Yopolo: Trợ Lý Ngoại Ngữ AI · Luyện Phản Xạ 24/7 | DoIT-Studio" />
+  <meta property="og:description"
+    content="Mở lối ngoại ngữ, tự do đối thoại cùng Trợ lý AI Deep Tech. Luyện phản xạ 15 phút mỗi ngày, sửa lỗi ngữ pháp tức thì và lưu sổ tay flashcard 1 chạm." />
+  <meta property="og:image" content="https://doitstudio.tech/yopolo/assets/yopolo-og-banner.png" />
+  <meta property="og:image:secure_url" content="https://doitstudio.tech/yopolo/assets/yopolo-og-banner.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Yopolo - Trợ Lý Ngoại Ngữ AI · Luyện Phản Xạ 24/7 | DoIT-Studio" />
+  <meta property="og:locale" content="vi_VN" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://doitstudio.tech/yopolo/" />
+  <meta name="twitter:title" content="Yopolo: Trợ Lý Ngoại Ngữ AI · Luyện Phản Xạ 24/7 | DoIT-Studio" />
+  <meta name="twitter:description"
+    content="Mở lối ngoại ngữ, tự do đối thoại cùng Trợ lý AI Deep Tech. Luyện phản xạ 15 phút mỗi ngày, sửa lỗi ngữ pháp tức thì và lưu sổ tay flashcard 1 chạm." />
+  <meta name="twitter:image" content="https://doitstudio.tech/yopolo/assets/yopolo-og-banner.png" />
+  <meta name="twitter:image:alt" content="Yopolo - Trợ Lý Ngoại Ngữ AI · DoIT-Studio" />
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/yopolo/assets/design-tokens.css">
+  <link rel="stylesheet" href="/yopolo/assets/yopolo-landing.css">
+
+  <!-- Google Analytics 4 (Only loaded in Production) -->
+  {import.meta.env.PROD && (
+    <>
+      <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-64YJ3QLMEM"></script>
+      <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-64YJ3QLMEM', {
+          page_path: window.location.pathname,
+        });
+      </script>
+    </>
+  )}
+
+  <!-- Structured Data (JSON-LD) with SoftwareApplication, BreadcrumbList & FAQPage -->
+  <script is:inline type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://doitstudio.tech/yopolo/#software",
+        "name": "Yopolo: Trợ Lý Ngoại Ngữ AI",
+        "operatingSystem": "iOS, Android, Web",
+        "applicationCategory": "EducationalApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "VND"
+        },
+        "image": "https://doitstudio.tech/yopolo/assets/yopolo-og-banner.png",
+        "screenshot": [
+          "https://doitstudio.tech/yopolo/screenshots/1-login.jpg",
+          "https://doitstudio.tech/yopolo/screenshots/2-1-onboarding-lang.jpg",
+          "https://doitstudio.tech/yopolo/screenshots/2-2-onboarding-topics.jpg",
+          "https://doitstudio.tech/yopolo/screenshots/2-3-onboarding-time.jpg",
+          "https://doitstudio.tech/yopolo/screenshots/4-1-ai-chat-starter.jpg",
+          "https://doitstudio.tech/yopolo/screenshots/4-2-ai-chat-dialog.jpg",
+          "https://doitstudio.tech/yopolo/screenshots/5-notebook.jpg",
+          "https://doitstudio.tech/yopolo/screenshots/3-home-profile.jpg"
+        ],
+        "featureList": [
+          "Luyện phản xạ đàm thoại ngoại ngữ 15 phút mỗi ngày",
+          "Bóc tách từ vựng & sửa lỗi ngữ pháp tức thì bằng tiếng mẹ đẻ (Tiếng Việt)",
+          "Hỗ trợ 6 ngôn ngữ thông dụng: Tiếng Anh, Pháp, Trung (Pinyin), Hàn (Kính ngữ), Nhật (Romaji), Việt",
+          "Đăng nhập bảo mật đa nền tảng không cần mật khẩu với mã QR Web Client",
+          "Sổ tay cá nhân hóa 1 chạm & hệ thống ôn tập Flashcards thông minh",
+          "Mô hình ngôn ngữ lớn Deep Tech Gemini AI 1.5 Flash phản hồi mượt mà"
+        ],
+        "author": {
+          "@type": "Organization",
+          "name": "DoIT-Studio",
+          "url": "https://doitstudio.tech"
+        },
+        "description": "Yopolo là trợ lý luyện giao tiếp ngoại ngữ AI đa nền tảng. Khởi tạo chủ đề hàng ngày, bóc tách từ vựng, sửa lỗi ngữ pháp tức thì và lưu flashcards 1 chạm.",
+        "url": "https://doitstudio.tech/yopolo/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Trang chủ",
+            "item": "https://doitstudio.tech"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Dự án & Ứng dụng",
+            "item": "https://doitstudio.tech/apps"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Yopolo",
+            "item": "https://doitstudio.tech/yopolo/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Yopolo hiện đang hỗ trợ những ngôn ngữ nào?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yopolo hỗ trợ 6 ngôn ngữ chính: Tiếng Anh, Tiếng Pháp, Tiếng Trung (kèm phiên âm Pinyin), Tiếng Hàn (chú thích kính ngữ), Tiếng Nhật (kèm Furigana/Romaji) và Tiếng Việt. Bạn có thể tự do chuyển đổi ngôn ngữ mục tiêu bất kỳ lúc nào trong phần Cài đặt Profile."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Người mới bắt đầu có học được với Yopolo không?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ứng dụng được tối ưu hóa cho trình độ từ tiền trung cấp đến trung cấp (B1-B2) nhằm kích hoạt phản xạ giao tiếp. Tuy nhiên, người mới bắt đầu vẫn hoàn toàn có thể luyện tập vì Yopolo luôn bóc tách từ vựng, ngữ pháp và giải thích cặn kẽ bằng tiếng Việt giúp bạn theo kịp nhịp đàm thoại."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ứng dụng Yopolo có miễn phí không?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yopolo cung cấp hạn ngạch đàm thoại miễn phí mỗi ngày (25 tin nhắn/ngày), đủ để bạn hoàn thành trọn vẹn một bài học chủ đề và lưu từ vựng vào sổ tay mà không phát sinh bất kỳ chi phí nào."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Tính năng đăng nhập Web qua mã QR hoạt động như thế nào?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Khi bạn mở bản Web trên máy tính, hệ thống tạo một mã QR bảo mật phiên làm việc. Bạn chỉ cần mở app Yopolo trên điện thoại, bấm nút Quét QR Web để ủy quyền đăng nhập trong 1 giây mà không cần nhớ hay nhập mật khẩu."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Dữ liệu và nội dung trò chuyện của tôi có được bảo mật không?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Toàn bộ dữ liệu của bạn được mã hóa truyền tải an toàn qua giao thức HTTPS/TLS và lưu trữ bảo mật trên Firebase. Yopolo cam kết không bao giờ bán thông tin cá nhân hay nội dung học tập của bạn cho bất kỳ bên thứ ba nào."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+<!-- AURORA AMBIENT GLOW SYSTEM -->
+  <div class="aurora-bg">
+    <div class="aurora-orb orb-cyan"></div>
+    <div class="aurora-orb orb-violet"></div>
+    <div class="aurora-orb orb-pink"></div>
+  </div>
+  <div class="grid-overlay"></div>
+
+  <!-- STICKY SITE HEADER -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="/yopolo/" class="brand-logo" aria-label="Yopolo Home">
+        <img src="/yopolo/assets/yopolo-logo-horizontal.svg" alt="Yopolo AI Multi-Language Partner">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#features" class="nav-link">Tính năng</a></li>
+        <li><a href="#showcase" class="nav-link">Khám phá App</a></li>
+        <li><a href="#web-sync" class="nav-link">Trải nghiệm Web</a></li>
+        <li><a href="#reviews" class="nav-link">Đánh giá</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="/apps" class="btn btn-secondary nav-btn-ecosystem" style="padding: 8px 14px; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px; border-radius: 999px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
+          <span>DoIT Apps</span>
+        </a>
+        <a href="#download" class="btn btn-primary nav-btn-download">
+          <span>Tải Ứng Dụng</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN HERO SECTION -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+
+        <!-- Left: Text Content -->
+        <div class="hero-content">
+          <div class="badge-pill hero-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+            </svg>
+            <span>AI Language Partner • Powered by Gemini 1.5</span>
+          </div>
+
+          <h1 class="hero-title">
+            Luyện Phản Xạ Giao Tiếp <span class="gradient-text">24/7 Cùng Trợ Lý AI</span>
+          </h1>
+
+          <p class="hero-desc">
+            Không áp lực, không sợ phán xét. Mỗi ngày mở app, Yopolo AI tự động khởi tạo chủ đề đàm thoại thực tiễn, bóc
+            tách từ vựng đắt giá và sửa lỗi ngữ pháp tức thì bằng tiếng Việt.
+          </p>
+
+          <div class="hero-cta-group">
+            <!-- App Store Button -->
+            <a href="#download" class="store-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 1.01-2.87-.96.04-2.14.64-2.83 1.44-.57.65-1.07 1.72-.94 2.76 1.07.08 2.14-.58 2.76-1.33z" />
+              </svg>
+              <div class="store-btn-text">
+                <span>Tải về trên</span>
+                <strong>App Store</strong>
+              </div>
+            </a>
+
+            <!-- Google Play Button -->
+            <a href="#download" class="store-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M3.609 1.814L13.792 12 3.61 22.186c-.198-.225-.31-.539-.31-.886V2.7c0-.347.112-.661.31-.886zm11.235 11.238l2.257 2.257-11.45 6.495 9.193-8.752zm0-2.104L5.651 2.196l11.45 6.495-2.257 2.257zm1.488 1.052l3.414 1.936c.642.365.642.96 0 1.325l-3.414 1.936-2.106-2.106 2.106-2.091z" />
+              </svg>
+              <div class="store-btn-text">
+                <span>Tải về trên</span>
+                <strong>Google Play</strong>
+              </div>
+            </a>
+
+            <!-- Web QR Trigger -->
+            <a href="#web-sync" class="btn btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect width="18" height="18" x="3" y="3" rx="2" />
+                <path d="M7 7h.01" />
+                <path d="M17 7h.01" />
+                <path d="M7 17h.01" />
+                <path d="M17 17h.01" />
+              </svg>
+              <span>Quét QR Web</span>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-num">6+</div>
+              <p>Ngôn ngữ mục tiêu</p>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">B1 - B2</div>
+              <p>Trình độ đàm thoại</p>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">1 Chạm</div>
+              <p>Lưu Sổ tay tức thì</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: 3D Phone Mockup with Real App Screenshot -->
+        <div class="hero-visual">
+
+          <!-- Floating Feature Badge 1 -->
+          <div class="glass-card floating-card floating-card-1">
+            <div class="floating-card-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+              </svg>
+            </div>
+            <div class="floating-card-text">
+              <strong>+ woven themselves into</strong>
+              <span>Gợi ý lưu sổ tay từ vựng</span>
+            </div>
+          </div>
+
+          <!-- Floating Feature Badge 2 -->
+          <div class="glass-card floating-card floating-card-2">
+            <div class="floating-card-icon"
+              style="background: rgba(139, 92, 246, 0.15); color: var(--yp-aurora-violet);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="m5 13 4 4L19 7" />
+              </svg>
+            </div>
+            <div class="floating-card-text">
+              <strong>Sửa lỗi ngữ pháp</strong>
+              <span>Giải thích bằng tiếng Việt</span>
+            </div>
+          </div>
+
+          <!-- Phone Chassis -->
+          <div class="phone-mockup-wrap">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <img src="/yopolo/screenshots/4-1-ai-chat-starter.jpg" alt="Màn hình Yopolo AI Core Chatting">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM VS SOLUTION -->
+  <section class="problem-section" id="solution">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="badge-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+          </svg>
+          <span>Khác biệt cốt lõi</span>
+        </div>
+        <h2 class="section-title">Tại sao cách học ngoại ngữ cũ <span class="gradient-text">khiến bạn ngại nói?</span>
+        </h2>
+        <p class="section-desc">Phần lớn người học bỏ cuộc vì thiếu môi trường giao tiếp thực tế và sợ mắc sai lầm trước
+          mặt người khác.</p>
+      </div>
+
+      <div class="comparison-grid">
+        <!-- Traditional Way -->
+        <div class="compare-column traditional">
+          <div class="column-header">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <path d="m15 9-6 6" />
+              <path d="m9 9 6 6" />
+            </svg>
+            <h3 style="color: #F87171;">Cách học truyền thống</h3>
+          </div>
+          <ul class="compare-list">
+            <li class="compare-item bad">
+              <div class="compare-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg></div>
+              <div class="compare-item-text">
+                <strong>Áp lực tâm lý khi nói chuyện với người lạ</strong>
+                <p>Nỗi sợ bị phán xét hoặc phát âm sai khiến bạn luôn do dự trước khi mở lời.</p>
+              </div>
+            </li>
+            <li class="compare-item bad">
+              <div class="compare-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg></div>
+              <div class="compare-item-text">
+                <strong>Học vẹt ngữ pháp rời rạc, mau quên</strong>
+                <p>Học hàng trăm công thức nhưng không có ngữ cảnh hội thoại cụ thể để áp dụng vào thực tế.</p>
+              </div>
+            </li>
+            <li class="compare-item bad">
+              <div class="compare-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg></div>
+              <div class="compare-item-text">
+                <strong>Chi phí gia sư bản ngữ đắt đỏ, giới hạn giờ</strong>
+                <p>Khó duy trì thói quen luyện tập hàng ngày vì lịch hẹn cố định và chi phí cao.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Yopolo Way -->
+        <div class="compare-column yopolo">
+          <div class="column-header">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00F2FE" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+            </svg>
+            <h3 class="gradient-text">Giải pháp thông minh cùng Yopolo</h3>
+          </div>
+          <ul class="compare-list">
+            <li class="compare-item good">
+              <div class="compare-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <path d="m5 13 4 4L19 7" />
+                </svg></div>
+              <div class="compare-item-text">
+                <strong>Gia sư AI kiên nhẫn 24/7, tuyệt đối không phán xét</strong>
+                <p>Thoải mái thử các cách diễn đạt mới. Bạn có thể sai hàng trăm lần để tiến bộ mỗi ngày.</p>
+              </div>
+            </li>
+            <li class="compare-item good">
+              <div class="compare-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <path d="m5 13 4 4L19 7" />
+                </svg></div>
+              <div class="compare-item-text">
+                <strong>Chủ đề thực tế & Bóc tách ngữ pháp tức thì</strong>
+                <p>Học từ vựng và cấu trúc trực tiếp từ chính câu đàm thoại của bạn, giải thích tiếng Việt tường minh.
+                </p>
+              </div>
+            </li>
+            <li class="compare-item good">
+              <div class="compare-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <path d="m5 13 4 4L19 7" />
+                </svg></div>
+              <div class="compare-item-text">
+                <strong>Luyện ngắt quãng 5–10 phút mỗi ngày mọi lúc mọi nơi</strong>
+                <p>Chỉ cần vài phút giải lao trên điện thoại hoặc máy tính để duy trì mạch phản xạ liên tục.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREENSHOT SHOWCASE (INTERACTIVE GALLERY) -->
+  <section class="showcase-section" id="showcase">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="badge-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect width="18" height="18" x="3" y="3" rx="2" />
+            <path d="M3 9h18" />
+            <path d="M9 21V9" />
+          </svg>
+          <span>Trải nghiệm thực tế</span>
+        </div>
+        <h2 class="section-title">Khám Phá Toàn Diện <span class="gradient-text">Giao Diện Ứng Dụng</span></h2>
+        <p class="section-desc">Ảnh chụp thực tế từ ứng dụng Yopolo trên thiết bị di động. Nhấn vào bất kỳ ảnh nào để
+          phóng to và xem chi tiết tính năng.</p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="showcase-filters">
+        <button class="filter-tab active" data-filter="all">Tất cả màn hình (8)</button>
+        <button class="filter-tab" data-filter="onboarding">Bắt đầu & Thiết lập (4)</button>
+        <button class="filter-tab" data-filter="chat">Đàm thoại AI (2)</button>
+        <button class="filter-tab" data-filter="notebook">Sổ tay & Profile (2)</button>
+      </div>
+
+      <!-- Screenshots 4-Column Grid -->
+      <div class="showcase-grid" id="showcaseGrid">
+
+        <!-- Screen 1: Login -->
+        <div class="screenshot-card" data-category="onboarding" data-index="0">
+          <div class="screenshot-thumb-wrap">
+            <img src="/yopolo/screenshots/1-login.jpg" alt="Màn hình Đăng nhập Yopolo" loading="lazy">
+            <div class="zoom-hint">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+                <path d="M11 8v6" />
+                <path d="M8 11h6" />
+              </svg>
+              <span>Xem chi tiết</span>
+            </div>
+          </div>
+          <div class="screenshot-meta">
+            <h3>Đăng nhập Bảo mật</h3>
+            <p>Xác thực 1 chạm tiện lợi qua Google và Apple Sign-In an toàn.</p>
+          </div>
+        </div>
+
+        <!-- Screen 2: Onboarding 1 -->
+        <div class="screenshot-card" data-category="onboarding" data-index="1">
+          <div class="screenshot-thumb-wrap">
+            <img src="/yopolo/screenshots/2-1-onboarding-lang.jpg" alt="Màn hình Chọn Ngôn ngữ Mục tiêu" loading="lazy">
+            <div class="zoom-hint">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+                <path d="M11 8v6" />
+                <path d="M8 11h6" />
+              </svg>
+              <span>Xem chi tiết</span>
+            </div>
+          </div>
+          <div class="screenshot-meta">
+            <h3>1. Chọn Ngôn ngữ Học</h3>
+            <p>Hỗ trợ Tiếng Anh, Pháp, Trung, Hàn, Nhật và Tiếng Việt.</p>
+          </div>
+        </div>
+
+        <!-- Screen 3: Onboarding 2 -->
+        <div class="screenshot-card" data-category="onboarding" data-index="2">
+          <div class="screenshot-thumb-wrap">
+            <img src="/yopolo/screenshots/2-2-onboarding-topics.jpg" alt="Màn hình Chọn Chủ đề Quan tâm" loading="lazy">
+            <div class="zoom-hint">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+                <path d="M11 8v6" />
+                <path d="M8 11h6" />
+              </svg>
+              <span>Xem chi tiết</span>
+            </div>
+          </div>
+          <div class="screenshot-meta">
+            <h3>2. Chọn Chủ đề Yêu thích</h3>
+            <p>Lựa chọn 1 đến 5 chủ đề thực tế: IT, Công sở, Du lịch, Đời sống...</p>
+          </div>
+        </div>
+
+        <!-- Screen 4: Onboarding 3 -->
+        <div class="screenshot-card" data-category="onboarding" data-index="3">
+          <div class="screenshot-thumb-wrap">
+            <img src="/yopolo/screenshots/2-3-onboarding-time.jpg" alt="Màn hình Cấu hình Giờ Nhắc Học" loading="lazy">
+            <div class="zoom-hint">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+                <path d="M11 8v6" />
+                <path d="M8 11h6" />
+              </svg>
+              <span>Xem chi tiết</span>
+            </div>
+          </div>
+          <div class="screenshot-meta">
+            <h3>3. Giờ Nhắc Học Thông Minh</h3>
+            <p>Thiết lập thông báo nhẹ nhàng hàng ngày giúp duy trì kỷ luật.</p>
+          </div>
+        </div>
+
+        <!-- Screen 5: AI Chat Starter -->
+        <div class="screenshot-card" data-category="chat" data-index="4">
+          <div class="screenshot-thumb-wrap">
+            <img src="/yopolo/screenshots/4-1-ai-chat-starter.jpg" alt="AI Khởi tạo Chủ đề Ngẫu nhiên">
+            <div class="zoom-hint">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+                <path d="M11 8v6" />
+                <path d="M8 11h6" />
+              </svg>
+              <span>Xem chi tiết</span>
+            </div>
+          </div>
+          <div class="screenshot-meta">
+            <h3>AI Khởi tạo Chủ đề</h3>
+            <p>Tự động bắt đầu với bài học B1-B2 và gợi ý câu hỏi phản xạ mở.</p>
+          </div>
+        </div>
+
+        <!-- Screen 6: AI Chat Dialog -->
+        <div class="screenshot-card" data-category="chat" data-index="5">
+          <div class="screenshot-thumb-wrap">
+            <img src="/yopolo/screenshots/4-2-ai-chat-dialog.jpg" alt="Bóc tách Từ vựng & Cú pháp" loading="lazy">
+            <div class="zoom-hint">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+                <path d="M11 8v6" />
+                <path d="M8 11h6" />
+              </svg>
+              <span>Xem chi tiết</span>
+            </div>
+          </div>
+          <div class="screenshot-meta">
+            <h3>Bóc tách Điểm Sáng Tạo</h3>
+            <p>Tự động phân tách pill Từ vựng và Cú pháp để lưu sổ tay 1 chạm.</p>
+          </div>
+        </div>
+
+        <!-- Screen 7: Notebook -->
+        <div class="screenshot-card" data-category="notebook" data-index="6">
+          <div class="screenshot-thumb-wrap">
+            <img src="/yopolo/screenshots/5-notebook.jpg" alt="Tab Sổ tay Cá nhân & Flashcards" loading="lazy">
+            <div class="zoom-hint">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+                <path d="M11 8v6" />
+                <path d="M8 11h6" />
+              </svg>
+              <span>Xem chi tiết</span>
+            </div>
+          </div>
+          <div class="screenshot-meta">
+            <h3>Sổ tay Cá nhân & Flashcards</h3>
+            <p>Lưu trữ từ vựng, tự động lọc theo tag chủ đề và hỗ trợ lật thẻ.</p>
+          </div>
+        </div>
+
+        <!-- Screen 8: Home Profile -->
+        <div class="screenshot-card" data-category="notebook" data-index="7">
+          <div class="screenshot-thumb-wrap">
+            <img src="/yopolo/screenshots/3-home-profile.jpg" alt="Tab Trang chủ & Hồ sơ" loading="lazy">
+            <div class="zoom-hint">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+                <path d="M11 8v6" />
+                <path d="M8 11h6" />
+              </svg>
+              <span>Xem chi tiết</span>
+            </div>
+          </div>
+          <div class="screenshot-meta">
+            <h3>Hồ sơ & Đổi Cấu hình</h3>
+            <p>Quản lý ngôn ngữ, chủ đề học, giới thiệu app và quét QR Web.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BENTO GRID FEATURES -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="badge-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+          </svg>
+          <span>Tính năng nổi bật</span>
+        </div>
+        <h2 class="section-title">Hệ Sinh Thái Luyện Ngoại Ngữ <span class="gradient-text">Chuẩn Deep Tech</span></h2>
+        <p class="section-desc">Mọi chi tiết từ thiết kế Dark Glassmorphism đến thuật toán phản xạ AI đều được tinh
+          chỉnh nhằm mang lại cảm hứng học tập bền bỉ.</p>
+      </div>
+
+      <div class="bento-grid">
+
+        <!-- Bento 1: Daily Starter (Span 2) -->
+        <div class="glass-card bento-item span-2">
+          <div class="bento-header">
+            <div class="bento-icon cyan">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+            </div>
+            <h3>Khởi Tạo Chủ Đề Hàng Ngày (Daily Topic Starter)</h3>
+            <p>Không bao giờ phải tự hỏi "hôm nay nói gì?". Mỗi sáng mở app, AI tự động chọn ngẫu nhiên một chủ đề trong
+              danh sách bạn quan tâm (IT, Công sở, Du lịch, Phim ảnh...) và mở đầu câu chuyện bằng đoạn văn ngắn B1-B2
+              kèm câu hỏi kích thích phản xạ.</p>
+
+            <div class="bento-pill-group">
+              <span class="sim-pill sim-vocab">IT & Technology</span>
+              <span class="sim-pill sim-vocab">Work & Career</span>
+              <span class="sim-pill sim-vocab">Travel & Culture</span>
+              <span class="sim-pill sim-vocab">Daily Life</span>
+            </div>
+          </div>
+          <div class="bento-decor">
+            <img src="/yopolo/assets/yopolo-soundwave.svg" width="160" alt="Soundwave decoration" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Bento 2: Smart Feedback -->
+        <div class="glass-card bento-item">
+          <div class="bento-header">
+            <div class="bento-icon violet">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 20h9" />
+                <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" />
+              </svg>
+            </div>
+            <h3>Bóc Tách Từ Vựng & Cú Pháp</h3>
+            <p>AI tự động bóc tách từ vựng thực chiến và cấu trúc ngữ pháp đắt giá từ câu trả lời của bạn, hiển thị dưới
+              dạng pill màu sắc trực quan.</p>
+            <div class="bento-pill-group">
+              <span class="sim-pill sim-vocab">+ woven themselves into</span>
+              <span class="sim-pill sim-grammar">+ Whether [X] or [Y]...</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bento 3: Notebook & Flashcard -->
+        <div class="glass-card bento-item">
+          <div class="bento-header">
+            <div class="bento-icon pink">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z" />
+                <path d="M6 6h10" />
+                <path d="M6 10h10" />
+              </svg>
+            </div>
+            <h3>Sổ Tay 1 Chạm & Flashcards</h3>
+            <p>Nhấn vào bất kỳ pill từ vựng nào để lưu ngay vào Sổ tay. Luyện tập lặp lại ngắt quãng (Spaced Repetition)
+              với chế độ lật thẻ nhẹ nhàng.</p>
+          </div>
+        </div>
+
+        <!-- Bento 4: Multi-Language (Span 2) -->
+        <div class="glass-card bento-item span-2">
+          <div class="bento-header">
+            <div class="bento-icon mint">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                <path d="M2 12h20" />
+              </svg>
+            </div>
+            <h3>Hệ Sinh Thái Đa Ngôn Ngữ Linh Hoạt</h3>
+            <p>Dễ dàng chuyển đổi mục tiêu học tập bất cứ lúc nào trong Profile. AI hỗ trợ kèm phiên âm Pinyin (Tiếng
+              Trung), Romaji/Furigana (Tiếng Nhật), phân biệt kính ngữ (Tiếng Hàn), và quy tắc chia động từ (Tiếng
+              Pháp).</p>
+            <div class="bento-pill-group">
+              <span class="sim-pill sim-vocab">🇬🇧 English</span>
+              <span class="sim-pill sim-vocab">🇨🇳 中文 (Pinyin)</span>
+              <span class="sim-pill sim-vocab">🇰🇷 한국어 (존댓말)</span>
+              <span class="sim-pill sim-vocab">🇯🇵 日本語</span>
+              <span class="sim-pill sim-vocab">🇫🇷 Français</span>
+            </div>
+          </div>
+          <div class="bento-decor">
+            <img src="/yopolo/assets/yopolo-monogram.svg" width="140" alt="Monogram decoration" loading="lazy">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WEB COMPANION (QR SYNC) -->
+  <section class="web-section" id="web-sync">
+    <div class="container">
+      <div class="web-card">
+
+        <div class="web-content">
+          <div class="badge-pill" style="margin-bottom: 18px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect width="20" height="14" x="2" y="3" rx="2" />
+              <line x1="8" x2="16" y1="21" y2="21" />
+              <line x1="12" x2="12" y1="17" y2="21" />
+            </svg>
+            <span>Đồng bộ Đa Nền tảng</span>
+          </div>
+
+          <h3>Mở Rộng Không Gian Học <span class="gradient-text">Trên Màn Hình Lớn</span></h3>
+          <p>
+            Cần gõ bàn phím cơ để luyện viết câu dài khi làm việc tại văn phòng? Chỉ cần mở trình duyệt web trên laptop,
+            dùng điện thoại quét mã QR là phiên học của bạn đã được kết nối tức thì không cần nhập mật khẩu.
+          </p>
+
+          <ul class="web-steps">
+            <li class="web-step">
+              <span class="step-number">1</span>
+              <span>Truy cập Yopolo Web Client trên trình duyệt máy tính</span>
+            </li>
+            <li class="web-step">
+              <span class="step-number">2</span>
+              <span>Mở Yopolo App trên điện thoại và chọn "Quét mã QR Web"</span>
+            </li>
+            <li class="web-step">
+              <span class="step-number">3</span>
+              <span>Đăng nhập tự động qua kết nối thời gian thực Firebase</span>
+            </li>
+          </ul>
+
+          <a href="#download" class="btn btn-primary">
+            <span>Tải App Để Bắt Đầu</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- QR Scanner HUD Graphic -->
+        <div class="web-visual-box">
+          <div class="qr-hud-preview">
+            <img src="/yopolo/assets/yopolo-qr-scanner-hud.svg" alt="Yopolo QR Scanner HUD" loading="lazy">
+            <div class="qr-center-mock">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm13-2h3v2h-3v-2zm-5 0h3v3h-3v-3zm2 3h3v3h-3v-3zm3 0h3v5h-2v-3h-1v-2zm-5 2h2v3h-2v-3zm-3-2h2v2h-2v-2zm5 3h2v2h-2v-2z" />
+              </svg>
+            </div>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--yp-text-secondary); font-weight: 500;">
+            Quét mã QR trên màn hình Desktop để đồng bộ Realtime
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS & TESTIMONIALS -->
+  <section class="testimonials-section" id="reviews">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="badge-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="22 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+          <span>Cộng đồng học tập</span>
+        </div>
+        <h2 class="section-title">Người Dùng Nói Gì <span class="gradient-text">Về Yopolo?</span></h2>
+        <p class="section-desc">Hàng nghìn người đi làm và học sinh sinh viên đã tìm lại niềm vui giao tiếp ngoại ngữ
+          mỗi ngày.</p>
+      </div>
+
+      <div class="testimonials-grid">
+
+        <!-- Review 1 -->
+        <div class="glass-card testimonial-card">
+          <div>
+            <div class="stars-rating">
+              ★★★★★
+            </div>
+            <p class="testimonial-quote">
+              "Trước đây mình rất ngại nói tiếng Anh với đồng nghiệp nước ngoài vì sợ sai ngữ pháp. Từ ngày luyện 10
+              phút mỗi sáng với Yopolo về các chủ đề Tech & Architecture, phản xạ bật câu của mình tự nhiên hơn hẳn!"
+            </p>
+          </div>
+          <div class="user-profile">
+            <div class="user-avatar">TL</div>
+            <div class="user-info">
+              <h5>Thành Lê</h5>
+              <span>Senior Software Engineer</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="glass-card testimonial-card">
+          <div>
+            <div class="stars-rating">
+              ★★★★★
+            </div>
+            <p class="testimonial-quote">
+              "Tính năng bóc tách từ vựng kèm giải thích tiếng Việt cực kỳ thông minh. Thấy từ hay là mình bấm lưu vào
+              Sổ tay ngay. Chế độ lật thẻ Flashcard giúp mình ôn lại trên đường đi xe buýt rất tiện."
+            </p>
+          </div>
+          <div class="user-profile">
+            <div class="user-avatar" style="background: var(--yp-grad-cyan-blue);">MN</div>
+            <div class="user-info">
+              <h5>Minh Ngọc</h5>
+              <span>Marketing Specialist</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="glass-card testimonial-card">
+          <div>
+            <div class="stars-rating">
+              ★★★★★
+            </div>
+            <p class="testimonial-quote">
+              "Mình học tiếng Trung và thích nhất là AI phản hồi kèm theo Pinyin chuẩn xác. Giao diện Dark Glassmorphism
+              nhìn vừa ngầu vừa không chói mắt khi học đêm. Rất đáng trải nghiệm!"
+            </p>
+          </div>
+          <div class="user-profile">
+            <div class="user-avatar" style="background: var(--yp-grad-violet-pink);">HA</div>
+            <div class="user-info">
+              <h5>Hoàng Anh</h5>
+              <span>Sinh viên Ngoại ngữ</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="badge-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <path d="9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+            <line x1="12" x2="12.01" y1="17" y2="17" />
+          </svg>
+          <span>Giải đáp thắc mắc</span>
+        </div>
+        <h2 class="section-title">Câu Hỏi <span class="gradient-text">Thường Gặp</span></h2>
+        <p class="section-desc">Những điều bạn cần biết trước khi bắt đầu hành trình luyện phản xạ cùng Yopolo.</p>
+      </div>
+
+      <div class="faq-accordion" id="faqAccordion">
+
+        <!-- FAQ 1 -->
+        <div class="faq-item active">
+          <button class="faq-header" aria-expanded="true">
+            <span>Yopolo hiện đang hỗ trợ những ngôn ngữ nào?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq-body">
+            Yopolo hỗ trợ 6 ngôn ngữ chính: Tiếng Anh, Tiếng Pháp, Tiếng Trung (kèm phiên âm Pinyin), Tiếng Hàn (chú
+            thích kính ngữ), Tiếng Nhật (kèm Furigana/Romaji) và Tiếng Việt. Bạn có thể tự do chuyển đổi ngôn ngữ mục
+            tiêu bất kỳ lúc nào trong phần Cài đặt Profile.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item">
+          <button class="faq-header" aria-expanded="false">
+            <span>Người mới bắt đầu có học được với Yopolo không?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq-body">
+            Ứng dụng được tối ưu hóa cho trình độ từ tiền trung cấp đến trung cấp (B1-B2) nhằm kích hoạt phản xạ giao
+            tiếp. Tuy nhiên, người mới bắt đầu vẫn hoàn toàn có thể luyện tập vì Yopolo luôn bóc tách từ vựng, ngữ pháp
+            và giải thích cặn kẽ bằng tiếng Việt giúp bạn theo kịp nhịp đàm thoại.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item">
+          <button class="faq-header" aria-expanded="false">
+            <span>Ứng dụng Yopolo có miễn phí không?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq-body">
+            Yopolo cung cấp hạn ngạch đàm thoại miễn phí mỗi ngày (25 tin nhắn/ngày), đủ để bạn hoàn thành trọn vẹn một
+            bài học chủ đề và lưu từ vựng vào sổ tay mà không phát sinh bất kỳ chi phí nào.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item">
+          <button class="faq-header" aria-expanded="false">
+            <span>Tính năng đăng nhập Web qua mã QR hoạt động như thế nào?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq-body">
+            Khi bạn mở bản Web trên máy tính, hệ thống tạo một mã QR bảo mật phiên làm việc. Bạn chỉ cần mở app Yopolo
+            trên điện thoại, bấm nút "Quét QR Web" để ủy quyền đăng nhập trong 1 giây mà không cần nhớ hay nhập mật
+            khẩu.
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item">
+          <button class="faq-header" aria-expanded="false">
+            <span>Dữ liệu và nội dung trò chuyện của tôi có được bảo mật không?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq-body">
+            Toàn bộ dữ liệu của bạn được mã hóa truyền tải an toàn qua giao thức HTTPS/TLS và lưu trữ bảo mật trên
+            Firebase. Yopolo cam kết không bao giờ bán thông tin cá nhân hay nội dung học tập của bạn cho bất kỳ bên thứ
+            ba nào.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA BANNER -->
+  <section class="cta-section" id="download">
+    <div class="container">
+      <div class="cta-banner">
+        <h2>Sẵn Sàng Làm Chủ Ngoại Ngữ <span class="gradient-text">Cùng Yopolo?</span></h2>
+        <p>Bắt đầu ngay hôm nay để biến việc luyện ngoại ngữ thành thói quen tự nhiên, tự tin đàm thoại trong công việc
+          và cuộc sống.</p>
+
+        <div class="cta-btn-group">
+          <!-- App Store Button -->
+          <a href="#" class="store-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 1.01-2.87-.96.04-2.14.64-2.83 1.44-.57.65-1.07 1.72-.94 2.76 1.07.08 2.14-.58 2.76-1.33z" />
+            </svg>
+            <div class="store-btn-text">
+              <span>Tải về trên</span>
+              <strong>App Store (iOS)</strong>
+            </div>
+          </a>
+
+          <!-- Google Play Button -->
+          <a href="#" class="store-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M3.609 1.814L13.792 12 3.61 22.186c-.198-.225-.31-.539-.31-.886V2.7c0-.347.112-.661.31-.886zm11.235 11.238l2.257 2.257-11.45 6.495 9.193-8.752zm0-2.104L5.651 2.196l11.45 6.495-2.257 2.257zm1.488 1.052l3.414 1.936c.642.365.642.96 0 1.325l-3.414 1.936-2.106-2.106 2.106-2.091z" />
+            </svg>
+            <div class="store-btn-text">
+              <span>Tải về trên</span>
+              <strong>Google Play (Android)</strong>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <img src="/yopolo/assets/yopolo-logo-horizontal.svg" alt="Yopolo" style="height: 36px; width: auto;">
+          <p>
+            Trợ lý luyện phản xạ giao tiếp ngoại ngữ AI đa nền tảng. Thiết kế theo tiêu chuẩn Dark Glassmorphism và công
+            nghệ Gemini AI.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Sản Phẩm</h5>
+          <ul class="footer-links">
+            <li><a href="#features" class="footer-link">Tính năng AI</a></li>
+            <li><a href="#showcase" class="footer-link">Màn hình ứng dụng</a></li>
+            <li><a href="#web-sync" class="footer-link">Web Client</a></li>
+            <li><a href="#download" class="footer-link">Tải ứng dụng</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Ngôn Ngữ</h5>
+          <ul class="footer-links">
+            <li><a href="#features" class="footer-link">Tiếng Anh (B1-B2)</a></li>
+            <li><a href="#features" class="footer-link">Tiếng Trung (Pinyin)</a></li>
+            <li><a href="#features" class="footer-link">Tiếng Hàn (Kính ngữ)</a></li>
+            <li><a href="#features" class="footer-link">Tiếng Nhật (Romaji)</a></li>
+            <li><a href="#features" class="footer-link">Tiếng Pháp</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Hỗ Trợ & Pháp Lý</h5>
+          <ul class="footer-links">
+            <li><a href="mailto:support@yopolo.app" class="footer-link">support@yopolo.app</a></li>
+            <li><a href="/yopolo/legal#privacy" class="footer-link">Chính sách bảo mật</a></li>
+            <li><a href="/yopolo/legal#terms" class="footer-link">Điều khoản sử dụng</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Yopolo (Doit Studio). All rights reserved.</p>
+        <p>Built with ❤️ using Deep Tech & Dark Glassmorphism Design System.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- INTERACTIVE LIGHTBOX MODAL -->
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="lightbox-content">
+      <button class="lightbox-close-btn" id="lightboxClose" aria-label="Đóng cửa sổ">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M18 6 6 18" />
+          <path d="m6 6 12 12" />
+        </svg>
+      </button>
+
+      <div class="lightbox-image-box">
+        <img id="lightboxImg" src="" alt="Screenshot phóng to">
+      </div>
+
+      <div class="lightbox-info-box">
+        <div class="lightbox-meta">
+          <div class="badge-pill" id="lightboxCategory" style="margin-bottom: 14px;">Màn hình App</div>
+          <h3 id="lightboxTitle">Tiêu đề màn hình</h3>
+          <p id="lightboxDesc">Mô tả tính năng chi tiết của ảnh chụp màn hình đang hiển thị.</p>
+        </div>
+
+        <div class="lightbox-nav-btns">
+          <button class="btn btn-secondary" id="lightboxPrev" style="padding: 10px 18px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m15 18-6-6 6-6" />
+            </svg>
+            <span>Trước</span>
+          </button>
+          <button class="btn btn-primary" id="lightboxNext" style="padding: 10px 18px;">
+            <span>Sau</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE JAVASCRIPT CONTROLLERS -->
+  <script>
+    // 1. Screenshots Data Matrix
+    const screenshotsData = [
+      {
+        title: "Đăng nhập Bảo mật",
+        category: "Bắt đầu & Thiết lập",
+        desc: "Đăng nhập 1 chạm an toàn qua Google và Apple Sign-In. Lưu trữ hồ sơ người dùng trên nền tảng đám mây Firebase Authentication.",
+        src: "/yopolo/screenshots/1-login.jpg"
+      },
+      {
+        title: "1. Chọn Ngôn ngữ Mục tiêu",
+        category: "Onboarding",
+        desc: "Hỗ trợ linh hoạt 6 ngôn ngữ thông dụng: Tiếng Anh, Pháp, Trung, Hàn, Nhật và Tiếng Việt. Ngôn ngữ giải thích lỗi sai mặc định là Tiếng Việt.",
+        src: "/yopolo/screenshots/2-1-onboarding-lang.jpg"
+      },
+      {
+        title: "2. Chọn Chủ đề Quan tâm",
+        category: "Onboarding",
+        desc: "Lựa chọn từ 1 đến 5 chủ đề bạn yêu thích nhất (Công nghệ & IT, Công sở & Sự nghiệp, Du lịch & Văn hoá, Đời sống, Giải trí...).",
+        src: "/yopolo/screenshots/2-2-onboarding-topics.jpg"
+      },
+      {
+        title: "3. Giờ Nhắc Học Thông Minh",
+        category: "Onboarding",
+        desc: "Cấu hình khung giờ nhận thông báo nhắc nhở hàng ngày (Local Notification) giúp bạn duy trì kỷ luật học tập ngắt quãng 5–10 phút.",
+        src: "/yopolo/screenshots/2-3-onboarding-time.jpg"
+      },
+      {
+        title: "AI Khởi tạo Chủ đề Ngẫu nhiên",
+        category: "Đàm thoại AI",
+        desc: "Mỗi ngày mở màn hình Chat, Yopolo AI tự động tạo một chủ đề thảo luận thú vị theo sở thích của bạn, kèm bài đọc B1-B2 và câu hỏi kích thích phản xạ.",
+        src: "/yopolo/screenshots/4-1-ai-chat-starter.jpg"
+      },
+      {
+        title: "Bóc tách Từ vựng & Cú pháp",
+        category: "Đàm thoại AI",
+        desc: "Trong từng câu đàm thoại, AI bóc tách các pill [+ Từ vựng] và [+ Cú pháp] đắt giá kèm giải thích cặn kẽ để bạn lưu vào sổ tay chỉ với 1 chạm.",
+        src: "/yopolo/screenshots/4-2-ai-chat-dialog.jpg"
+      },
+      {
+        title: "Sổ tay Cá nhân & Flashcards",
+        category: "Sổ tay & Ôn tập",
+        desc: "Tất cả từ vựng đã lưu được nhóm theo chủ đề và ngôn ngữ. Hỗ trợ chế độ lật thẻ Flashcard tương tác giúp ghi nhớ dài hạn không áp lực.",
+        src: "/yopolo/screenshots/5-notebook.jpg"
+      },
+      {
+        title: "Hồ sơ & Đổi Cấu hình",
+        category: "Trang chủ & Profile",
+        desc: "Quản lý hồ sơ cá nhân, cấp độ học tập, tùy chỉnh lại danh sách chủ đề, ngôn ngữ và quét mã QR để đăng nhập ngay trên Web Client.",
+        src: "/yopolo/screenshots/3-home-profile.jpg"
+      }
+    ];
+
+    let currentScreenshotIdx = 0;
+
+    // 2. Filter Tabs Functionality
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const screenshotCards = document.querySelectorAll('.screenshot-card');
+
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        filterTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const filter = tab.getAttribute('data-filter');
+        screenshotCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 3. Lightbox Modal Functionality
+    const lightboxModal = document.getElementById('lightboxModal');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxDesc = document.getElementById('lightboxDesc');
+    const lightboxCategory = document.getElementById('lightboxCategory');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+
+    function openLightbox(index) {
+      currentScreenshotIdx = index;
+      const data = screenshotsData[index];
+      lightboxImg.src = data.src;
+      lightboxTitle.textContent = data.title;
+      lightboxDesc.textContent = data.desc;
+      lightboxCategory.textContent = data.category;
+      lightboxModal.classList.add('active');
+      lightboxModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightboxModal.classList.remove('active');
+      lightboxModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    screenshotCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const index = parseInt(card.getAttribute('data-index'), 10);
+        openLightbox(index);
+      });
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal) {
+        closeLightbox();
+      }
+    });
+
+    lightboxPrev.addEventListener('click', () => {
+      currentScreenshotIdx = (currentScreenshotIdx - 1 + screenshotsData.length) % screenshotsData.length;
+      openLightbox(currentScreenshotIdx);
+    });
+
+    lightboxNext.addEventListener('click', () => {
+      currentScreenshotIdx = (currentScreenshotIdx + 1) % screenshotsData.length;
+      openLightbox(currentScreenshotIdx);
+    });
+
+    // Keyboard Navigation for Lightbox
+    window.addEventListener('keydown', (e) => {
+      if (!lightboxModal.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') lightboxPrev.click();
+      if (e.key === 'ArrowRight') lightboxNext.click();
+    });
+
+    // 4. FAQ Accordion Functionality
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const header = item.querySelector('.faq-header');
+      header.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        faqItems.forEach(i => {
+          i.classList.remove('active');
+          i.querySelector('.faq-header').setAttribute('aria-expanded', 'false');
+        });
+        if (!isActive) {
+          item.classList.add('active');
+          header.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
