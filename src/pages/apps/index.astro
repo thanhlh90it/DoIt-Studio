@@ -52,7 +52,8 @@ const appIdeas = [
     description: 'Trợ lý luyện giao tiếp ngoại ngữ AI đa nền tảng: Khởi tạo chủ đề đàm thoại mỗi ngày, bóc tách từ vựng, sửa lỗi ngữ pháp tức thì và lưu flashcards 1 chạm cùng Gemini AI.',
     date: '01/11/2026',
     status: 'Sắp ra mắt (iOS, Android, Web)',
-    tags: ['React Native', 'Gemini AI', 'Language Learning', 'Deep Tech']
+    tags: ['React Native', 'Gemini AI', 'Language Learning', 'Deep Tech'],
+    icon: '/yopolo/assets/yopolo-icon.svg'
   },
   {
     slug: '/pledgo/',
@@ -60,7 +61,8 @@ const appIdeas = [
     description: 'Ứng dụng quản lý mục tiêu & thói quen 365 ngày: Nghi thức tuyên thệ khóa chỉ tiêu, đồng hồ đếm ngược thời gian thực, bản đồ nhiệt thói quen và Bảo tàng cá nhân.',
     date: '18/10/2026',
     status: 'Đã phát hành (App Store & Google Play)',
-    tags: ['React Native', 'Firebase', 'Habit Tracker', 'Goal Setting', 'Discipline']
+    tags: ['React Native', 'Firebase', 'Habit Tracker', 'Goal Setting', 'Discipline'],
+    icon: '/pledgo/assets/brand/app-icon.svg'
   },
   {
     slug: '/tevy/',
@@ -68,7 +70,8 @@ const appIdeas = [
     description: 'Tevy đã chính thức go-live trên Google Play: ứng dụng Tevy Parent cho Android và Tevy TV Client cho Android TV.',
     date: '25/09/2026',
     status: 'Đã phát hành (Google Play)',
-    tags: ['Android TV', 'Android', 'Google Play', 'Parental Control', 'React Native']
+    tags: ['Android TV', 'Android', 'Google Play', 'Parental Control', 'React Native'],
+    icon: '/tevy/assets/tevy-app-icon.svg'
   },
   {
     slug: '/nhata',
@@ -76,7 +79,8 @@ const appIdeas = [
     description: 'Không gian số ấm áp, riêng tư cho tổ ấm gia đình: Lịch biểu chung & TKB, phân chia việc nhà tích sao đổi quà rèn luyện tính tự lập cho con, album kỷ niệm và quản lý chi tiêu.',
     date: '04/09/2026',
     status: 'Đã phát hành (App Store & Google Play)',
-    tags: ['React Native', 'Expo', 'Firebase', 'Family', 'Gamification']
+    tags: ['React Native', 'Expo', 'Firebase', 'Family', 'Gamification'],
+    icon: '/nhata/icons/app-icon.svg'
   },
   {
     slug: '/apps/securevault',
@@ -84,7 +88,8 @@ const appIdeas = [
     description: 'Két sắt cá nhân đa năng bảo vệ ảnh, video riêng tư và quản lý mật khẩu mã hóa AES-256-GCM. 100% cục bộ, Face ID, Blur Shield, tự động xóa clipboard. Không máy chủ.',
     date: '08/09/2026',
     status: 'Đã phát hành (App Store & Google Play)',
-    tags: ['React Native', 'Expo', 'AES-256', 'Privacy', 'iOS', 'Android']
+    tags: ['React Native', 'Expo', 'AES-256', 'Privacy', 'iOS', 'Android'],
+    icon: '/securevault/app-icon.webp'
   },
   {
     slug: '/noduletrack',
@@ -92,7 +97,8 @@ const appIdeas = [
     description: 'Ứng dụng di động y tế cá nhân chuyên biệt hỗ trợ số hóa hồ sơ siêu âm, theo dõi tốc độ tăng trưởng của nang, nhân, hạch và nhắc lịch tái khám chuẩn TI-RADS/BI-RADS.',
     date: '18/08/2026',
     status: 'Đã phát hành (Google Play)',
-    tags: ['HealthTech', 'TI-RADS', 'Google Play', 'Mobile']
+    tags: ['HealthTech', 'TI-RADS', 'Google Play', 'Mobile'],
+    icon: '/noduletrack/assets/brand/app-icon.svg'
   },
   {
     slug: 'dotask-minimalist',
@@ -171,6 +177,7 @@ const appIdeas = [
           slug={app.slug}
           status={app.status}
           tags={app.tags}
+          icon={app.icon}
         />
       ))}
     </div>

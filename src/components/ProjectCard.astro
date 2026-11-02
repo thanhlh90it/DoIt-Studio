@@ -6,6 +6,7 @@ interface Props {
   slug: string;
   tags?: string[];
   status?: string;
+  icon?: string;
 }
 
 const { 
@@ -14,7 +15,8 @@ const {
   date, 
   slug, 
   tags = [], 
-  status = "Đang phát triển" 
+  status = "Đang phát triển",
+  icon
 } = Astro.props;
 
 const href = slug.startsWith('/') ? slug : `/apps/${slug}`;
@@ -30,6 +32,13 @@ const statusStyles: Record<string, string> = {
 };
 
 const statusClass = statusStyles[status] || 'bg-blue-500/20 text-cyan-300 border-blue-400/50';
+
+const fallbackInitials = title
+  .split(/\s+/)
+  .map(w => w[0])
+  .slice(0, 2)
+  .join('')
+  .toUpperCase();
 ---
 
 <a 
@@ -53,12 +62,31 @@ const statusClass = statusStyles[status] || 'bg-blue-500/20 text-cyan-300 border
       )}
     </div>
 
-    <h3 class="font-tech text-2xl sm:text-3xl font-bold text-white group-hover:text-cyan-300 transition-colors flex items-center justify-between gap-3 mb-4 tracking-tight leading-snug">
-      <span>{title}</span>
+    <!-- Title with App Icon -->
+    <div class="flex items-center justify-between gap-3 mb-4">
+      <div class="flex items-center gap-3.5 sm:gap-4 min-w-0">
+        {icon ? (
+          <img
+            src={icon}
+            alt={`${title} App Icon`}
+            width="56"
+            height="56"
+            class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl object-cover shrink-0 border border-slate-700/60 shadow-lg shadow-black/40 group-hover:scale-105 group-hover:border-cyan-400/50 transition-all duration-300"
+            loading="lazy"
+          />
+        ) : (
+          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700/60 flex items-center justify-center shrink-0 text-slate-300 group-hover:text-cyan-300 group-hover:border-cyan-400/50 transition-all duration-300 font-tech font-bold text-lg sm:text-xl shadow-lg shadow-black/40">
+            {fallbackInitials}
+          </div>
+        )}
+        <h3 class="font-tech text-2xl sm:text-3xl font-bold text-white group-hover:text-cyan-300 transition-colors tracking-tight leading-snug">
+          {title}
+        </h3>
+      </div>
       <span class="w-10 h-10 rounded-xl bg-black border border-slate-800 flex items-center justify-center text-slate-400 group-hover:text-cyan-300 group-hover:border-cyan-400/60 group-hover:bg-blue-950/80 group-hover:translate-x-1 transition-all text-sm font-mono shrink-0">
         ↗
       </span>
-    </h3>
+    </div>
 
     <p class="text-slate-300 text-base sm:text-lg leading-relaxed mb-8 line-clamp-3">
       {description}

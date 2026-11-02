@@ -15,6 +15,7 @@ const featuredApps = [
     date: "01/11/2026",
     status: "Sắp ra mắt (iOS, Android, Web)",
     tags: ["React Native", "Gemini AI", "Language Learning", "Deep Tech"],
+    icon: "/yopolo/assets/yopolo-icon.svg",
   },
   {
     slug: "/pledgo/",
@@ -24,6 +25,7 @@ const featuredApps = [
     date: "18/10/2026",
     status: "Đã phát hành (App Store & Google Play)",
     tags: ["React Native", "Firebase", "Habit Tracker", "Goal Setting"],
+    icon: "/pledgo/assets/brand/app-icon.svg",
   },
   {
     slug: "/tevy/",
@@ -33,6 +35,7 @@ const featuredApps = [
     date: "25/09/2026",
     status: "Đã phát hành (Google Play)",
     tags: ["Android TV", "Android", "Google Play", "Parental Control"],
+    icon: "/tevy/assets/tevy-app-icon.svg",
   },
   {
     slug: "/nhata",
@@ -42,6 +45,7 @@ const featuredApps = [
     date: "04/09/2026",
     status: "Đã phát hành (App Store & Google Play)",
     tags: ["React Native", "Expo", "Firebase", "Family"],
+    icon: "/nhata/icons/app-icon.svg",
   },
   {
     slug: "/apps/securevault",
@@ -51,6 +55,7 @@ const featuredApps = [
     date: "19/08/2026",
     status: "Thử nghiệm (Beta)",
     tags: ["React Native", "Expo", "Privacy", "iOS", "Android"],
+    icon: "/securevault/app-icon.webp",
   },
   {
     slug: "/noduletrack",
@@ -60,6 +65,7 @@ const featuredApps = [
     date: "18/08/2026",
     status: "Đã phát hành (Google Play)",
     tags: ["HealthTech", "TI-RADS", "Google Play", "Mobile"],
+    icon: "/noduletrack/assets/brand/app-icon.svg",
   },
   {
     slug: "dotask-minimalist",
@@ -475,6 +481,7 @@ const engineeringValues = [
             slug={app.slug}
             status={app.status}
             tags={app.tags}
+            icon={app.icon}
           />
         ))
       }
