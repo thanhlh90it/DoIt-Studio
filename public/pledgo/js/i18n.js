@@ -11,6 +11,7 @@ window.PLEDGO_I18N = {
     'nav.ritual': 'Triết lý',
     'nav.goals': 'Mục tiêu',
     'nav.today': 'Hôm nay',
+    'nav.widget': 'Widget',
     'nav.museum': 'Bảo tàng',
     'nav.cta': 'Tải app',
 
@@ -70,6 +71,19 @@ window.PLEDGO_I18N = {
     'today.f3.title': 'Ân hạn 24 giờ',
     'today.f3.body': 'Lỡ một ngày? Grace Period cho bạn 24 giờ để bù lại trước khi chuỗi bị đứt.',
 
+    'widget.eyebrow': 'Interactive Widget · 1-chạm 0ms',
+    'widget.title': 'Kỷ luật ngay trên Màn hình chính.<br /><span class="text-bronze-grad">Tick hoàn thành, không cần mở app.</span>',
+    'widget.sub': 'Triết lý Nordic Zen Discipline kết hợp nguyên tắc Zero-Friction: Chạm 1 lần để bảo vệ chuỗi thói quen trong chưa đầy 1 giây. Phản hồi thị giác tức thì (Optimistic UI) trên cả iOS 17+ và Android 12+.',
+    'widget.badge': 'iOS 17+ WidgetKit · Android Glance',
+    'widget.f1.title': '1-Tap Zero Friction (0 Ma Sát)',
+    'widget.f1.body': 'Đánh dấu hoàn thành thói quen Daily trực tiếp từ Home Screen & Lock Screen mà không cần khởi động app, không độ trễ.',
+    'widget.f2.title': 'Streak Guardian (Bảo vệ chuỗi 🔥)',
+    'widget.f2.body': 'Theo dõi số ngày duy trì chuỗi liên tiếp và đếm ngược số thói quen trong ngày theo thời gian thực (2/3 xong).',
+    'widget.f3.title': 'Tự động hủy cảnh báo lúc 22:50',
+    'widget.f3.body': 'Khi bạn hoàn thành thói quen Daily cuối cùng trên Widget, hệ thống Discipline Engine tự động hủy thông báo cảnh báo nguy cơ đứt chuỗi.',
+    'widget.f4.title': 'Medium, Small & Lock Screen',
+    'widget.f4.body': 'Checklist đa thói quen (2x4), Focus thói quen tâm điểm (2x2) hoặc Vòng đo tỷ lệ trên Lock Screen. Hoạt động 100% Offline-First.',
+
     'museum.eyebrow': 'Bảo tàng cá nhân',
     'museum.title': 'Mọi lời thề đều được lưu giữ vĩnh viễn.',
     'museum.sub': 'Mỗi năm khép lại, mục tiêu của bạn trở thành hiện vật: vinh quang hay bài học đều được trân trọng như nhau.',
@@ -78,7 +92,7 @@ window.PLEDGO_I18N = {
     'museum.regret.title': 'Bảng Khắc Cốt',
     'museum.regret.body': 'Những lời thề đã từ bỏ, đóng dấu mộc đỏ: một bài học khắc sâu trên hành trình trưởng thành.',
 
-    'gallery.eyebrow': '7 màn hình',
+    'gallery.eyebrow': '8 màn hình',
     'gallery.title': 'Bên trong Pledgo',
     'gallery.prev': 'Ảnh trước',
     'gallery.next': 'Ảnh tiếp theo',
@@ -90,6 +104,7 @@ window.PLEDGO_I18N = {
     'gallery.c5': 'Mục tiêu tích luỹ',
     'gallery.c6': 'Bảo tàng cá nhân',
     'gallery.c7': 'Cài đặt & hồ sơ',
+    'gallery.c8': 'Interactive Widget 1-chạm',
 
     'cta.title': 'Năm nay, hãy tuyên thệ.',
     'cta.sub': 'Kỷ luật không phải là sự trừng phạt. Kỷ luật là sự tự do tuyệt đối trước thời gian.',
@@ -104,6 +119,7 @@ window.PLEDGO_I18N = {
     'alt.cumulative': 'Mục tiêu tích luỹ Tiết kiệm 100 triệu, đạt 20% với lịch sử từng lượt ghi nhận',
     'alt.epic': 'Dự án Epic Setup góc làm việc mơ ước hoàn thành 5 trên 5 công việc',
     'alt.today': 'Tab Hôm nay với danh sách 6 hành động cần hoàn thành và tiến độ tuần',
+    'alt.widget': 'Màn hình chính iOS với Interactive Widget Medium và Small của Pledgo',
     'alt.museum': 'Bảo tàng cá nhân năm 2026 với Bảng Vinh Danh',
   },
 
@@ -118,6 +134,7 @@ window.PLEDGO_I18N = {
     'nav.ritual': 'Philosophy',
     'nav.goals': 'Goals',
     'nav.today': 'Today',
+    'nav.widget': 'Widget',
     'nav.museum': 'Museum',
     'nav.cta': 'Get the app',
 
@@ -177,6 +194,19 @@ window.PLEDGO_I18N = {
     'today.f3.title': '24-hour grace period',
     'today.f3.body': 'Missed a day? The grace period gives you 24 hours to make it up before the streak breaks.',
 
+    'widget.eyebrow': 'Interactive Widget · 1-Tap 0ms',
+    'widget.title': 'Discipline on your Home Screen.<br /><span class="text-bronze-grad">Mark done without opening the app.</span>',
+    'widget.sub': 'Nordic Zen Discipline meets Zero-Friction: One tap to guard your streaks in under 1 second. Instant visual feedback (Optimistic UI) on both iOS 17+ and Android 12+.',
+    'widget.badge': 'iOS 17+ WidgetKit · Android Glance',
+    'widget.f1.title': '1-Tap Zero Friction',
+    'widget.f1.body': 'Mark daily habits done directly from your Home Screen & Lock Screen without opening the app, with zero latency.',
+    'widget.f2.title': 'Streak Guardian 🔥',
+    'widget.f2.body': 'Track your consecutive days and count down remaining habits in real time (e.g. 2/3 done).',
+    'widget.f3.title': 'Auto-cancels 22:50 urgency alert',
+    'widget.f3.body': 'Once you complete your last daily habit on the Widget, the Discipline Engine automatically cancels the late-night broken-streak alert.',
+    'widget.f4.title': 'Medium, Small & Lock Screen',
+    'widget.f4.body': 'Multi-habit checklist (2x4), single focus habit (2x2), or circular Lock Screen gauge. Works 100% Offline-First.',
+
     'museum.eyebrow': 'Personal museum',
     'museum.title': 'Every pledge is preserved forever.',
     'museum.sub': 'When a year closes, your goals become artifacts. Glory and lessons are honored alike.',
@@ -185,7 +215,7 @@ window.PLEDGO_I18N = {
     'museum.regret.title': 'Hall of Regret',
     'museum.regret.body': 'Pledges you gave up, stamped with a red wax seal: a lesson carved into the path of growth.',
 
-    'gallery.eyebrow': '7 screens',
+    'gallery.eyebrow': '8 screens',
     'gallery.title': 'Inside Pledgo',
     'gallery.prev': 'Previous screen',
     'gallery.next': 'Next screen',
@@ -197,6 +227,7 @@ window.PLEDGO_I18N = {
     'gallery.c5': 'Cumulative goal',
     'gallery.c6': 'Personal museum',
     'gallery.c7': 'Settings & profile',
+    'gallery.c8': '1-Tap Interactive Widget',
 
     'cta.title': 'This year, make the pledge.',
     'cta.sub': 'Discipline is not punishment. Discipline is absolute freedom in the face of time.',
@@ -211,6 +242,7 @@ window.PLEDGO_I18N = {
     'alt.cumulative': 'Cumulative goal to save 100 million VND, 20% reached, with entry history',
     'alt.epic': 'Epic project to set up a dream workspace, 5 of 5 tasks done',
     'alt.today': 'Today tab with six actions to complete and weekly progress',
+    'alt.widget': 'iOS Home Screen featuring Pledgo Medium and Small Interactive Widgets',
     'alt.museum': 'Personal museum for 2026 showing the Hall of Fame',
   },
 };
