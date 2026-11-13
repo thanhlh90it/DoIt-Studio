@@ -34,6 +34,7 @@ const EXCLUDED_SITEMAP_ROUTES = [
   '/apps/nhata',
   '/apps/pledgo',
   '/apps/tevy',
+  '/apps/thyromate',
   '/apps/yopolo',
   '/nhata/data-deletion',
   '/nhata/delete-account',
@@ -45,6 +46,9 @@ const EXCLUDED_SITEMAP_ROUTES = [
   '/tevy/child-safety',
   '/tevy/privacy',
   '/tevy/terms',
+  '/thorymate',
+  '/thyromate/privacy',
+  '/thyromate/terms',
   '/yopolo/privacy',
   '/yopolo/terms'
 ];

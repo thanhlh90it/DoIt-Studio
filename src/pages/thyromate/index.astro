@@ -1,0 +1,927 @@
+---
+// ThyroMate (An Giáp) Landing Page - DoIT Studio
+// Route: /thyromate/
+const TESTFLIGHT_URL = "https://testflight.apple.com";
+const ANDROID_APK_URL = "#download";
+---
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ThyroMate (An Giáp): App Quản Lý Tuyến Giáp &amp; Uống Thuốc Đói | DoIT Studio</title>
+  <meta name="description"
+    content="ThyroMate (An Giáp) là ứng dụng thông minh hỗ trợ bệnh nhân tuyến giáp theo dõi lịch uống thuốc bụng đói, đồng hồ đếm ngược trước ăn sáng và biểu đồ TSH/FT4 chuẩn y khoa.">
+  <meta name="keywords"
+    content="thyromate, an giap, app quan ly tuyen giap, ung dung theo doi tuyen giap, uong thuoc levothyroxin dung cach, theo doi chi so tsh, suy giap, cuong giap, nhac uong thuoc tuyen giap, nhan giap tirads, bieu do tsh ft4, tuong tac canxi va levothyroxin, nhat ky trieu chung tuyen giap, benh basedow, viem giap hashimoto, doit studio">
+  <meta name="author" content="DoIT Studio" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://doitstudio.tech/thyromate/" />
+  <meta name="theme-color" content="#0D9488" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/thyromate/assets/icons/app-icon.svg">
+  <link rel="apple-touch-icon" href="/thyromate/assets/icons/app-icon.png">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ThyroMate (An Giáp)" />
+  <meta property="og:url" content="https://doitstudio.tech/thyromate/" />
+  <meta property="og:title" content="ThyroMate (An Giáp): App Quản Lý Tuyến Giáp &amp; Uống Thuốc Đói | DoIT Studio" />
+  <meta property="og:description"
+    content="Ứng dụng thông minh theo dõi lịch uống thuốc Levothyroxin bụng đói, đồng hồ đếm ngược chờ ăn sáng, khoảng cách an toàn Canxi 4h và biểu đồ TSH/FT4 chuẩn y khoa." />
+  <meta property="og:image" content="https://doitstudio.tech/thyromate/assets/thyromate-og-banner.png" />
+  <meta property="og:image:secure_url" content="https://doitstudio.tech/thyromate/assets/thyromate-og-banner.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1376" />
+  <meta property="og:image:height" content="768" />
+  <meta property="og:image:alt" content="ThyroMate (An Giáp) - Ứng Dụng Quản Lý Tuyến Giáp &amp; Nhịp Sống An Yên | DoIT Studio" />
+  <meta property="og:locale" content="vi_VN" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://doitstudio.tech/thyromate/" />
+  <meta name="twitter:title" content="ThyroMate (An Giáp): App Quản Lý Tuyến Giáp &amp; Uống Thuốc Đói" />
+  <meta name="twitter:description"
+    content="Công cụ kỹ thuật số thông minh hỗ trợ người bệnh tuyến giáp theo dõi lịch uống thuốc bụng đói, đồng hồ đếm ngược ăn sáng &amp; kiểm soát chỉ số TSH/FT4." />
+  <meta name="twitter:image" content="https://doitstudio.tech/thyromate/assets/thyromate-og-banner.png" />
+  <meta name="twitter:image:alt" content="ThyroMate (An Giáp) - Ứng Dụng Quản Lý Tuyến Giáp · DoIT Studio" />
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/thyromate/css/design-tokens.css">
+  <link rel="stylesheet" href="/thyromate/css/style.css">
+
+  <!-- Google Analytics 4 (Only loaded in Production) -->
+  {import.meta.env.PROD && (
+    <>
+      <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-64YJ3QLMEM"></script>
+      <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-64YJ3QLMEM', {
+          page_path: window.location.pathname,
+        });
+      </script>
+    </>
+  )}
+
+  <!-- Structured Data (JSON-LD) with SoftwareApplication, BreadcrumbList & FAQPage -->
+  <script is:inline type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://doitstudio.tech/thyromate/#software",
+        "name": "ThyroMate (An Giáp) - App Quản Lý Tuyến Giáp",
+        "operatingSystem": "iOS, Android",
+        "applicationCategory": "HealthApplication, MedicalApplication, LifestyleApplication",
+        "applicationSubCategory": "Thyroid Health, Medication Tracker, Endocrinology Tool",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "VND"
+        },
+        "image": "https://doitstudio.tech/thyromate/assets/thyromate-og-banner.png",
+        "screenshot": [
+          "https://doitstudio.tech/thyromate/assets/screenshots/03-home.jpeg",
+          "https://doitstudio.tech/thyromate/assets/screenshots/03-home-dashboard.jpeg",
+          "https://doitstudio.tech/thyromate/assets/screenshots/04-active-prescription.jpeg",
+          "https://doitstudio.tech/thyromate/assets/screenshots/05-add-symptom.jpeg",
+          "https://doitstudio.tech/thyromate/assets/screenshots/08-lab-analytics.jpeg",
+          "https://doitstudio.tech/thyromate/assets/screenshots/09-consultations-list.jpeg",
+          "https://doitstudio.tech/thyromate/assets/screenshots/10-consultation-detail.jpeg",
+          "https://doitstudio.tech/thyromate/assets/screenshots/06-add-consultation.jpeg",
+          "https://doitstudio.tech/thyromate/assets/screenshots/07-profile.jpeg",
+          "https://doitstudio.tech/thyromate/assets/screenshots/01-login.jpeg",
+          "https://doitstudio.tech/thyromate/assets/screenshots/02-onboarding-1.jpeg",
+          "https://doitstudio.tech/thyromate/assets/screenshots/02-onboarding-2.jpeg"
+        ],
+        "featureList": [
+          "Đồng hồ đếm ngược kép bụng đói trước ăn sáng 30-60 phút",
+          "Cảnh báo an toàn khoảng cách Canxi, Sắt ≥ 4 tiếng tránh cản trở hấp thu Levothyroxin",
+          "Nhật ký tuân thủ uống thuốc dạng Heatmap & cảnh báo kho thuốc sắp hết (≤ 3 ngày)",
+          "Biểu đồ đường cong Spline theo dõi chỉ số hormone TSH, FT4, FT3 so với dải an toàn y tế",
+          "Lưu trữ và theo dõi tăng trưởng bướu nhân giáp theo thang đo phân loại TIRADS 1-5",
+          "Ghi nhận 7 nhóm triệu chứng lâm sàng và cảnh báo sớm nguy cơ hạ canxi hoặc tim nhanh sụt cân",
+          "Timeline số hóa toàn bộ lịch sử khám bệnh và xuất báo cáo PDF cho bác sĩ nội tiết",
+          "Bảo mật sinh trắc học Face ID / Touch ID, hoạt động Offline-First và quyền xóa vĩnh viễn dữ liệu"
+        ],
+        "author": {
+          "@type": "Organization",
+          "name": "DoIT Studio",
+          "url": "https://doitstudio.tech"
+        },
+        "description": "ThyroMate (An Giáp) là ứng dụng công cụ kỹ thuật số thông minh hỗ trợ bệnh nhân tuyến giáp theo dõi lịch dùng thuốc Levothyroxin bụng đói, đếm ngược trước ăn sáng, kiểm soát tương tác Canxi và lưu trữ hồ sơ xét nghiệm TSH/FT4.",
+        "url": "https://doitstudio.tech/thyromate/",
+        "downloadUrl": "https://testflight.apple.com",
+        "installUrl": "https://doitstudio.tech/thyromate/#download"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Trang chủ",
+            "item": "https://doitstudio.tech"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Dự án & Ứng dụng",
+            "item": "https://doitstudio.tech/apps"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "ThyroMate (An Giáp)",
+            "item": "https://doitstudio.tech/thyromate/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "ThyroMate có phải là ứng dụng y tế hay đưa ra chẩn đoán bệnh không?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Không. ThyroMate hoàn toàn là một công cụ hỗ trợ cá nhân nhằm giúp người bệnh ghi nhớ giờ uống thuốc, đếm ngược trước ăn sáng và ghi nhận nhật ký sức khỏe. Ứng dụng không phải là thiết bị y tế, không đưa ra chẩn đoán bệnh tật hay khuyến nghị thay thế chỉ định của bác sĩ chuyên khoa nội tiết."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Tại sao người uống Levothyroxin phải chờ 30-60 phút mới được ăn sáng?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Hormone tuyến giáp Levothyroxin hấp thu chủ yếu tại ruột non và rất nhạy cảm với thức ăn, chất xơ, trà và cà phê. Uống khi bụng rỗng hoàn toàn vào buổi sáng và chờ ít nhất 30 - 60 phút mới ăn sáng giúp nồng độ thuốc hấp thu vào máu đạt hiệu suất tối ưu và ổn định nhất."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Tại sao uống Canxi hoặc thuốc Sắt phải cách xa Levothyroxin ít nhất 4 tiếng?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Các ion Canxi và Sắt tạo phức hợp không tan với Levothyroxin trong đường ruột, làm giảm mạnh khả năng hấp thu thuốc của cơ thể, dẫn đến nguy cơ suy giáp tái phát mặc dù vẫn uống thuốc đủ liều. ThyroMate tích hợp đồng hồ đếm ngược 4 tiếng để cảnh báo an toàn khi bạn uống các loại vi chất này."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Dữ liệu của tôi được lưu trữ ở đâu và có bị bán cho bên thứ ba không?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Chúng tôi cam kết tuyệt đối không bán hay chia sẻ dữ liệu sức khỏe của bạn cho bất kỳ bên thứ ba hay nhà quảng cáo nào. Dữ liệu được lưu trữ trên bộ nhớ thiết bị của bạn và đồng bộ bảo mật lên đám mây Google Firebase Firestore thuộc quyền sở hữu của chính bạn."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Tôi có thể xóa toàn bộ dữ liệu và tài khoản của mình không?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Có. Bạn có toàn quyền xóa vĩnh viễn tài khoản và toàn bộ dữ liệu bất kỳ lúc nào ngay trong ứng dụng: Mở Hồ sơ cá nhân → Cuộn xuống mục Vùng nguy hiểm (Danger Zone) → Bấm 'Xóa tài khoản & toàn bộ dữ liệu'. Toàn bộ dữ liệu đám mây và thông tin đăng nhập sẽ bị xóa sạch lập tức."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ứng dụng có thể sử dụng khi không có mạng Internet không?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Có. ThyroMate được thiết kế theo nguyên lý Offline-First. Bạn vẫn có thể ghi nhận thuốc, theo dõi đếm ngược ăn sáng và ghi nhận triệu chứng hoàn toàn bình thường khi mất mạng. Dữ liệu sẽ tự động đồng bộ lên đám mây khi điện thoại kết nối Internet trở lại."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- Background Ambient Glows -->
+  <div class="bg-ambient-orb-1" aria-hidden="true"></div>
+  <div class="bg-ambient-orb-2" aria-hidden="true"></div>
+
+  <!-- Top Medical Disclaimer Banner -->
+  <aside class="disclaimer-banner">
+    <span>💡 <strong>Lưu ý quan trọng:</strong> ThyroMate là công cụ kỹ thuật số hỗ trợ cá nhân ghi nhớ và theo dõi, <u>không phải</u> là ứng dụng y tế hay dịch vụ khám chữa bệnh. <a href="/thyromate/legal#disclaimer">Xem chi tiết</a></span>
+  </aside>
+
+  <!-- Header & Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="flex items-center gap-3">
+        <a href="/thyromate/" class="brand-logo">
+          <div class="brand-icon-box">
+            <img src="/thyromate/assets/icons/app-icon.svg" alt="ThyroMate Logo" width="40" height="40">
+          </div>
+          <div class="brand-name-group">
+            <span class="brand-title">ThyroMate</span>
+            <span class="brand-sub">An Giáp</span>
+          </div>
+        </a>
+        <a href="/apps" class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold rounded-full border border-[#B8E9E2] bg-[#E6F7F5] text-[#0D9488] hover:bg-[#CCFBF1] transition-colors" title="Xem tất cả ứng dụng DoIT Studio">
+          <span>DoIT Studio</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Điều hướng chính">
+        <ul class="nav-links">
+          <li><a href="#features">Tính Năng</a></li>
+          <li><a href="#showcase">Giao Diện</a></li>
+          <li><a href="#security">Bảo Mật</a></li>
+          <li><a href="#faq">Hỏi Đáp</a></li>
+          <li><a href="/thyromate/legal#terms">Điều Khoản</a></li>
+          <li><a href="/thyromate/legal#privacy">Xóa Dữ Liệu</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#download" class="btn btn-primary-coral">Tải Ứng Dụng</a>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Mở menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div class="mobile-menu-dropdown" id="mobileDropdown">
+      <ul>
+        <li><a href="#features">Tính Năng Nổi Bật</a></li>
+        <li><a href="#showcase">Bộ Sưu Tập Giao Diện Thật</a></li>
+        <li><a href="#security">Bảo Mật &amp; Riêng Tư</a></li>
+        <li><a href="#faq">Hỏi Đáp Thường Gặp</a></li>
+        <li><a href="/thyromate/legal#terms">Điều Khoản Dịch Vụ</a></li>
+        <li><a href="/thyromate/legal#privacy">Chính Sách Bảo Mật &amp; Xóa Tài Khoản</a></li>
+        <li><a href="/apps" style="color: var(--color-primary-600); font-weight: 600;">← Về DoIT Studio</a></li>
+        <li><a href="#download" style="color: var(--color-accent-500); font-weight: 700;">Tải Ứng Dụng Ngay</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      
+      <div class="hero-content">
+        <div class="hero-badge-pill">
+          <span class="hero-badge-dot"></span>
+          <span>Công Cụ Hỗ Trợ Cá Nhân Chuẩn Zen &amp; Neumorphism</span>
+        </div>
+
+        <h1 class="hero-headline">
+          Cân Bằng Tuyến Giáp &amp; <br>
+          <span class="highlight-teal">Nhịp Sống An Yên</span>
+        </h1>
+
+        <p class="hero-description">
+          Công cụ quản lý lịch uống thuốc hormone (Levothyroxin) bụng đói, đồng hồ đếm ngược trước ăn sáng, bảo đảm khoảng cách an toàn Canxi 4 tiếng &amp; trực quan hóa chỉ số xét nghiệm TSH/FT4 chuẩn y khoa.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#download" class="btn btn-primary-coral">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Tải Ứng Dụng (iOS &amp; Android)
+          </a>
+          <a href="#features" class="btn btn-secondary-teal">
+            Khám Phá Tính Năng
+          </a>
+        </div>
+
+        <div class="hero-disclaimer-note">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+          <span>(*) ThyroMate là công cụ tiện ích cá nhân, không đưa ra chẩn đoán hay thay thế bác sĩ.</span>
+        </div>
+      </div>
+
+      <!-- Hero Phone Mockup with Real Screenshot -->
+      <div class="hero-visual-wrap">
+        <div class="phone-mockup">
+          <div class="phone-screen">
+            <img src="/thyromate/assets/screenshots/03-home.jpeg" alt="Giao diện màn hình Home ThyroMate trên iPhone" width="600" height="1300" fetchpriority="high">
+          </div>
+        </div>
+
+        <!-- Floating Badges -->
+        <div class="floating-badge badge-top-left">
+          <div class="badge-icon-circle">⏰</div>
+          <div class="badge-text-box">
+            <h4>Đếm ngược 45 phút</h4>
+            <p>Bụng rỗng chờ ăn sáng</p>
+          </div>
+        </div>
+
+        <div class="floating-badge badge-bottom-right">
+          <div class="badge-icon-circle">🛡️</div>
+          <div class="badge-text-box">
+            <h4>An toàn Canxi ≥ 4 tiếng</h4>
+            <p>Không cản trở hấp thu thuốc</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Tool Positioning Strip (Clarification) -->
+  <section class="positioning-strip">
+    <div class="container positioning-inner">
+      <div class="positioning-item">
+        <div class="pos-icon">🛠️</div>
+        <div class="pos-text">
+          <h4>Ứng Dụng Dạng Công Cụ</h4>
+          <p>Hỗ trợ ghi nhớ lịch dùng thuốc &amp; nhật ký sức khỏe cá nhân</p>
+        </div>
+      </div>
+
+      <div class="positioning-item">
+        <div class="pos-icon">🌿</div>
+        <div class="pos-text">
+          <h4>Thiết Kế Zen Êm Dịu</h4>
+          <p>Màu Xanh Teal &amp; Mint xua tan căng thẳng, không áp lực</p>
+        </div>
+      </div>
+
+      <div class="positioning-item">
+        <div class="pos-icon">🔒</div>
+        <div class="pos-text">
+          <h4>Toàn Quyền Dữ Liệu</h4>
+          <p>Bảo mật sinh trắc học &amp; quyền xóa vĩnh viễn dữ liệu 1 chạm</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 Core Value Pillars -->
+  <section class="pillars-section" id="pillars">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Giá Trị Cốt Lõi</span>
+        <h2 class="section-title">Đơn Giản Hóa Quá Trình Dùng Thuốc &amp; Chăm Sóc Tuyến Giáp</h2>
+        <p class="section-desc">ThyroMate loại bỏ mọi phiền toái khi phải nhớ giờ uống thuốc buổi sáng đói và xâu chuỗi dữ liệu xét nghiệm qua từng năm tháng.</p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon-box">💊</div>
+          <h3 class="pillar-title">Chuẩn Giờ Thuốc &amp; Đếm Ngược Kép</h3>
+          <p class="pillar-desc">
+            Nhắc giờ uống thuốc bụng đói ngay khi thức dậy. Tự động kích hoạt đồng hồ đếm ngược chờ ăn sáng 30 - 60 phút và giám sát khoảng cách an toàn trước khi dùng Canxi hay Sắt.
+          </p>
+          <div class="pillar-highlight">
+            <span>✓ Bảo đảm thuốc hấp thu tối đa</span>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box">📊</div>
+          <h3 class="pillar-title">Biểu Đồ TSH/FT4 &amp; Nhật Ký U Hạch</h3>
+          <p class="pillar-desc">
+            Trực quan hóa diễn biến nồng độ hormone qua biểu đồ đường cong Spline mượt mà so với dải an toàn y tế. Lưu trữ kích thước nhân giáp và phân độ TIRADS qua các lần siêu âm.
+          </p>
+          <div class="pillar-highlight">
+            <span>✓ Thấy rõ xu hướng bình giáp</span>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box">🩺</div>
+          <h3 class="pillar-title">Nhật Ký Triệu Chứng &amp; Hồ Sơ Khám</h3>
+          <p class="pillar-desc">
+            Ghi nhận 7 nhóm triệu chứng lâm sàng 1 chạm. Hệ thống tự động cảnh báo nguy cơ hạ canxi hoặc tim đập nhanh sụt cân để người bệnh chủ động trao đổi với bác sĩ khi tái khám.
+          </p>
+          <div class="pillar-highlight">
+            <span>✓ Số hóa toàn bộ phiếu khám</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deep Dive Features (Zig-Zag Rows with Real Screenshots) -->
+  <section class="features-section" id="features">
+    <div class="container">
+      
+      <!-- Feature 1: Prescription & Adherence -->
+      <div class="feature-row">
+        <div class="feature-info">
+          <span class="feature-pill">Quản Lý Liều Lượng</span>
+          <h2 class="feature-title">Đơn Thuốc Đang Dùng &amp; Heatmap Tuân Thủ 14 Ngày</h2>
+          <p class="feature-desc">
+            Dễ dàng thiết lập đơn thuốc hormone tuyến giáp hàng ngày (Levothyroxin 50, 75, 100, 125 mcg). Nhật ký tuân thủ dạng lịch trực quan (Heatmap) giúp bạn duy trì thói quen uống đều đặn mỗi sáng và cảnh báo kịp thời khi hộp thuốc còn dưới 3 ngày.
+          </p>
+          <ul class="feature-points">
+            <li><span class="check-icon">✓</span> Đồng hồ đếm ngược kép: Đếm lùi giờ ăn sáng &amp; Khoảng cách 4h Canxi</li>
+            <li><span class="check-icon">✓</span> Cảnh báo kho thuốc sắp hết (≤ 3 ngày) để kịp mua mới</li>
+            <li><span class="check-icon">✓</span> Lịch sử thay đổi liều lượng (Audit trail) kèm lý do bác sĩ điều chỉnh</li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <div class="feature-phone-card">
+            <img src="/thyromate/assets/screenshots/04-active-prescription.jpeg" alt="Giao diện Đơn thuốc đang dùng &amp; Theo dõi tuân thủ" loading="lazy" width="600" height="1300">
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 2: Symptoms Tracking -->
+      <div class="feature-row reverse">
+        <div class="feature-info">
+          <span class="feature-pill">Nhật Ký Lâm Sàng</span>
+          <h2 class="feature-title">Ghi Nhận 7 Nhóm Triệu Chứng &amp; Báo Cáo Tái Khám</h2>
+          <p class="feature-desc">
+            Không còn phải cố nhớ cảm giác mệt mỏi hay nhịp tim lúc tái khám. ThyroMate cung cấp bảng ghi nhận triệu chứng 1 chạm thông minh, tự động phân tích dấu hiệu lâm sàng theo khuyến cáo y khoa.
+          </p>
+          <ul class="feature-points">
+            <li><span class="check-icon">✓</span> 7 nhóm triệu chứng điển hình: Nhịp tim, Thân nhiệt, Cân nặng, Cảm xúc, Tiêu hóa, Cơ khớp, Da tóc</li>
+            <li><span class="check-icon">✓</span> Cảnh báo lâm sàng hạ Canxi (tê bì tay chân, co rút quanh miệng)</li>
+            <li><span class="check-icon">✓</span> Báo cáo triệu chứng trực quan sẵn sàng chia sẻ cho bác sĩ</li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <div class="feature-phone-card">
+            <img src="/thyromate/assets/screenshots/05-add-symptom.jpeg" alt="Giao diện Ghi nhận và theo dõi triệu chứng lâm sàng" loading="lazy" width="600" height="1300">
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 3: Labs & Nodule Analytics -->
+      <div class="feature-row">
+        <div class="feature-info">
+          <span class="feature-pill">Phân Tích Chỉ Số</span>
+          <h2 class="feature-title">Biểu Đồ Xu Hướng TSH, FT4 &amp; Quản Lý U Hạch TIRADS</h2>
+          <p class="feature-desc">
+            Chỉ số xét nghiệm máu không còn là những con số vô hồn. ThyroMate vẽ đường cong diễn biến theo thời gian, đặt trong mối tương quan với dải tham chiếu chuẩn để bạn luôn biết mình đang ở vùng an toàn hay cần chú ý.
+          </p>
+          <ul class="feature-points">
+            <li><span class="check-icon">✓</span> Biểu đồ Spline toán học mượt mà theo dõi nồng độ TSH &amp; FT4</li>
+            <li><span class="check-icon">✓</span> Mã màu y tế trực quan: Xanh bình giáp, Vàng cần theo dõi, Đỏ bất thường</li>
+            <li><span class="check-icon">✓</span> Lưu trữ kích thước u hạch và theo dõi chỉ số phân loại TIRADS</li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <div class="feature-phone-card">
+            <img src="/thyromate/assets/screenshots/08-lab-analytics.jpeg" alt="Giao diện Biểu đồ chỉ số máu và quản lý u hạch" loading="lazy" width="600" height="1300">
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 4: Consultation Records -->
+      <div class="feature-row reverse">
+        <div class="feature-info">
+          <span class="feature-pill">Số Hóa Bệnh Án</span>
+          <h2 class="feature-title">Lưu Trữ Toàn Bộ Lịch Sử Khám Bệnh Định Kỳ</h2>
+          <p class="feature-desc">
+            Tạm biệt nỗi lo thất lạc sổ khám bệnh hay kết quả siêu âm cũ. Mọi lần khám bệnh tại các bệnh viện đều được lưu trữ theo trình tự thời gian, bao gồm bác sĩ, nơi khám, đơn thuốc và kết quả xét nghiệm liên quan.
+          </p>
+          <ul class="feature-points">
+            <li><span class="check-icon">✓</span> Lưu thông tin lần khám: Ngày khám, Bác sĩ điều trị, Cơ sở y tế</li>
+            <li><span class="check-icon">✓</span> Tự động cập nhật đơn thuốc mới vào lịch uống ngay sau khi nhập kết quả khám</li>
+            <li><span class="check-icon">✓</span> Tra cứu lịch sử thay đổi phác đồ qua các năm nhanh chóng</li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <div class="feature-phone-card">
+            <img src="/thyromate/assets/screenshots/09-consultations-list.jpeg" alt="Giao diện Danh sách và chi tiết lịch sử khám bệnh" loading="lazy" width="600" height="1300">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Screenshot Showcase Gallery -->
+  <section class="showcase-section" id="showcase">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Thư Viện Màn Hình Thật</span>
+        <h2 class="section-title">Trải Nghiệm Thực Tế Ứng Dụng ThyroMate</h2>
+        <p class="section-desc">Khám phá toàn bộ ảnh chụp màn hình thật của ứng dụng trên thiết bị di động. Nhấn vào bất kỳ ảnh nào để phóng to chi tiết.</p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="gallery-tabs-wrap">
+        <button class="tab-btn active" data-category="all">Tất Cả (12)</button>
+        <button class="tab-btn" data-category="home">Trang Chủ &amp; Đơn Thuốc</button>
+        <button class="tab-btn" data-category="clinical">Khám Bệnh &amp; Xét Nghiệm</button>
+        <button class="tab-btn" data-category="onboarding">Khởi Đầu &amp; Hồ Sơ</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid">
+
+        <!-- 1. Home Dashboard -->
+        <div class="gallery-item" data-category="home">
+          <span class="gallery-tag-pill">Trang Chủ</span>
+          <div class="gallery-thumb-wrap">
+            <img src="/thyromate/assets/screenshots/03-home.jpeg" alt="Màn hình Trang chủ Dashboard An Giáp" loading="lazy" width="400" height="860">
+            <div class="gallery-zoom-overlay">🔍</div>
+          </div>
+          <div class="gallery-meta">
+            <h4>Dashboard An Giáp</h4>
+            <p>Đếm ngược trước ăn sáng &amp; 7 nhóm triệu chứng</p>
+          </div>
+        </div>
+
+        <!-- 2. Home Dashboard Detailed -->
+        <div class="gallery-item" data-category="home">
+          <span class="gallery-tag-pill">Trang Chủ</span>
+          <div class="gallery-thumb-wrap">
+            <img src="/thyromate/assets/screenshots/03-home-dashboard.jpeg" alt="Trang chủ khi kích hoạt đếm ngược kép" loading="lazy" width="400" height="860">
+            <div class="gallery-zoom-overlay">🔍</div>
+          </div>
+          <div class="gallery-meta">
+            <h4>Đếm Ngược Kép</h4>
+            <p>Trạng thái đã uống thuốc &amp; an toàn Canxi 4h</p>
+          </div>
+        </div>
+
+        <!-- 3. Active Prescription -->
+        <div class="gallery-item" data-category="home">
+          <span class="gallery-tag-pill">Đơn Thuốc</span>
+          <div class="gallery-thumb-wrap">
+            <img src="/thyromate/assets/screenshots/04-active-prescription.jpeg" alt="Màn hình Đơn thuốc đang dùng &amp; Heatmap" loading="lazy" width="400" height="860">
+            <div class="gallery-zoom-overlay">🔍</div>
+          </div>
+          <div class="gallery-meta">
+            <h4>Đơn Thuốc &amp; Heatmap</h4>
+            <p>Quản lý liều lượng, kho thuốc &amp; lịch tuân thủ</p>
+          </div>
+        </div>
+
+        <!-- 4. Symptoms Tracker -->
+        <div class="gallery-item" data-category="home clinical">
+          <span class="gallery-tag-pill">Triệu Chứng</span>
+          <div class="gallery-thumb-wrap">
+            <img src="/thyromate/assets/screenshots/05-add-symptom.jpeg" alt="Màn hình Ghi nhận triệu chứng lâm sàng" loading="lazy" width="400" height="860">
+            <div class="gallery-zoom-overlay">🔍</div>
+          </div>
+          <div class="gallery-meta">
+            <h4>Nhật Ký Triệu Chứng</h4>
+            <p>Đánh giá 7 nhóm biểu hiện &amp; cảnh báo an toàn</p>
+          </div>
+        </div>
+
+        <!-- 5. Lab Analytics & Nodule -->
+        <div class="gallery-item" data-category="clinical">
+          <span class="gallery-tag-pill">Xét Nghiệm</span>
+          <div class="gallery-thumb-wrap">
+            <img src="/thyromate/assets/screenshots/08-lab-analytics.jpeg" alt="Màn hình Biểu đồ TSH/FT4 &amp; U hạch" loading="lazy" width="400" height="860">
+            <div class="gallery-zoom-overlay">🔍</div>
+          </div>
+          <div class="gallery-meta">
+            <h4>Chỉ Số &amp; U Hạch</h4>
+            <p>Đường cong TSH spline &amp; phân độ TIRADS</p>
+          </div>
+        </div>
+
+        <!-- 6. Consultations List -->
+        <div class="gallery-item" data-category="clinical">
+          <span class="gallery-tag-pill">Lịch Khám</span>
+          <div class="gallery-thumb-wrap">
+            <img src="/thyromate/assets/screenshots/09-consultations-list.jpeg" alt="Màn hình Lịch sử khám bệnh định kỳ" loading="lazy" width="400" height="860">
+            <div class="gallery-zoom-overlay">🔍</div>
+          </div>
+          <div class="gallery-meta">
+            <h4>Lịch Sử Khám Bệnh</h4>
+            <p>Danh sách các lần tái khám tại các bệnh viện</p>
+          </div>
+        </div>
+
+        <!-- 7. Consultation Detail -->
+        <div class="gallery-item" data-category="clinical">
+          <span class="gallery-tag-pill">Lịch Khám</span>
+          <div class="gallery-thumb-wrap">
+            <img src="/thyromate/assets/screenshots/10-consultation-detail.jpeg" alt="Chi tiết một lần khám bệnh" loading="lazy" width="400" height="860">
+            <div class="gallery-zoom-overlay">🔍</div>
+          </div>
+          <div class="gallery-meta">
+            <h4>Chi Tiết Lần Khám</h4>
+            <p>Đơn thuốc, chỉ số máu và ghi chú của bác sĩ</p>
+          </div>
+        </div>
+
+        <!-- 8. Add Consultation Wizard -->
+        <div class="gallery-item" data-category="clinical">
+          <span class="gallery-tag-pill">Nhập Liệu</span>
+          <div class="gallery-thumb-wrap">
+            <img src="/thyromate/assets/screenshots/06-add-consultation.jpeg" alt="Màn hình Thêm kết quả khám mới" loading="lazy" width="400" height="860">
+            <div class="gallery-zoom-overlay">🔍</div>
+          </div>
+          <div class="gallery-meta">
+            <h4>Nhập Kết Quả Khám</h4>
+            <p>Quy trình số hóa hồ sơ y tế dễ dàng</p>
+          </div>
+        </div>
+
+        <!-- 9. Profile Screen -->
+        <div class="gallery-item" data-category="onboarding">
+          <span class="gallery-tag-pill">Hồ Sơ</span>
+          <div class="gallery-thumb-wrap">
+            <img src="/thyromate/assets/screenshots/07-profile.jpeg" alt="Màn hình Hồ sơ cá nhân và cài đặt bảo mật" loading="lazy" width="400" height="860">
+            <div class="gallery-zoom-overlay">🔍</div>
+          </div>
+          <div class="gallery-meta">
+            <h4>Hồ Sơ Cá Nhân</h4>
+            <p>Phân loại tuyến giáp, sinh trắc học &amp; Vùng nguy hiểm</p>
+          </div>
+        </div>
+
+        <!-- 10. Login Screen -->
+        <div class="gallery-item" data-category="onboarding">
+          <span class="gallery-tag-pill">Khởi Đầu</span>
+          <div class="gallery-thumb-wrap">
+            <img src="/thyromate/assets/screenshots/01-login.jpeg" alt="Màn hình Đăng nhập ứng dụng ThyroMate" loading="lazy" width="400" height="860">
+            <div class="gallery-zoom-overlay">🔍</div>
+          </div>
+          <div class="gallery-meta">
+            <h4>Đăng Nhập Bảo Mật</h4>
+            <p>Hỗ trợ Google, Apple Sign-In và chế độ Khách</p>
+          </div>
+        </div>
+
+        <!-- 11. Onboarding Step 1 -->
+        <div class="gallery-item" data-category="onboarding">
+          <span class="gallery-tag-pill">Khởi Đầu</span>
+          <div class="gallery-thumb-wrap">
+            <img src="/thyromate/assets/screenshots/02-onboarding-1.jpeg" alt="Màn hình Giới thiệu tính năng uống thuốc" loading="lazy" width="400" height="860">
+            <div class="gallery-zoom-overlay">🔍</div>
+          </div>
+          <div class="gallery-meta">
+            <h4>Nhắc Nhở Đúng Giờ</h4>
+            <p>Giới thiệu tính năng quản lý giờ uống thuốc</p>
+          </div>
+        </div>
+
+        <!-- 12. Onboarding Step 2 -->
+        <div class="gallery-item" data-category="onboarding">
+          <span class="gallery-tag-pill">Khởi Đầu</span>
+          <div class="gallery-thumb-wrap">
+            <img src="/thyromate/assets/screenshots/02-onboarding-2.jpeg" alt="Màn hình Giới thiệu theo dõi xét nghiệm" loading="lazy" width="400" height="860">
+            <div class="gallery-zoom-overlay">🔍</div>
+          </div>
+          <div class="gallery-meta">
+            <h4>Biểu Đồ Thông Minh</h4>
+            <p>Giới thiệu khả năng trực quan hóa chỉ số xét nghiệm</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Security, Privacy & Design Philosophy -->
+  <section class="security-section" id="security">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Bảo Mật &amp; Thiết Kế</span>
+        <h2 class="section-title">An Toàn Tuyệt Đối &amp; Êm Dịu Chuẩn Zen</h2>
+        <p class="section-desc">Chúng tôi tin rằng việc theo dõi sức khỏe không nên tạo ra thêm áp lực. Thiết kế Zen Neumorphism kết hợp cùng kiến trúc bảo mật đa tầng đem lại sự an tâm tuyệt đối.</p>
+      </div>
+
+      <div class="security-grid">
+        <div class="security-card">
+          <div class="sec-icon">🔐</div>
+          <h3>Khóa Sinh Trắc Học</h3>
+          <p>Tích hợp sẵn Face ID / Touch ID / Mã PIN để bảo vệ màn hình ứng dụng khỏi sự tò mò khi người khác cầm thiết bị.</p>
+        </div>
+
+        <div class="security-card">
+          <div class="sec-icon">☁️</div>
+          <h3>Đám Mây Mã Hóa</h3>
+          <p>Đồng bộ dữ liệu hai chiều lên Google Firebase Firestore với quy tắc phân quyền nghiêm ngặt, mã hóa chuẩn SSL 256-bit.</p>
+        </div>
+
+        <div class="security-card">
+          <div class="sec-icon">📴</div>
+          <h3>Hoạt Động Offline</h3>
+          <p>Lưu trữ cục bộ ngay trên máy. Bạn vẫn có thể ghi nhận thuốc và triệu chứng trơn tru ngay cả khi không có kết nối mạng.</p>
+        </div>
+
+        <div class="security-card">
+          <div class="sec-icon">🗑️</div>
+          <h3>Quyền Xóa Vĩnh Viễn</h3>
+          <p>Tính năng Vùng nguy hiểm (Danger Zone) cho phép bạn xóa sạch toàn bộ tài khoản và dữ liệu đám mây chỉ với 1 chạm.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Hỏi Đáp Thường Gặp</span>
+        <h2 class="section-title">Những Câu Hỏi Thường Gặp Về Dùng Thuốc &amp; Ứng Dụng</h2>
+        <p class="section-desc">Các giải đáp khoa học về quy chuẩn dùng thuốc hormone tuyến giáp và chính sách sử dụng công cụ ThyroMate.</p>
+      </div>
+
+      <div class="faq-container">
+        
+        <div class="faq-item open">
+          <div class="faq-question">
+            <h3>1. ThyroMate có phải là ứng dụng y tế hay đưa ra chẩn đoán bệnh không?</h3>
+            <span class="faq-toggle-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              <strong>Không.</strong> ThyroMate hoàn toàn là một <strong>công cụ hỗ trợ cá nhân</strong> nhằm giúp người bệnh ghi nhớ giờ uống thuốc, đếm ngược trước ăn sáng và ghi nhận nhật ký sức khỏe. Ứng dụng không phải là thiết bị y tế, không đưa ra chẩn đoán bệnh tật hay khuyến nghị thay thế chỉ định của bác sĩ chuyên khoa nội tiết.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>2. Tại sao người uống Levothyroxin phải chờ 30-60 phút mới được ăn sáng?</h3>
+            <span class="faq-toggle-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Hormone tuyến giáp Levothyroxin hấp thu chủ yếu tại ruột non và rất nhạy cảm với thức ăn, chất xơ, trà và cà phê. Uống khi bụng rỗng hoàn toàn vào buổi sáng và chờ ít nhất 30 - 60 phút mới ăn sáng giúp nồng độ thuốc hấp thu vào máu đạt hiệu suất tối ưu và ổn định nhất.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>3. Tại sao uống Canxi hoặc thuốc Sắt phải cách xa Levothyroxin ít nhất 4 tiếng?</h3>
+            <span class="faq-toggle-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Các ion Canxi và Sắt tạo phức hợp không tan với Levothyroxin trong đường ruột, làm giảm mạnh khả năng hấp thu thuốc của cơ thể, dẫn đến nguy cơ suy giáp tái phát mặc dù vẫn uống thuốc đủ liều. ThyroMate tích hợp đồng hồ đếm ngược 4 tiếng để cảnh báo an toàn khi bạn uống các loại vi chất này.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>4. Dữ liệu của tôi được lưu trữ ở đâu và có bị bán cho bên thứ ba không?</h3>
+            <span class="faq-toggle-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Chúng tôi cam kết <strong>tuyệt đối không bán hay chia sẻ dữ liệu</strong> sức khỏe của bạn cho bất kỳ bên thứ ba hay nhà quảng cáo nào. Dữ liệu được lưu trữ trên bộ nhớ thiết bị của bạn và đồng bộ bảo mật lên đám mây Google Firebase Firestore thuộc quyền sở hữu của chính bạn.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>5. Tôi có thể xóa toàn bộ dữ liệu và tài khoản của mình không?</h3>
+            <span class="faq-toggle-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              <strong>Có.</strong> Bạn có toàn quyền xóa vĩnh viễn tài khoản và toàn bộ dữ liệu bất kỳ lúc nào ngay trong ứng dụng: Mở Hồ sơ cá nhân → Cuộn xuống mục "Vùng nguy hiểm" (Danger Zone) → Bấm "Xóa tài khoản & toàn bộ dữ liệu". Toàn bộ dữ liệu đám mây và thông tin đăng nhập sẽ bị xóa sạch lập tức.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>6. Ứng dụng có thể sử dụng khi không có mạng Internet không?</h3>
+            <span class="faq-toggle-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              <strong>Có.</strong> ThyroMate được thiết kế theo nguyên lý Offline-First. Bạn vẫn có thể ghi nhận thuốc, theo dõi đếm ngược ăn sáng và ghi nhận triệu chứng hoàn toàn bình thường khi mất mạng. Dữ liệu sẽ tự động đồng bộ lên đám mây khi điện thoại kết nối Internet trở lại.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Download CTA Section -->
+  <section class="cta-banner-section" id="download">
+    <div class="container">
+      <div class="cta-banner-card">
+        <div class="cta-text-side">
+          <h2>Bắt Đầu Hành Trình Cân Bằng Tuyến Giáp Nhẹ Nhàng Ngay Hôm Nay</h2>
+          <p>
+            Trải nghiệm công cụ hỗ trợ thông minh, thiết kế êm dịu chuẩn Zen Neumorphism giúp bạn không còn bận tâm về việc quên thuốc hay thất lạc hồ sơ y tế.
+          </p>
+          <div class="cta-buttons-row">
+            <a href={TESTFLIGHT_URL} target="_blank" rel="noopener noreferrer" class="btn btn-cta-white">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 0.92-2.87-.93.04-2.02.63-2.66 1.38-.56.65-.99 1.7-0.86 2.73 1.05.08 2.03-.54 2.6-1.24z"/></svg>
+              Cài Đặt Bản iOS (TestFlight)
+            </a>
+            <a href={ANDROID_APK_URL} class="btn btn-secondary-teal">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.472 1.472 0 0 1-.22-.777V2.591c0-.295.082-.566.22-.777zm11.39 11.39l2.87-2.87-12.75-7.36 9.88 10.23zm3.76-3.76l3.37 1.95c.98.57.98 1.49 0 2.06l-3.37 1.95-2.51-2.51 2.51-2.45zm-3.76 4.31l-9.88 10.23 12.75-7.36-2.87-2.87z"/></svg>
+              Tải Bản Android (APK)
+            </a>
+          </div>
+        </div>
+
+        <div class="cta-qr-box">
+          <div class="qr-code-graphic">
+            <!-- Stylized QR Code SVG representing App Download -->
+            <svg viewBox="0 0 100 100" fill="#0D9488" width="160" height="160" role="img" aria-label="QR Code tải ứng dụng ThyroMate">
+              <rect x="10" y="10" width="24" height="24" rx="4" />
+              <rect x="14" y="14" width="16" height="16" fill="#FFF" rx="2" />
+              <rect x="18" y="18" width="8" height="8" rx="2" />
+              <rect x="66" y="10" width="24" height="24" rx="4" />
+              <rect x="70" y="14" width="16" height="16" fill="#FFF" rx="2" />
+              <rect x="74" y="18" width="8" height="8" rx="2" />
+              <rect x="10" y="66" width="24" height="24" rx="4" />
+              <rect x="14" y="70" width="16" height="16" fill="#FFF" rx="2" />
+              <rect x="18" y="74" width="8" height="8" rx="2" />
+              <rect x="42" y="14" width="8" height="8" rx="2" />
+              <rect x="52" y="24" width="8" height="8" rx="2" />
+              <rect x="42" y="34" width="8" height="8" rx="2" />
+              <rect x="24" y="44" width="8" height="8" rx="2" />
+              <rect x="44" y="44" width="12" height="12" rx="3" />
+              <rect x="64" y="44" width="8" height="8" rx="2" />
+              <rect x="76" y="52" width="8" height="8" rx="2" />
+              <rect x="42" y="66" width="8" height="8" rx="2" />
+              <rect x="52" y="76" width="12" height="12" rx="3" />
+              <rect x="74" y="74" width="14" height="14" rx="3" />
+            </svg>
+          </div>
+          <p>Quét mã để mở ứng dụng</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand">
+          <div class="flex items-center gap-3 mb-3">
+            <img src="/thyromate/assets/icons/app-icon.svg" alt="ThyroMate Logo" width="36" height="36">
+            <span class="font-heading font-bold text-xl text-[#0D9488]">ThyroMate (An Giáp)</span>
+          </div>
+          <p>Công cụ kỹ thuật số thông minh hỗ trợ theo dõi lịch dùng thuốc, đồng hồ đếm ngược trước ăn sáng và nhật ký tuyến giáp chuẩn Zen &amp; Neumorphism.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Khám Phá</h4>
+          <ul>
+            <li><a href="#features">Tính Năng Cốt Lõi</a></li>
+            <li><a href="#showcase">Bộ Sưu Tập Giao Diện</a></li>
+            <li><a href="#security">Bảo Mật &amp; Riêng Tư</a></li>
+            <li><a href="#faq">Câu Hỏi Thường Gặp</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Pháp Lý &amp; An Toàn</h4>
+          <ul>
+            <li><a href="/thyromate/legal#terms">Điều Khoản Dịch Vụ</a></li>
+            <li><a href="/thyromate/legal#privacy">Chính Sách Bảo Mật</a></li>
+            <li><a href="/thyromate/legal#danger-zone">Hướng Dẫn Xóa Dữ Liệu</a></li>
+            <li><a href="/thyromate/legal#disclaimer">Tuyên Bố Miễn Trừ Y Tế</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Nhà Phát Triển</h4>
+          <p style="font-size: 13.5px; color: #B8E9E2; line-height: 1.6;">
+            Phát triển bởi <strong><a href="/" class="underline hover:text-white transition-colors">DoIT Studio</a></strong>.<br>
+            Hỗ trợ: <a href="mailto:thanhlh.developer@gmail.com" class="hover:text-white transition-colors">thanhlh.developer@gmail.com</a><br>
+            Phiên bản: 1.0.0 (Release)
+          </p>
+        </div>
+      </div>
+
+      <!-- Medical Disclaimer Box -->
+      <div class="footer-disclaimer-box">
+        <strong>Tuyên bố miễn trừ trách nhiệm y tế:</strong> ThyroMate là công cụ tiện ích hỗ trợ cá nhân ghi nhớ lịch trình và lưu trữ dữ liệu sức khỏe, không phải là ứng dụng y tế, thiết bị y tế hay dịch vụ khám chữa bệnh từ xa. Mọi thông tin trong ứng dụng chỉ mang tính chất tham khảo học thuật. Người dùng luôn phải tham khảo ý kiến bác sĩ chuyên khoa nội tiết trước khi thay đổi liều lượng thuốc hoặc phương pháp điều trị.
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>© 2026 ThyroMate by <a href="/" class="underline hover:text-white">DoIT Studio</a>. All rights reserved.</span>
+        <span>Thiết kế theo chuẩn Zen &amp; Neumorphism — "Thyroid Balance"</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Xem ảnh phóng to">
+    <div class="lightbox-content">
+      <button class="lightbox-close-btn" id="lightboxClose" aria-label="Đóng ảnh">&times;</button>
+      <img src="" alt="Ảnh phóng to giao diện ThyroMate" id="lightboxImg">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <script is:inline src="/thyromate/js/main.js"></script>
+</body>
+</html>
+

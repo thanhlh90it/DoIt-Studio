@@ -6,6 +6,13 @@ import { getSoftwareAppSchema } from '../../utils/seoSchemas';
 
 const appsSchemas = [
   getSoftwareAppSchema({
+    name: "ThyroMate (An Giáp)",
+    description: "Công cụ kỹ thuật số thông minh hỗ trợ bệnh nhân tuyến giáp theo dõi lịch uống thuốc bụng đói, đồng hồ đếm ngược trước ăn sáng, an toàn Canxi 4h và biểu đồ TSH/FT4 chuẩn y khoa.",
+    applicationCategory: "HealthApplication",
+    url: "https://doitstudio.tech/thyromate/",
+    downloadUrl: "https://testflight.apple.com"
+  }),
+  getSoftwareAppSchema({
     name: "SecureVault",
     description: "Két sắt cá nhân bảo mật cao trên di động - 100% local-first privacy, không máy chủ, mã hóa AES-256-GCM.",
     applicationCategory: "SecurityApplication",
@@ -47,6 +54,15 @@ const appsSchemas = [
 ];
 
 const appIdeas = [
+  {
+    slug: '/thyromate/',
+    title: 'ThyroMate (An Giáp)',
+    description: 'Ứng dụng hỗ trợ bệnh nhân tuyến giáp theo dõi lịch uống thuốc hormone bụng đói, đếm ngược trước ăn sáng, cảnh báo an toàn Canxi 4h, biểu đồ TSH/FT4 và phân loại u hạch TIRADS chuẩn y khoa.',
+    date: '13/11/2026',
+    status: 'Đã phát hành (TestFlight & Android)',
+    tags: ['React Native', 'Endocrinology', 'Zen UI', 'HealthTech', 'Offline-First'],
+    icon: '/thyromate/assets/icons/app-icon.svg'
+  },
   {
     slug: '/yopolo/',
     title: 'Yopolo',
