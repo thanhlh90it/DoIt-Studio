@@ -221,17 +221,17 @@ const ANDROID_APK_URL = "#download";
   <!-- Header & Navigation -->
   <header class="site-header">
     <div class="container nav-container">
-      <div class="flex items-center gap-3">
-        <a href="/thyromate/" class="brand-logo">
+      <div class="brand-wrapper">
+        <a href="/thyromate/" class="brand-logo" title="Trang chủ ThyroMate">
           <div class="brand-icon-box">
-            <img src="/thyromate/assets/icons/app-icon.svg" alt="ThyroMate Logo" width="40" height="40">
+            <img src="/thyromate/assets/icons/app-icon.svg" alt="ThyroMate Logo" width="38" height="38">
           </div>
           <div class="brand-name-group">
             <span class="brand-title">ThyroMate</span>
             <span class="brand-sub">An Giáp</span>
           </div>
         </a>
-        <a href="/apps" class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold rounded-full border border-[#B8E9E2] bg-[#E6F7F5] text-[#0D9488] hover:bg-[#CCFBF1] transition-colors" title="Xem tất cả ứng dụng DoIT Studio">
+        <a href="/apps" class="brand-back-link" title="Xem tất cả ứng dụng DoIT Studio">
           <span>DoIT Studio</span>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
         </a>
@@ -863,9 +863,9 @@ const ANDROID_APK_URL = "#download";
     <div class="container">
       <div class="footer-top-grid">
         <div class="footer-brand">
-          <div class="flex items-center gap-3 mb-3">
+          <div class="footer-brand-title-wrap">
             <img src="/thyromate/assets/icons/app-icon.svg" alt="ThyroMate Logo" width="36" height="36">
-            <span class="font-heading font-bold text-xl text-[#0D9488]">ThyroMate (An Giáp)</span>
+            <span class="footer-brand-name">ThyroMate (An Giáp)</span>
           </div>
           <p>Công cụ kỹ thuật số thông minh hỗ trợ theo dõi lịch dùng thuốc, đồng hồ đếm ngược trước ăn sáng và nhật ký tuyến giáp chuẩn Zen &amp; Neumorphism.</p>
         </div>
@@ -893,8 +893,8 @@ const ANDROID_APK_URL = "#download";
         <div class="footer-col">
           <h4>Nhà Phát Triển</h4>
           <p style="font-size: 13.5px; color: #B8E9E2; line-height: 1.6;">
-            Phát triển bởi <strong><a href="/" class="underline hover:text-white transition-colors">DoIT Studio</a></strong>.<br>
-            Hỗ trợ: <a href="mailto:thanhlh.developer@gmail.com" class="hover:text-white transition-colors">thanhlh.developer@gmail.com</a><br>
+            Phát triển bởi <strong><a href="/" class="footer-dev-link">DoIT Studio</a></strong>.<br>
+            Hỗ trợ: <a href="mailto:thanhlh.developer@gmail.com" class="footer-dev-link">thanhlh.developer@gmail.com</a><br>
             Phiên bản: 1.0.0 (Release)
           </p>
         </div>
